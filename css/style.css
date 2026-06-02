@@ -41,6 +41,7 @@ body{
 #loader.hidden{opacity:0;visibility:hidden}
 .loader-logo{width:120px;animation:loaderPulse 1.5s ease-in-out infinite}
 @keyframes loaderPulse{0%,100%{filter:drop-shadow(0 0 10px var(--neon-blue));transform:scale(1)}50%{filter:drop-shadow(0 0 30px var(--neon-blue)) drop-shadow(0 0 60px var(--neon-purple));transform:scale(1.05)}}
+
 .loader-bar{width:200px;height:2px;background:#111;margin-top:30px;border-radius:2px;overflow:hidden}
 .loader-fill{height:100%;background:linear-gradient(90deg,var(--neon-blue),var(--neon-purple));animation:loaderFill 1.8s ease forwards}
 @keyframes loaderFill{from{width:0}to{width:100%}}
