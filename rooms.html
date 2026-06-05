@@ -11,26 +11,16 @@
 </head>
 <body>
 
-<!-- LOADING SCREEN 
-<div id="loader">
-  <img src="assets/logo.png" class="loader-logo" alt="LVL Logo" onerror="this.style.display='none'">
-  <div style="font-family:'Orbitron',monospace;font-size:1.2rem;font-weight:900;color:#00d4ff;letter-spacing:4px;margin-top:16px;text-shadow:0 0 20px #00d4ff">LVL</div>
-  <div class="loader-bar"><div class="loader-fill"></div></div>
-  <div class="loader-text" id="loaderText">INITIALIZING SYSTEMS...</div>
-</div>-->
-
-<!-- PARTICLE CANVAS -->
 <canvas id="particleCanvas"></canvas>
 
-<!-- NAVIGATION -->
 <nav id="mainNav">
   <a class="nav-logo" href="index.html">
-    <img src="assets/logo.png" alt="LVL" onerror="this.style.display='none'">
+    <img src="assets/LVL BW logo.png" alt="LVL" onerror="this.style.display='none'">
     <span class="nav-brand">LVL</span>
   </a>
   <ul class="nav-links">
     <li><a href="index.html">HOME</a></li>
-    <li><a href="rooms.html" class="active">ROOMS</a></li>
+    <li><a href="rooms.html" class="active">CONSOLE</a></li>
     <li><a href="games.html">GAMES</a></li>
     <li><a href="food.html">FOOD</a></li>
     <li><a href="about.html">ABOUT</a></li>
@@ -42,23 +32,20 @@
   </div>
 </nav>
 
-<!-- MOBILE NAV -->
 <div class="mobile-nav" id="mobileNav">
   <a href="index.html">HOME</a>
-  <a href="rooms.html" class="active">ROOMS</a>
+  <a href="rooms.html" class="active">CONSOLES</a>
   <a href="games.html">GAMES</a>
   <a href="food.html">FOOD</a>
   <a href="about.html">ABOUT</a>
   <a href="booking.html">CONTACT / BOOK</a>
 </div>
 
-<!-- FLOATING BOOK BUTTON -->
 <a id="floatBook" href="booking.html">⚡ BOOK SLOT</a>
 
-<!-- ==================== ROOMS PAGE ==================== -->
 <div class="page-wrapper">
   <div class="page-hero fade-in">
-    <p class="section-label" style="justify-content:center">PRIVATE GAMING ROOMS</p>
+    <p class="section-label" style="justify-content:center">PRIVATE AFFORDABLE GAMING</p>
     <h1 class="section-title" style="text-align:center">YOUR OWN<br>GAMING UNIVERSE</h1>
     <p class="section-sub" style="text-align:center;margin:12px auto 0">Every console lives in a separate private room. Sound-controlled, distraction-free, crafted for the best gaming experience.</p>
   </div>
@@ -75,83 +62,194 @@
       </div>
       <div class="glass-card room-feat fade-in stagger-2">
         <div class="room-feat-icon">👨‍👩‍👧‍👦</div>
-        <div><h3>GROUPS WELCOME</h3><p>Fits up to 4 players per room. Perfect for friend groups and hangouts.</p></div>
+        <div><h3>GROUPS WELCOME</h3><p>Perfect for friend groups and hangouts.</p></div>
       </div>
       <div class="glass-card room-feat fade-in stagger-3">
         <div class="room-feat-icon">💺</div>
-        <div><h3>PREMIUM SEATING</h3><p>Ergonomic chairs and ambient lighting curated for long gaming sessions.</p></div>
+        <div><h3>PREMIUM SEATING</h3><p>Comfortable Seats and ambient lighting curated for long gaming sessions.</p></div>
       </div>
     </div>
 
-    <p class="section-label">PRICING</p>
-    <h2 class="section-title" style="margin-bottom:32px">CONSOLE &amp; <span style="background:linear-gradient(135deg,var(--neon-blue),var(--neon-purple));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">PRICING</span></h2>
+    <p class="section-label">PRICING & ROOMS</p>
+    <h2 class="section-title" style="margin-bottom:32px">CONSOLE & <span style="background:linear-gradient(135deg,var(--neon-blue),var(--neon-purple));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">PRICING</span></h2>
 
     <div class="consoles-grid">
-      <!-- PS4 -->
+      
+      <!-- PS4 CARD -->
       <div class="glass-card rgb-border console-card ps4-accent fade-in">
-        <div class="console-card-header">
-          <div class="console-badge">PS4</div>
-          <div class="console-name">PlayStation 4</div>
-          <div class="console-tv">📺 55" 4K TV</div>
+        <div class="console-card-image">
+          <span class="card-corner-label">Casual & Budget Gaming</span>
+          <img src="assets/PS4.jpeg" alt="LVL Gaming Café PS4 Room" loading="lazy">
         </div>
-        <div class="price-table">
-          <div class="price-row"><span class="price-players">👤 1 Player</span><span class="price-amount">₹100/hr</span></div>
-          <div class="price-row"><span class="price-players">👥 2 Players</span><span class="price-amount">₹180/hr</span></div>
-          <div class="price-row"><span class="price-players">👥 3 Players</span><span class="price-amount">₹260/hr</span></div>
-          <div class="price-row"><span class="price-players">👥 4 Players</span><span class="price-amount">₹340/hr</span></div>
+        <div class="console-card-content">
+          <div class="console-card-header">
+            <div class="console-badge">PS4</div>
+            <div class="console-name">PlayStation 4 <span class="tv-spec">(55" 4K TV)</span></div>
+            <p class="console-description"><b>The Best Budget Gaming Setup</b><br>
+Looking for an affordable way to unwind? Our entertainment lounge features the ultimate beginner-friendly setup. Experience smooth, seamless gaming with a classic PS4 paired with a gorgeous 55-inch 4K TV.</p>
+          </div>
+          
+          <div class="price-table">
+            <div class="price-row"><span class="price-players">👤<b> 1 Player</b> </span><span class="price-amount">₹100/hr</span></div>
+            <div class="price-row"><span class="price-players">👥<b>  2 Players</b> </span><span class="price-amount">₹180/hr</span></div>
+            <div class="price-row"><span class="price-players">👥 <b> 3 Players</b> </span><span class="price-amount">₹260/hr</span></div>
+            <div class="price-row"><span class="price-players">👥 <b> 4 Players</b> </span><span class="price-amount">₹340/hr</span></div>
+          </div>
+          <div class="price-note">Extra: ₹50/hr per accompanying person</div>
+
+          <div class="games-preview-section">
+            <div class="games-preview-header">
+              <span>🎮 POPULAR GAMES</span>
+              <a href="games.html" class="see-all-link">See All Games →</a>
+            </div>
+            <div class="games-tags-container">
+              <span class="game-tag">WWE 2K23</span>
+              <span class="game-tag">WWE 2K24</span>
+              <span class="game-tag">FC 25</span>
+              <span class="game-tag">Cricket 24</span>
+              <span class="game-tag">Rocket League</span>
+              <span class="game-tag">A Way Out</span>
+            </div>
+          </div>
+
+          <a href="booking.html" class="card-book-btn">BOOK NOW</a>
         </div>
-        <div class="price-note">₹50/hr per accompanying person</div>
       </div>
-      <!-- PS5 55" -->
+
+      <!-- PS5 55" CARD -->
       <div class="glass-card rgb-border console-card ps5-55-accent fade-in stagger-1">
-        <div class="console-card-header">
-          <div class="console-badge">PS5 · 55"</div>
-          <div class="console-name">PlayStation 5</div>
-          <div class="console-tv">📺 55" 4K Neo QLED TV</div>
+        <div class="console-card-image">
+          <span class="card-corner-label hot-badge">Most Popular</span>
+          <img src="assets/PS4.jpeg" alt="LVL Gaming Café PS5 55 inch Room" loading="lazy">
         </div>
-        <div class="price-table">
-          <div class="price-row"><span class="price-players">👤 1 Player</span><span class="price-amount">₹120/hr</span></div>
-          <div class="price-row"><span class="price-players">👥 2 Players</span><span class="price-amount">₹220/hr</span></div>
-          <div class="price-row"><span class="price-players">👥 3 Players</span><span class="price-amount">₹320/hr</span></div>
-          <div class="price-row"><span class="price-players">👥 4 Players</span><span class="price-amount">₹420/hr</span></div>
+        <div class="console-card-content">
+          <div class="console-card-header">
+            <div class="console-badge">PS5 · 55"</div>
+            <div class="console-name">PlayStation 5 <span class="tv-spec">(55" 4k Neo QLED TV)</span></div>
+            <p class="console-description"><b>Next-Gen Visual Experience</b><br> Experience next-gen performance with crisp visuals on a 55-inch OLED setup. Perfectly calibrated colors and unmatched frame rates to bring your favorite campaign and sports titles to life.</p>
+          </div>
+          
+          <div class="price-table">
+            <div class="price-row"><span class="price-players">👤 </b>1 Player</b></span><span class="price-amount">₹120/hr</span></div>
+            <div class="price-row"><span class="price-players">👥 <b>2 Players</b></span><span class="price-amount">₹220/hr</span></div>
+            <div class="price-row"><span class="price-players">👥 <b>3 Players</b></span><span class="price-amount">₹320/hr</span></div>
+            <div class="price-row"><span class="price-players">👥 <b>4 Players</b></span><span class="price-amount">₹420/hr</span></div>
+          </div>
+          <div class="price-note">Extra: ₹50/hr per accompanying person</div>
+
+          <div class="games-preview-section">
+            <div class="games-preview-header">
+              <span>🎮 POPULAR GAMES</span>
+              <a href="games.html" class="see-all-link">See All Games →</a>
+            </div>
+            <div class="games-tags-container">
+              <span class="game-tag">WWE 2K23</span>
+              <span class="game-tag">WWE 2K24</span>
+              <span class="game-tag">FC 25</span>
+              <span class="game-tag">Cricket 24</span>
+              <span class="game-tag">Rocket League</span>
+              <span class="game-tag">A Way Out</span>
+            </div>
+          </div>
+
+          <a href="booking.html" class="card-book-btn">BOOK NOW</a>
         </div>
-        <div class="price-note">₹50/hr per accompanying person</div>
       </div>
-      <!-- PS5 65" -->
-      <div class="glass-card rgb-border console-card fade-in stagger-2">
-        <div class="console-card-header">
-          <div class="console-badge">PS5 · 65"</div>
-          <div class="console-name">PlayStation 5</div>
-          <div class="console-tv">📺 65" 4K QLED TV</div>
-        </div>
-        <div class="price-table">
-          <div class="price-row"><span class="price-players">👤 1 Player</span><span class="price-amount">₹140/hr</span></div>
-          <div class="price-row"><span class="price-players">👥 2 Players</span><span class="price-amount">₹260/hr</span></div>
-          <div class="price-row"><span class="price-players">👥 3 Players</span><span class="price-amount">₹380/hr</span></div>
-          <div class="price-row"><span class="price-players">👥 4 Players</span><span class="price-amount">₹500/hr</span></div>
-        </div>
-        <div class="price-note">₹50/hr per accompanying person</div>
-      </div>
-      <!-- PS5 Pro -->
-      <div class="glass-card rgb-border console-card pspro-accent fade-in stagger-3">
-        <div class="console-card-header">
-          <div class="console-badge">PS5 PRO</div>
-          <div class="console-name">PlayStation 5 Pro</div>
-          <div class="console-tv">📺 65" 4K QLED TV</div>
-        </div>
-        <div class="price-table">
-          <div class="price-row"><span class="price-players">👤 1 Player</span><span class="price-amount">₹160/hr</span></div>
-          <div class="price-row"><span class="price-players">👥 2 Players</span><span class="price-amount">₹300/hr</span></div>
-          <div class="price-row"><span class="price-players">👥 3 Players</span><span class="price-amount">₹440/hr</span></div>
-          <div class="price-row"><span class="price-players">👥 4 Players</span><span class="price-amount">₹580/hr</span></div>
-        </div>
-        <div class="price-note">Parents with children exempt from extra charge</div>
-      </div>
+
+      <!-- PS5 65" CARD -->
+   <div class="glass-card rgb-border console-card ps5-65-accent fade-in stagger-2">
+  <div class="console-card-image">
+    <span class="card-corner-label">Best for Multiplayer</span>
+    <img src="assets/PS 5 65.jpeg" alt="LVL Gaming Café PS5 65 inch Room" loading="lazy">
+  </div>
+  <div class="console-card-content">
+    <div class="console-card-header">
+      <div class="console-badge">PS5 · 65"</div>
+      <div class="console-name">PS5 <span class="tv-spec">(65" 4k QD OLED TV)</span></div>
+      <p class="console-description"><b>Immersive Big Screen Private Gaming</b><br>
+Ready for multiplayer? Relax in your own private room featuring a powerful PS5 paired with a gorgeous 65" 4K QD-OLED TV for the ultimate smooth gameplay.</p>
     </div>
+
+          <div class="price-table">
+            <div class="price-row"><span class="price-players">👤 <b>1 Player</span><span class="price-amount">₹140/hr</span></div>
+            <div class="price-row"><span class="price-players">👥 <b>2 Players</b></span><span class="price-amount">₹260/hr</span></div>
+            <div class="price-row"><span class="price-players">👥 <b>3 Players</b></span><span class="price-amount">₹380/hr</span></div>
+            <div class="price-row"><span class="price-players">👥 <b>4 Players</b></span><span class="price-amount">₹500/hr</span></div>
+          </div>
+          <div class="price-note">Extra: ₹50/hr per accompanying person</div>
+
+          <div class="games-preview-section">
+            <div class="games-preview-header">
+              <span>🎮 POPULAR GAMES</span>
+              <a href="games.html" class="see-all-link">See All Games →</a>
+            </div>
+            <div class="games-tags-container">
+              <span class="game-tag">WWE 2K24</span>
+              <span class="game-tag">FC 25</span>
+              <span class="game-tag">Cricket 24</span>
+              <span class="game-tag">Rocket League</span>
+              <span class="game-tag">A Way Out</span>
+              <span class="game-tag">It Takes Two</span>
+            </div>
+          </div>
+
+          <a href="booking.html" class="card-book-btn">BOOK NOW</a>
+        </div>
+      </div>
+
+      <!-- PS5 PRO CARD -->
+      <div class="glass-card rgb-border console-card pspro-accent fade-in stagger-3">
+        <div class="console-card-image">
+          <span class="card-corner-label pro-badge">Best for Squad</span>
+          <img src="assets/PS5 Pro.jpeg" alt="LVL Gaming Café PS5 Pro Room" loading="lazy">
+        </div>
+        <div class="console-card-content">
+          <div class="console-card-header">
+            <div class="console-badge">PS5 PRO</div>
+            <div class="console-name">PlayStation 5 Pro <span class="tv-spec"></span>(65" 4k QLED TV)</span></div>
+            <p class="console-description"><b>The Ultimate Pro Gaming Arena</b><br> Lock in with your team in our private, high-performance squad room. Experience peak graphics, advanced ray tracing, and maximum processing power with the PS5 Pro on a massive 65" QD-OLED display</p>
+          
+          </div>
+          
+          <div class="price-table">
+            <div class="price-row"><span class="price-players">👤 <b>1 Player</b></span><span class="price-amount">₹160/hr</span></div>
+            <div class="price-row"><span class="price-players">👥 <b>2 Players</b></span><span class="price-amount">₹300/hr</span></div>
+            <div class="price-row"><span class="price-players">👥 <b>3 Players</b></span><span class="price-amount">₹440/hr</span></div>
+            <div class="price-row"><span class="price-players">👥 <b>4 Players</b></span><span class="price-amount">₹580/hr</span></div>
+          </div>
+          <div class="price-note">Extra: ₹50/hr per accompanying person</div>
+
+          <div class="games-preview-section">
+            <div class="games-preview-header">
+              <span>🎮 POPULAR GAMES</span>
+              <a href="games.html" class="see-all-link">See All Games →</a>
+            </div>
+            <div class="games-tags-container">
+              <span class="game-tag">Rocket League</span>
+              <span class="game-tag">A Way Out</span>
+              <span class="game-tag">It Takes Two</span>
+              <span class="game-tag">Dirt 5</span>
+              <span class="game-tag">GTA 5</span>
+              <span class="game-tag">Spider-Man: MM</span>
+            </div>
+          </div>
+
+          <a href="booking.html" class="card-book-btn">BOOK NOW</a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- IMPORTANT NOTES BOX -->
+    <div class="glass-card fade-in" style="margin: 40px auto 0; max-width: 600px; padding: 20px; border-left: 4px solid var(--neon-blue, #00f0ff); background: rgba(255, 255, 255, 0.03); text-align: center;">
+      <h4 style="font-family: 'Orbitron', sans-serif; letter-spacing: 2px; color: var(--neon-blue, #00f0ff); margin-bottom: 12px; font-size: 0.95rem;">⚠️ IMPORTANT NOTES</h4>
+      <p style="margin: 6px 0; font-size: 0.9rem; color: #fff;">• Extra: <b>₹50/hr</b> per accompanying person</p>
+      <p style="margin: 6px 0; font-size: 0.9rem; color: #fff;">• <b>Parents with children</b> are exempt from extra charge</p>
+    </div>
+
   </div>
 </div>
 
-<!-- ==================== FOOTER ==================== -->
 <footer>
   <div class="footer-inner">
     <div class="footer-top">

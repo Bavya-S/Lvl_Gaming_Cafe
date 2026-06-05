@@ -2,6 +2,7 @@
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
   --neon-blue:#00d4ff;
+  --neon-pink:#ff6b9d;
   --neon-purple:#a855f7;
   --neon-red:#ff2d55;
   --neon-green:#39ff14;
