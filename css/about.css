@@ -10,7 +10,32 @@
 .highlight-text{font-size:0.9rem;color:var(--text-muted);font-family:var(--font-mono);letter-spacing:1px}
 
 /* About visual */
-.about-visual{position:relative;display:flex;align-items:center;justify-content:center;}
+.about-visual-ring {
+  position: absolute;
+  width: 110%;
+  height: 110%;
+  border: 1px solid rgba(0,212,255,0.15);
+  border-radius: 50%;
+  animation: ringRotate 10s linear infinite;
+  /* ADD THIS line to make it click-through */
+  pointer-events: none; 
+}
+
+.about-visual-ring2 {
+  position: absolute;
+  width: 130%;
+  height: 130%;
+  border: 1px solid rgba(168,85,247,0.1);
+  border-radius: 50%;
+  animation: ringRotate 15s linear infinite reverse;
+  /* ADD THIS line to make it click-through */
+  pointer-events: none; 
+}
+.about-text {
+  position: relative;
+  /* ADD THIS line to push the text layer to the very top */
+  z-index: 20; 
+}
 .about-logo-display{
   width:70%;max-width:300px;
   filter:drop-shadow(0 0 40px var(--neon-blue)) drop-shadow(0 0 80px var(--neon-purple));
@@ -33,7 +58,11 @@
 @keyframes ringRotate{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
 
 /* Map & contact */
-.map-section{margin-top:20px}
+.map-section{
+  margin-top:20px;
+  position: relative;
+  z-index: 5; /* Forces the entire section above any overlapping visual rings */
+}
 .map-section h2{font-family:var(--font-display);font-size:1rem;font-weight:700;letter-spacing:3px;margin-bottom:20px;color:var(--neon-blue)}
 .map-wrapper{
   border:1px solid rgba(0,212,255,0.2);
@@ -49,17 +78,37 @@
   pointer-events:none;z-index:1;border-radius:4px;
 }
 .map-wrapper iframe{display:block;width:100%;height:320px;filter:invert(90%) hue-rotate(180deg) brightness(0.9) contrast(1.1)}
-.contact-bar{
-  display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-  gap:16px;margin-top:20px;
+
+.contact-bar {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  margin-top: 20px;
+  
+  /* FORCE THIS LAYER ON TOP */
+  position: relative;
+  z-index: 9999 !important; 
 }
 .contact-item{padding:20px;display:flex;align-items:center;gap:14px;}
 .contact-icon{font-size:1.3rem;flex-shrink:0}
 .contact-info{}
 .contact-label{font-family:var(--font-mono);font-size:0.6rem;color:var(--text-muted);letter-spacing:2px;margin-bottom:2px}
 .contact-value{font-family:var(--font-display);font-size:0.75rem;font-weight:700;color:var(--text-primary)}
-.contact-item a{color:inherit;text-decoration:none}
-.contact-item:hover .contact-value{color:var(--neon-blue)}
+
+/* FIXED LINK STATES */
+.contact-item a{
+  color:inherit;
+  text-decoration:none;
+  display: block;
+  width: 100%;
+}
+/* Gives a vibrant neon blue flash when hovering card elements directly */
+.contact-item:hover .contact-value a, 
+.contact-item:hover .contact-value {
+  color:var(--neon-blue) !important;
+  text-shadow: 0 0 8px rgba(0, 212, 255, 0.4);
+  transition: color 0.2s ease, text-shadow 0.2s ease;
+}
 
 /* Responsive */
 @media(max-width:600px){

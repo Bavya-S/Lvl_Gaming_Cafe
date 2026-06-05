@@ -8,6 +8,59 @@
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Rajdhani:wght@300;400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/about.css">
+<style>
+  /* Custom Styles to Expand the Gallery Layout Size */
+  .about-grid {
+    align-items: center !important;
+  }
+  .cafe-gallery-container {
+    display: flex; 
+    flex-direction: column; 
+    width: 100%;
+    margin-top: 20px;
+  }
+  .cafe-gallery {
+    display: flex;
+    overflow-x: auto; /* Re-enabled auto overflow to support touch and swipe gestures native behavior */
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    border-radius: 16px;
+    background: rgba(0,0,0,0.4);
+    box-shadow: 0 0 30px rgba(0, 212, 255, 0.15);
+    border: 1px solid rgba(0, 212, 255, 0.2);
+    -webkit-overflow-scrolling: touch;
+    width: 100%;
+  }
+  /* Hide standard scrollbars cleanly across multiple engine viewports */
+  .cafe-gallery::-webkit-scrollbar {
+    display: none;
+  }
+  .cafe-gallery {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .gallery-item {
+    flex: 0 0 100%;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    scroll-snap-align: start;
+  }
+  /* Enlarged heights for desktop/mobile views */
+  .gallery-item img, .gallery-item video {
+    width: 100%;
+    height: 480px; /* Increased from 320px for a much bigger display presence */
+    object-fit: cover;
+    display: block;
+  }
+  @media (max-width: 768px) {
+    .gallery-item img, .gallery-item video {
+      height: 360px; /* Adjusted optimized height for mobile layout sizing */
+    }
+  }
+</style>
 </head>
 <body>
 
@@ -22,7 +75,7 @@
 <!-- PARTICLE CANVAS -->
 <canvas id="particleCanvas"></canvas>
 
-<!-- NAVIGATION -->
+<!-- NAVIGATION (Unchanged) -->
 <nav id="mainNav">
   <a class="nav-logo" href="index.html">
     <img src="assets/logo.png" alt="LVL" onerror="this.style.display='none'">
@@ -56,40 +109,108 @@
 <a id="floatBook" href="booking.html">⚡ BOOK SLOT</a>
 
 <!-- ==================== ABOUT PAGE ==================== -->
-<div class="page-wrapper">
+<div class="page-wrapper" style="font-family: 'Rajdhani', sans-serif;">
+  <!-- HEADER SECTION (Unchanged) -->
   <div class="page-hero fade-in">
     <p class="section-label" style="justify-content:center">ABOUT LVL</p>
     <h1 class="section-title" style="text-align:center">WHERE GAMING<br>MEETS LUXURY</h1>
   </div>
+  
   <div class="about-section">
     <div class="about-grid">
-      <div class="about-text fade-in">
-        <p>LVL Gaming Café is a <strong>luxury console gaming lounge</strong> crafted for gamers who value comfort, performance, and uninterrupted play. Designed with a premium aesthetic and a focus on exclusivity, LVL offers private gaming rooms that let you fully immerse yourself in the game — whether you're competing, grinding, or unwinding with friends.</p>
-        <p>Each setup features <strong>high-end PlayStation consoles</strong> paired with stunning 4K displays delivering ultra-smooth 120 FPS gameplay, crystal-clear visuals, and responsive performance. Every detail — from ergonomic seating to acoustics and ambient lighting — is curated to elevate your gaming experience to the next level.</p>
-        <p>Beyond gaming, LVL Gaming Café enhances your sessions with a <strong>selection of delicious food and refreshments</strong>, ensuring long hours of play without breaking the flow. The atmosphere strikes the perfect balance between competitive energy and relaxed comfort, making it ideal for solo gamers, friend groups, and special hangouts.</p>
-        <p>📍 Located in <strong>Chennai, India</strong>, LVL Gaming Café is more than just a gaming space — it's a premium destination where gaming meets luxury. Whether you're here to play hard or chill harder, <strong>LVL is where you level up.</strong></p>
-        <div class="about-highlights">
-          <div class="glass-card about-highlight"><div class="highlight-icon">🎮</div><div class="highlight-text">PlayStation 4 &amp; 5 Range</div></div>
+      <!-- BODY FONT CONVERTED TO RAJDHANI FOR HUMAN READABILITY -->
+      <div class="about-text fade-in" style="font-family: 'Rajdhani', sans-serif; font-size: 1.2rem; line-height: 1.6; letter-spacing: 0.5px;">
+        <h2 style="font-family: var(--font-display, 'Orbitron', sans-serif); color: var(--neon-blue); margin-bottom: 10px;">Welcome to LVL Gaming Café</h2>
+        <h3 style="font-family: var(--font-display, 'Orbitron', sans-serif); font-size: 1.4rem; color: var(--text-light); margin-bottom: 25px; font-weight: 600;">Chennai’s No.1 Experience in Premium, Affordable Gaming</h3>
+        
+        <p style="margin-bottom: 20px;">LVL Gaming Café redefines the local gaming scene by offering a luxury console lounge that remains <strong>accessible and affordable for every gamer</strong>. We bridge the gap between high-end performance and budget-friendly pricing, giving you private spaces to immerse yourself completely without worrying about the hourly cost.</p>
+        
+        <p style="margin-bottom: 20px;">
+          <strong style="color: var(--neon-blue); font-size: 1.3rem; display: block; margin-bottom: 5px;">🎮 Elite Performance on a Budget</strong>
+          Get the pro-gaming edge for less. Our setups feature top-tier PlayStation consoles paired with stunning 4K displays delivering ultra-smooth 120 FPS gameplay. Combined with acoustic design and ergonomic seating, you get an elite setup at a fraction of the cost.
+        </p>
+        
+        <p style="margin-bottom: 20px;">
+          <strong style="color: var(--neon-blue); font-size: 1.3rem; display: block; margin-bottom: 5px;">🍔 Relax, Refuel, & Save</strong>
+          Long gaming sessions demand great food. LVL enhances your time with a menu of delicious, pocket-friendly refreshments and snacks designed to keep you in the zone without breaking your flow—or your budget.
+        </p>
+        
+        <p style="margin-bottom: 25px;">
+          <strong style="color: var(--neon-blue); font-size: 1.3rem; display: block; margin-bottom: 5px;">📍 Level Up in Chennai</strong>
+          Whether you are a solo casual player or rolling deep with your squad, LVL Gaming Café strikes the perfect balance between competitive energy and relaxed comfort. Come see why we are Chennai's favorite value-driven gaming destination.
+        </p>
+        
+        <div class="about-highlights" style="margin-top: 30px; font-family: var(--font-display, 'Orbitron', sans-serif);">
+          <div class="glass-card about-highlight"><div class="highlight-icon">🎮</div><div class="highlight-text">PlayStation 4 & 5 Range</div></div>
           <div class="glass-card about-highlight"><div class="highlight-icon">📺</div><div class="highlight-text">Up to 65" 4K QLED</div></div>
           <div class="glass-card about-highlight"><div class="highlight-icon">⚡</div><div class="highlight-text">120 FPS Gameplay</div></div>
           <div class="glass-card about-highlight"><div class="highlight-icon">🔒</div><div class="highlight-text">100% Private Rooms</div></div>
         </div>
       </div>
+      
+      <!-- VISUAL SIDE - EXPANDED SMART SWIPE + AUTOPLAY GALLERY -->
       <div class="about-visual fade-in stagger-2">
-        <div class="about-visual-ring"></div>
-        <div class="about-visual-ring2"></div>
-        <img src="assets/logo.png" class="about-logo-display" alt="LVL Logo" onerror="this.outerHTML='<div style=\'font-family:var(--font-display);font-size:6rem;font-weight:900;color:var(--neon-blue);text-shadow:0 0 40px var(--neon-blue)\'>LVL</div>'">
+        <div class="cafe-gallery-container">
+          
+          <div class="cafe-gallery" id="lvlAboutGallery">
+            <!-- Slide 1: Cafe Pic1 -->
+            <div class="gallery-item" data-type="image">
+              <img src="assets/Cafe Pic1.jpeg" alt="LVL Gaming Cafe Setup 1" onerror="this.src='assets/logo.png'; this.style.objectFit='contain';">
+            </div>
+            
+            <!-- Slide 2: Cafe Pic2 -->
+            <div class="gallery-item" data-type="image">
+              <img src="assets/PS4.jpeg" alt="LVL Gaming Cafe Setup 2" onerror="this.src='assets/logo.png'; this.style.objectFit='contain';">
+            </div>
+            
+            <!-- Slide 3: Cafe Video1 -->
+            <div class="gallery-item" data-type="video">
+              <video src="assets/Cafe Video1.mp4" muted playsinline></video>
+            </div>
+
+            <!-- Slide 4: Cafe Video2 -->
+            <div class="gallery-item" data-type="video">
+              <video src="assets/Cafe Video2.mp4" muted playsinline></video>
+            </div>
+
+            <!-- Slide 5: Cafe Video3 -->
+            <div class="gallery-item" data-type="video">
+              <video src="assets/Cafe Video3.mp4" muted playsinline></video>
+            </div>
+
+            <!-- Slide 6: Cafe Video4 -->
+            <div class="gallery-item" data-type="video">
+              <video src="assets/Cafe Video4.mp4" muted playsinline></video>
+            </div>
+          </div>
+
+          <!-- Restructured Swipe Hint Text: Positioned directly underneath the gallery box container -->
+          <div style="
+            text-align: center;
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.75rem;
+            color: var(--neon-blue, #00d4ff);
+            margin-top: 16px;
+            letter-spacing: 2px;
+            text-shadow: 0 0 5px var(--neon-blue);
+            width: 100%;
+            display: block;
+            clear: both;
+          ">
+            Swipe Right to Explore Gallery ➔
+          </div>
+
+        </div>
       </div>
     </div>
-
-    <div class="map-section fade-in">
+<div class="map-section fade-in">
       <h2>📍 FIND US</h2>
       <div class="contact-bar" style="margin-bottom:20px">
         <div class="glass-card contact-item">
           <div class="contact-icon">📍</div>
           <div class="contact-info">
             <div class="contact-label">ADDRESS</div>
-            <div class="contact-value">47, Padmavathy Nagar, Madambakkam, 73, 1st St, Selaiyur, Chennai, Tamil Nadu 600126</div>
+            <div class="contact-value"><a href="https://www.google.com/maps/search/LvL+Gaming+Cafe+Chennai" target="_blank">47, Padmavathy Nagar, Madambakkam, 73, 1st St, Selaiyur, Chennai, Tamil Nadu 600126</a></div>
           </div>
         </div>
         <div class="glass-card contact-item">
@@ -108,7 +229,17 @@
         </div>
       </div>
       <div class="map-wrapper">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.745!2d80.192!3d12.916!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTLCsDU0JzU3LjYiTiA4MMKwMTEnMzEuMiJF!5e0!3m2!1sen!2sin!4v1!5m2!1sen!2sin" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="LVL Gaming Café Location"></iframe>
+        <iframe 
+          src="https://maps.google.com/maps?q=LVL%20Gaming%20Cafe,%2047,%20Padmavathy%20Nagar,%20Madambakkam,%20Selaiyur,%20Chennai&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+          width="100%" 
+          height="300" 
+          style="border:0;" 
+          allowfullscreen="" 
+          loading="lazy" 
+          referrerpolicy="no-referrer-when-downgrade" 
+          title="LVL Gaming Café Location">
+        </iframe>
+      </div>
       </div>
     </div>
   </div>
@@ -140,7 +271,7 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <p class="footer-copy">© 2025 LVL Gaming Café. All rights reserved.</p>
+      <p class="footer-copy">© 2026 LVL Gaming Café. All rights reserved.</p>
       <p class="footer-dev">Developed by <a href="https://linkedin.com/in/bavya-saravanakumar" target="_blank">Bavya S</a></p>
     </div>
   </div>
@@ -148,5 +279,112 @@
 
 <script src="js/script.js"></script>
 <script src="js/about.js"></script>
+
+<!-- SYSTEM GALLERY ROUTING CONTROLLER JS -->
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const gallery = document.getElementById("lvlAboutGallery");
+  const slides = gallery.getElementsByClassName("gallery-item");
+  let currentIndex = 0;
+  let slideTimeout;
+  let isUserInteracting = false;
+  let interactionTimer;
+
+  function initGallery() {
+    if (slides.length === 0) return;
+    playSlide(0);
+
+    // Track when user manually swipes to update indices and handle loops gracefully
+    gallery.addEventListener('scroll', () => {
+      if (isUserInteracting) {
+        const slideWidth = gallery.clientWidth;
+        const newIndex = Math.round(gallery.scrollLeft / slideWidth);
+        if (newIndex !== currentIndex && newIndex >= 0 && newIndex < slides.length) {
+          currentIndex = newIndex;
+          // Play current video if swiped manually into a video block
+          const currentSlide = slides[currentIndex];
+          if (currentSlide.getAttribute("data-type") === "video") {
+            const video = currentSlide.querySelector("video");
+            if (video && video.paused) {
+              video.play().catch(() => {});
+            }
+          }
+        }
+      }
+    });
+
+    // Detect touch inputs to temporarily halt automation mechanics
+    gallery.addEventListener('touchstart', userInteractionTrigger, {passive: true});
+    gallery.addEventListener('mousedown', userInteractionTrigger);
+  }
+
+  function userInteractionTrigger() {
+    isUserInteracting = true;
+    clearTimeout(slideTimeout);
+    clearTimeout(interactionTimer);
+
+    // If user drops interaction, wait 6 seconds before turning auto loop back engine on
+    interactionTimer = setTimeout(() => {
+      isUserInteracting = false;
+      playSlide(currentIndex);
+    }, 6000);
+  }
+
+  function playSlide(index) {
+    if (isUserInteracting) return;
+    currentIndex = index;
+    
+    gallery.scrollTo({
+      left: slides[index].offsetLeft,
+      behavior: 'smooth'
+    });
+
+    clearTimeout(slideTimeout);
+
+    const currentSlide = slides[index];
+    const type = currentSlide.getAttribute("data-type");
+
+    // Manage engine tracks
+    Array.from(slides).forEach(slide => {
+      const vid = slide.querySelector("video");
+      if (vid) {
+        vid.pause();
+        vid.currentTime = 0;
+      }
+    });
+
+    if (type === "video") {
+      const video = currentSlide.querySelector("video");
+      if (video) {
+        let playPromise = video.play();
+        if (playPromise !== undefined) {
+          playPromise.then(() => {
+            video.onended = function() {
+              if (!isUserInteracting) nextSlide();
+            };
+          }).catch(() => {
+            slideTimeout = setTimeout(nextSlide, 3000);
+          });
+        }
+      } else {
+        slideTimeout = setTimeout(nextSlide, 3000);
+      }
+    } else {
+      slideTimeout = setTimeout(nextSlide, 3000);
+    }
+  }
+
+  function nextSlide() {
+    if (isUserInteracting) return;
+    let nextIndex = currentIndex + 1;
+    if (nextIndex >= slides.length) {
+      nextIndex = 0;
+    }
+    playSlide(nextIndex);
+  }
+
+  setTimeout(initGallery, 500);
+});
+</script>
 </body>
 </html>
