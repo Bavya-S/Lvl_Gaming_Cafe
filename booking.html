@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Book a Slot – LVL Gaming Café</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Rajdhani:wght@300;400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/booking.css">
+</head>
+<body>
+
+<!-- PARTICLE CANVAS -->
+<canvas id="particleCanvas"></canvas>
+
+<!-- NAVIGATION -->
+<nav id="mainNav">
+  <a class="nav-logo" href="index.html">
+    <img src="assets/logo.png" alt="LVL" onerror="this.style.display='none'">
+    <span class="nav-brand">LVL</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">HOME</a></li>
+    <li><a href="rooms.html">ROOMS</a></li>
+    <li><a href="games.html">GAMES</a></li>
+    <li><a href="food.html">FOOD</a></li>
+    <li><a href="about.html">ABOUT</a></li>
+    <li><a href="booking.html" class="active">CONTACT</a></li>
+  </ul>
+  <a class="nav-cta" href="booking.html">BOOK SLOT</a>
+  <div class="hamburger" onclick="toggleMobileNav()" id="hamburger">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- MOBILE NAV -->
+<div class="mobile-nav" id="mobileNav">
+  <a href="index.html">HOME</a>
+  <a href="rooms.html">ROOMS</a>
+  <a href="games.html">GAMES</a>
+  <a href="food.html">FOOD</a>
+  <a href="about.html">ABOUT</a>
+  <a href="booking.html" class="active">CONTACT / BOOK</a>
+</div>
+
+<!-- FLOATING BOOK BUTTON -->
+<a id="floatBook" href="booking.html">⚡ BOOK SLOT</a>
+
+<!-- ==================== BOOKING PAGE ==================== -->
+<div class="page-wrapper">
+  <div class="page-hero fade-in">
+    <p class="section-label" style="justify-content:center">BOOK A SLOT</p>
+    <h1 class="section-title" style="text-align:center">RESERVE YOUR<br>GAMING ROOM</h1>
+  </div>
+  <div class="booking-section">
+    <div class="booking-intro fade-in">
+      <p style="font-family:var(--font-mono);font-size:0.7rem;color:var(--neon-blue);letter-spacing:3px">// FOR IMMEDIATE BOOKING</p>
+      <p style="margin-top:8px;color:var(--text-muted)">Call or WhatsApp us directly</p>
+      <a href="tel:9962270902" class="booking-phone-big">📞 +91 99622 70902</a>
+    </div>
+    <div class="glass-card form-wrap fade-in stagger-1">
+      <p style="font-family:var(--font-mono);font-size:0.65rem;color:var(--neon-blue);letter-spacing:3px;margin-bottom:24px">// OR SEND A BOOKING REQUEST VIA WHATSAPP</p>
+      <div class="form-group">
+        <label class="form-label" for="bookName">YOUR NAME</label>
+        <input type="text" id="bookName" class="form-input" placeholder="Enter your name">
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="bookPhone">PHONE NUMBER *</label>
+        <input type="tel" id="bookPhone" class="form-input" placeholder="+91 XXXXX XXXXX" required>
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="bookConsole">PREFERRED CONSOLE</label>
+        <select id="bookConsole" class="form-select">
+          <option value="">Select Console</option>
+          <option value='PS4 – 55" 4K TV'>PS4 – 55" 4K TV</option>
+          <option value='PS5 – 55" 4K Neo QLED'>PS5 – 55" 4K Neo QLED</option>
+          <option value='PS5 – 65" 4K QLED'>PS5 – 65" 4K QLED</option>
+          <option value='PS5 Pro – 65" 4K QLED'>PS5 Pro – 65" 4K QLED</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="bookTime">PREFERRED TIME</label>
+        <input type="text" id="bookTime" class="form-input" placeholder="e.g., Today 5 PM or Tomorrow 3 PM">
+      </div>
+      <button class="form-submit" onclick="submitBooking()">⚡ BOOK SLOT VIA WHATSAPP</button>
+      <p class="form-note">This will open WhatsApp with a pre-filled message to <a href="tel:9962270902">+91 99622 70902</a></p>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== FOOTER ==================== -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <img src="assets/logo.png" alt="LVL" onerror="this.style.display='none'">
+          <span class="footer-logo-text">LVL GAMING CAFÉ</span>
+        </div>
+        <p class="footer-tagline">// LEVEL UP. LOCK IN. GAME FREE.</p>
+        <p style="font-size:0.8rem;color:var(--text-muted);margin-top:8px;max-width:280px">47, Padmavathy Nagar, Madambakkam, Chennai, TN 600126</p>
+      </div>
+      <div class="footer-social">
+        <p style="font-family:var(--font-mono);font-size:0.6rem;color:var(--neon-blue);letter-spacing:3px;margin-bottom:8px">FOLLOW US</p>
+        <a class="footer-social-link" href="https://www.youtube.com/@lvlgamingcafe" target="_blank"><span class="footer-social-icon">▶</span> YouTube</a>
+        <a class="footer-social-link" href="https://www.instagram.com/lvl_gaming_cafe/" target="_blank"><span class="footer-social-icon">◆</span> Instagram</a>
+        <a class="footer-social-link" href="https://wa.me/919962270902" target="_blank"><span class="footer-social-icon">●</span> WhatsApp</a>
+      </div>
+      <div class="footer-contact">
+        <p style="font-family:var(--font-mono);font-size:0.6rem;color:var(--neon-blue);letter-spacing:3px;margin-bottom:8px">CONTACT</p>
+        <a href="tel:9962270902">📞 +91 99622 70902</a>
+        <a href="https://wa.me/919962270902" target="_blank">💬 WhatsApp</a>
+        <a href="https://www.google.com/maps/search/LvL+Gaming+Cafe+Chennai" target="_blank">📍 Get Directions</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2025 LVL Gaming Café. All rights reserved.</p>
+      <p class="footer-dev">Developed by <a href="https://linkedin.com/in/bavya-saravanakumar" target="_blank">Bavya S</a></p>
+    </div>
+  </div>
+</footer>
+
+<script src="js/script.js"></script>
+<script src="js/booking.js"></script>
+</body>
+</html>

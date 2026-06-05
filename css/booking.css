@@ -1,0 +1,70 @@
+/* ===================== BOOKING PAGE ===================== */
+.booking-section{max-width:700px;margin:0 auto;padding:20px 2rem 80px}
+.booking-intro{
+  text-align:center;margin-bottom:40px;
+  padding:20px;background:rgba(0,212,255,0.04);border:1px solid rgba(0,212,255,0.15);
+}
+.booking-intro p{color:var(--text-muted);margin:8px 0}
+.booking-phone-big{
+  font-family:var(--font-display);font-size:1.5rem;font-weight:900;
+  color:var(--neon-blue);text-shadow:0 0 20px var(--neon-blue);
+  display:block;margin-top:12px;text-decoration:none;
+}
+.form-wrap{
+  background:rgba(255,255,255,0.02);
+  border:1px solid rgba(0,212,255,0.15);
+  padding:32px;
+}
+.form-group{margin-bottom:24px}
+.form-label{
+  display:block;font-family:var(--font-mono);font-size:0.65rem;
+  letter-spacing:3px;color:var(--neon-blue);margin-bottom:8px;
+  text-transform:uppercase;
+}
+.form-input,.form-select{
+  width:100%;background:rgba(0,0,0,0.5);
+  border:1px solid rgba(0,212,255,0.2);
+  color:var(--text-primary);font-family:var(--font-body);font-size:1rem;
+  padding:12px 16px;outline:none;
+  transition:border-color 0.3s,box-shadow 0.3s;
+  appearance:none;-webkit-appearance:none;
+}
+.form-input:focus,.form-select:focus{
+  border-color:var(--neon-blue);
+  box-shadow:0 0 20px rgba(0,212,255,0.15),inset 0 0 10px rgba(0,212,255,0.05);
+}
+.form-select option{background:#0a0a1a;color:var(--text-primary)}
+.form-submit{
+  width:100%;background:linear-gradient(135deg,var(--neon-blue),var(--neon-purple));
+  border:none;color:#000;font-family:var(--font-display);font-size:0.8rem;
+  font-weight:900;letter-spacing:3px;padding:18px;cursor:pointer;
+  text-transform:uppercase;transition:all 0.3s;
+  clip-path:polygon(12px 0%,100% 0%,calc(100% - 12px) 100%,0% 100%);
+}
+.form-submit:hover{
+  transform:scale(1.02);
+  box-shadow:0 0 40px rgba(0,212,255,0.6),0 0 80px rgba(168,85,247,0.4);
+}
+.form-note{
+  text-align:center;margin-top:16px;
+  font-family:var(--font-mono);font-size:0.65rem;color:var(--text-muted);letter-spacing:1px;
+}
+.form-note a{color:var(--neon-blue)}
+
+/* Responsive */
+@media(max-width:600px){
+  .form-wrap{padding:20px}
+}
+
+.booking-section {
+  position: relative;
+  z-index: 10; /* Forces the booking form layout to sit above everything else */
+}
+
+.form-wrap input, 
+.form-wrap select, 
+.form-wrap button {
+  position: relative;
+  z-index: 15; /* Guarantees the fields capture your mouse clicks and touches */
+  pointer-events: auto !important;
+}

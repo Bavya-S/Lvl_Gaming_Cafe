@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Food Menu – LVL Gaming Café</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Rajdhani:wght@300;400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/food.css">
+</head>
+<body>
+
+<!-- LOADING SCREEN 
+<div id="loader">
+  <img src="assets/logo.png" class="loader-logo" alt="LVL Logo" onerror="this.style.display='none'">
+  <div style="font-family:'Orbitron',monospace;font-size:1.2rem;font-weight:900;color:#00d4ff;letter-spacing:4px;margin-top:16px;text-shadow:0 0 20px #00d4ff">LVL</div>
+  <div class="loader-bar"><div class="loader-fill"></div></div>
+  <div class="loader-text" id="loaderText">INITIALIZING SYSTEMS...</div>
+</div> -->
+
+<!-- PARTICLE CANVAS -->
+<canvas id="particleCanvas"></canvas>
+
+<!-- NAVIGATION -->
+<nav id="mainNav">
+  <a class="nav-logo" href="index.html">
+    <img src="assets/logo.png" alt="LVL" onerror="this.style.display='none'">
+    <span class="nav-brand">LVL</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">HOME</a></li>
+    <li><a href="rooms.html">ROOMS</a></li>
+    <li><a href="games.html">GAMES</a></li>
+    <li><a href="food.html" class="active">FOOD</a></li>
+    <li><a href="about.html">ABOUT</a></li>
+    <li><a href="booking.html">CONTACT</a></li>
+  </ul>
+  <a class="nav-cta" href="booking.html">BOOK SLOT</a>
+  <div class="hamburger" onclick="toggleMobileNav()" id="hamburger">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- MOBILE NAV -->
+<div class="mobile-nav" id="mobileNav">
+  <a href="index.html">HOME</a>
+  <a href="rooms.html">ROOMS</a>
+  <a href="games.html">GAMES</a>
+  <a href="food.html" class="active">FOOD</a>
+  <a href="about.html">ABOUT</a>
+  <a href="booking.html">CONTACT / BOOK</a>
+</div>
+
+<!-- FLOATING BOOK BUTTON -->
+<a id="floatBook" href="booking.html">⚡ BOOK SLOT</a>
+
+<!-- ==================== FOOD PAGE ==================== -->
+<div class="page-wrapper">
+  <div class="page-hero fade-in">
+    <p class="section-label" style="justify-content:center">IN-HOUSE MENU</p>
+    <h1 class="section-title" style="text-align:center">FUEL YOUR<br>SESSION</h1>
+    <p class="section-sub" style="text-align:center;margin:12px auto 0">Hot bites, loaded fries, and cold drinks — delivered to your room.</p>
+  </div>
+
+  <div class="food-section">
+    <div class="food-tabs">
+      <button class="food-tab active" data-panel="veg">🥦 VEG BITES</button>
+      <button class="food-tab" data-panel="nonveg">🍗 NON-VEG DELIGHTS</button>
+      <button class="food-tab" data-panel="combos">🔥 COMBOS</button>
+      <button class="food-tab" data-panel="beverages">🥤 BEVERAGES</button>
+    </div>
+
+    <!-- VEG -->
+    <div class="food-panel active" id="panel-veg">
+      <div class="glass-card rgb-border food-card fade-in">
+        <div class="food-card-img" style="background:linear-gradient(135deg,#1a3a1a,#0d2b0d)">
+          🍟<span class="steam-1">〰</span><span class="steam-2">〰</span><span class="steam-3">〰</span>
+        </div>
+        <div class="food-card-body">
+          <div class="food-card-name">Classic Fries</div>
+          <div class="food-card-price">₹95</div>
+        </div>
+      </div>
+      <div class="glass-card rgb-border food-card fade-in stagger-1">
+        <div class="food-card-img" style="background:linear-gradient(135deg,#2a1a0d,#3a2000)">
+          🍟<span class="steam-1">〰</span><span class="steam-2">〰</span>
+        </div>
+        <div class="food-card-body">
+          <div class="food-card-name">Peri Peri Fries</div>
+          <div class="food-card-price">₹100</div>
+        </div>
+      </div>
+      <div class="glass-card rgb-border food-card fade-in stagger-2">
+        <div class="food-card-img" style="background:linear-gradient(135deg,#1a1a3a,#0d1a3a)">
+          🧆<span class="steam-1">〰</span><span class="steam-2">〰</span><span class="steam-3">〰</span>
+        </div>
+        <div class="food-card-body">
+          <div class="food-card-name">Veg Nuggets</div>
+          <div class="food-card-desc">6 pcs</div>
+          <div class="food-card-price">₹120</div>
+        </div>
+      </div>
+      <div class="glass-card rgb-border food-card fade-in stagger-3">
+        <div class="food-card-img" style="background:linear-gradient(135deg,#1a2a1a,#0a2a0a)">
+          🥢<span class="steam-1">〰</span><span class="steam-2">〰</span>
+        </div>
+        <div class="food-card-body">
+          <div class="food-card-name">Veg Fingers</div>
+          <div class="food-card-desc">6 pcs</div>
+          <div class="food-card-price">₹120</div>
+        </div>
+      </div>
+      <div class="glass-card rgb-border food-card fade-in">
+        <div class="food-card-img" style="background:linear-gradient(135deg,#2a1a2a,#1a0a1a)">
+          🥟<span class="steam-1">〰</span><span class="steam-2">〰</span><span class="steam-3">〰</span>
+        </div>
+        <div class="food-card-body">
+          <div class="food-card-name">Fried Paneer Momos</div>
+          <div class="food-card-desc">6 pcs</div>
+          <div class="food-card-price">₹130</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- NON-VEG -->
+    <div class="food-panel" id="panel-nonveg">
+      <div class="glass-card rgb-border food-card fade-in">
+        <div class="food-card-img" style="background:linear-gradient(135deg,#2a1a0a,#3a1500)">
+          🍜<span class="steam-1">〰</span><span class="steam-2">〰</span><span class="steam-3">〰</span>
+        </div>
+        <div class="food-card-body">
+          <div class="food-card-name">Chicken Cup Noodles</div>
+          <div class="food-card-price">₹80</div>
+        </div>
+      </div>
+      <div class="glass-card rgb-border food-card fade-in stagger-1">
+        <div class="food-card-img" style="background:linear-gradient(135deg,#2a0a0a,#3a1000)">
+          🍟<span class="steam-1">〰</span><span class="steam-2">〰</span>
+        </div>
+        <div class="food-card-body">
+          <div class="food-card-name">Chicken Loaded Fries</div>
+          <div class="food-card-price">₹120</div>
+        </div>
+      </div>
+      <div class="glass-card rgb-border food-card fade-in stagger-2">
+        <div class="food-card-img" style="background:linear-gradient(135deg,#1a0a0a,#2a0808)">
+          🍗<span class="steam-1">〰</span><span class="steam-2">〰</span><span class="steam-3">〰</span>
+        </div>
+        <div class="food-card-body">
+          <div class="food-card-name">Chicken Bites</div>
+          <div class="food-card-desc">6 pcs</div>
+          <div class="food-card-price">₹120</div>
+        </div>
+      </div>
+      <div class="glass-card rgb-border food-card fade-in stagger-3">
+        <div class="food-card-img" style="background:linear-gradient(135deg,#2a1a0a,#1a0808)">
+          🥟<span class="steam-1">〰</span><span class="steam-2">〰</span>
+        </div>
+        <div class="food-card-body">
+          <div class="food-card-name">Fried Chicken Momos</div>
+          <div class="food-card-desc">6 pcs</div>
+          <div class="food-card-price">₹140</div>
+        </div>
+      </div>
+      <div class="glass-card rgb-border food-card fade-in">
+        <div class="food-card-img" style="background:linear-gradient(135deg,#1a0808,#2a0a0a)">
+          🍿<span class="steam-1">〰</span><span class="steam-2">〰</span><span class="steam-3">〰</span>
+        </div>
+        <div class="food-card-body">
+          <div class="food-card-name">Chicken Popcorn</div>
+          <div class="food-card-desc">12 pcs</div>
+          <div class="food-card-price">₹160</div>
+        </div>
+      </div>
+      <div class="glass-card rgb-border food-card fade-in stagger-1">
+        <div class="food-card-img" style="background:linear-gradient(135deg,#2a0d0a,#1a0808)">
+          🍖<span class="steam-1">〰</span><span class="steam-2">〰</span>
+        </div>
+        <div class="food-card-body">
+          <div class="food-card-name">Chicken Nuggets</div>
+          <div class="food-card-desc">8 pcs</div>
+          <div class="food-card-price">₹160</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- COMBOS -->
+    <div class="food-panel" id="panel-combos">
+      <div class="glass-card rgb-border food-card fade-in">
+        <div class="food-card-img" style="background:linear-gradient(135deg,#0d2a0d,#1a3a1a);height:140px">
+          🥗🍟<span class="steam-1">〰</span><span class="steam-2">〰</span><span class="steam-3">〰</span>
+        </div>
+        <div class="food-card-body">
+          <div class="combo-badge">VEG COMBO</div>
+          <div class="food-card-name">Veg Combo</div>
+          <div class="food-card-includes">Nuggets 6 pcs + Fingers 4 pcs<br>Peri Peri Fries + 2 Beverages</div>
+          <div class="food-card-price">₹249</div>
+        </div>
+      </div>
+      <div class="glass-card rgb-border food-card fade-in stagger-1">
+        <div class="food-card-img" style="background:linear-gradient(135deg,#2a0808,#3a0d0d);height:140px">
+          🍗🍟<span class="steam-1">〰</span><span class="steam-2">〰</span><span class="steam-3">〰</span>
+        </div>
+        <div class="food-card-body">
+          <div class="combo-badge" style="background:rgba(255,45,85,0.15);border-color:rgba(255,45,85,0.3);color:var(--neon-red)">NON-VEG COMBO</div>
+          <div class="food-card-name">Non-Veg Combo</div>
+          <div class="food-card-includes">Nuggets 6 pcs + Popcorn 10 pcs<br>Peri Peri Fries + 2 Beverages</div>
+          <div class="food-card-price">₹299</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- BEVERAGES -->
+    <div class="food-panel" id="panel-beverages">
+      <div class="bev-card glass-card rgb-border fade-in">
+        <div class="bev-icon">🟡</div>
+        <div class="bev-name">SPRITE</div>
+        <div class="bev-price">₹20</div>
+      </div>
+      <div class="bev-card glass-card rgb-border fade-in stagger-1">
+        <div class="bev-icon">🟠</div>
+        <div class="bev-name">FANTA</div>
+        <div class="bev-price">₹20</div>
+      </div>
+      <div class="bev-card glass-card rgb-border fade-in stagger-2">
+        <div class="bev-icon">🔵</div>
+        <div class="bev-name">PEPSI</div>
+        <div class="bev-price">₹20</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== FOOTER ==================== -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <img src="assets/logo.png" alt="LVL" onerror="this.style.display='none'">
+          <span class="footer-logo-text">LVL GAMING CAFÉ</span>
+        </div>
+        <p class="footer-tagline">// LEVEL UP. LOCK IN. GAME FREE.</p>
+        <p style="font-size:0.8rem;color:var(--text-muted);margin-top:8px;max-width:280px">47, Padmavathy Nagar, Madambakkam, Chennai, TN 600126</p>
+      </div>
+      <div class="footer-social">
+        <p style="font-family:var(--font-mono);font-size:0.6rem;color:var(--neon-blue);letter-spacing:3px;margin-bottom:8px">FOLLOW US</p>
+        <a class="footer-social-link" href="https://www.youtube.com/@lvlgamingcafe" target="_blank"><span class="footer-social-icon">▶</span> YouTube</a>
+        <a class="footer-social-link" href="https://www.instagram.com/lvl_gaming_cafe/" target="_blank"><span class="footer-social-icon">◆</span> Instagram</a>
+        <a class="footer-social-link" href="https://wa.me/919962270902" target="_blank"><span class="footer-social-icon">●</span> WhatsApp</a>
+      </div>
+      <div class="footer-contact">
+        <p style="font-family:var(--font-mono);font-size:0.6rem;color:var(--neon-blue);letter-spacing:3px;margin-bottom:8px">CONTACT</p>
+        <a href="tel:9962270902">📞 +91 99622 70902</a>
+        <a href="https://wa.me/919962270902" target="_blank">💬 WhatsApp</a>
+        <a href="https://www.google.com/maps/search/LvL+Gaming+Cafe+Chennai" target="_blank">📍 Get Directions</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2025 LVL Gaming Café. All rights reserved.</p>
+      <p class="footer-dev">Developed by <a href="https://linkedin.com/in/bavya-saravanakumar" target="_blank">Bavya S</a></p>
+    </div>
+  </div>
+</footer>
+
+<script src="js/script.js"></script>
+<script src="js/food.js"></script>
+</body>
+</html>

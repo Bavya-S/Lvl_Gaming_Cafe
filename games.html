@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Game Library – LVL Gaming Café</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Rajdhani:wght@300;400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/games.css">
+</head>
+<body>
+
+<!-- LOADING SCREEN 
+<div id="loader">
+  <img src="assets/logo.png" class="loader-logo" alt="LVL Logo" onerror="this.style.display='none'">
+  <div style="font-family:'Orbitron',monospace;font-size:1.2rem;font-weight:900;color:#00d4ff;letter-spacing:4px;margin-top:16px;text-shadow:0 0 20px #00d4ff">LVL</div>
+  <div class="loader-bar"><div class="loader-fill"></div></div>
+  <div class="loader-text" id="loaderText">INITIALIZING SYSTEMS...</div>
+</div>-->
+
+<!-- PARTICLE CANVAS -->
+<canvas id="particleCanvas"></canvas>
+
+<!-- NAVIGATION -->
+<nav id="mainNav">
+  <a class="nav-logo" href="index.html">
+    <img src="assets/logo.png" alt="LVL" onerror="this.style.display='none'">
+    <span class="nav-brand">LVL</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">HOME</a></li>
+    <li><a href="rooms.html">ROOMS</a></li>
+    <li><a href="games.html" class="active">GAMES</a></li>
+    <li><a href="food.html">FOOD</a></li>
+    <li><a href="about.html">ABOUT</a></li>
+    <li><a href="booking.html">CONTACT</a></li>
+  </ul>
+  <a class="nav-cta" href="booking.html">BOOK SLOT</a>
+  <div class="hamburger" onclick="toggleMobileNav()" id="hamburger">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- MOBILE NAV -->
+<div class="mobile-nav" id="mobileNav">
+  <a href="index.html">HOME</a>
+  <a href="rooms.html">ROOMS</a>
+  <a href="games.html" class="active">GAMES</a>
+  <a href="food.html">FOOD</a>
+  <a href="about.html">ABOUT</a>
+  <a href="booking.html">CONTACT / BOOK</a>
+</div>
+
+<!-- FLOATING BOOK BUTTON -->
+<a id="floatBook" href="booking.html">⚡ BOOK SLOT</a>
+
+<!-- ==================== GAMES PAGE ==================== -->
+<div class="page-wrapper">
+  <div class="page-hero fade-in">
+    <p class="section-label" style="justify-content:center">GAME LIBRARY</p>
+    <h1 class="section-title" style="text-align:center">55+ GAMES<br>ACROSS ALL CONSOLES</h1>
+    <p class="section-sub" style="text-align:center;margin:12px auto 0">Filter by console, players, or genre to find your perfect match.</p>
+  </div>
+
+  <div class="games-section">
+    <div class="filters-wrapper fade-in">
+      <div class="filter-group">
+        <div class="filter-label">CONSOLE</div>
+        <div class="filter-btns">
+          <button class="filter-btn active" data-filter="console" data-value="all">ALL</button>
+          <button class="filter-btn" data-filter="console" data-value="ps4">PS4</button>
+          <button class="filter-btn" data-filter="console" data-value="ps5-55">PS5 55"</button>
+          <button class="filter-btn" data-filter="console" data-value="ps5-65">PS5 65"</button>
+          <button class="filter-btn" data-filter="console" data-value="ps5-pro">PS5 PRO</button>
+        </div>
+      </div>
+      <div class="filter-group">
+        <div class="filter-label">PLAYERS</div>
+        <div class="filter-btns">
+          <button class="filter-btn active" data-filter="players" data-value="all">ALL</button>
+          <button class="filter-btn" data-filter="players" data-value="1">SOLO</button>
+          <button class="filter-btn" data-filter="players" data-value="2">2 PLAYERS</button>
+          <button class="filter-btn" data-filter="players" data-value="multi">MULTIPLAYER</button>
+        </div>
+      </div>
+      <div class="filter-group">
+        <div class="filter-label">GENRE</div>
+        <div class="filter-btns">
+          <button class="filter-btn active" data-filter="genre" data-value="all">ALL</button>
+          <button class="filter-btn" data-filter="genre" data-value="Adventure">ADVENTURE</button>
+          <button class="filter-btn" data-filter="genre" data-value="Roleplay">ROLEPLAY</button>
+          <button class="filter-btn" data-filter="genre" data-value="Racing">RACING</button>
+          <button class="filter-btn" data-filter="genre" data-value="Sports">SPORTS</button>
+          <button class="filter-btn" data-filter="genre" data-value="Fighting">FIGHTING</button>
+        </div>
+      </div>
+    </div>
+    <div class="games-count">Showing <span id="gameCount">55</span> games</div>
+    <div class="games-grid" id="gamesGrid"></div>
+  </div>
+</div>
+
+<!-- ==================== FOOTER ==================== -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <img src="assets/logo.png" alt="LVL" onerror="this.style.display='none'">
+          <span class="footer-logo-text">LVL GAMING CAFÉ</span>
+        </div>
+        <p class="footer-tagline">// LEVEL UP. LOCK IN. GAME FREE.</p>
+        <p style="font-size:0.8rem;color:var(--text-muted);margin-top:8px;max-width:280px">47, Padmavathy Nagar, Madambakkam, Chennai, TN 600126</p>
+      </div>
+      <div class="footer-social">
+        <p style="font-family:var(--font-mono);font-size:0.6rem;color:var(--neon-blue);letter-spacing:3px;margin-bottom:8px">FOLLOW US</p>
+        <a class="footer-social-link" href="https://www.youtube.com/@lvlgamingcafe" target="_blank"><span class="footer-social-icon">▶</span> YouTube</a>
+        <a class="footer-social-link" href="https://www.instagram.com/lvl_gaming_cafe/" target="_blank"><span class="footer-social-icon">◆</span> Instagram</a>
+        <a class="footer-social-link" href="https://wa.me/919962270902" target="_blank"><span class="footer-social-icon">●</span> WhatsApp</a>
+      </div>
+      <div class="footer-contact">
+        <p style="font-family:var(--font-mono);font-size:0.6rem;color:var(--neon-blue);letter-spacing:3px;margin-bottom:8px">CONTACT</p>
+        <a href="tel:9962270902">📞 +91 99622 70902</a>
+        <a href="https://wa.me/919962270902" target="_blank">💬 WhatsApp</a>
+        <a href="https://www.google.com/maps/search/LvL+Gaming+Cafe+Chennai" target="_blank">📍 Get Directions</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2025 LVL Gaming Café. All rights reserved.</p>
+      <p class="footer-dev">Developed by <a href="https://linkedin.com/in/bavya-saravanakumar" target="_blank">Bavya S</a></p>
+    </div>
+  </div>
+</footer>
+
+<script src="js/script.js"></script>
+<script src="js/games.js"></script>
+</body>
+</html>
