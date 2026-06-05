@@ -7,13 +7,14 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Rajdhani:wght@300;400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/home.css">
 </head>
 <body>
 
 <!-- LOADING SCREEN -->
 <div id="loader">
   <img src="assets/LVL BW logo.png" class="loader-logo" alt="LVL Logo" onerror="this.style.display='none'">
-  <div style="font-family:'Orbitron',monospace;font-size:1.2rem;font-weight:900;color:#00d4ff;letter-spacing:4px;margin-top:16px;text-shadow:0 0 20px #00d4ff" id="loaderBrand">LVL</div>
+  <div style="font-family:'Orbitron',monospace;font-size:1.2rem;font-weight:900;color:#00d4ff;letter-spacing:4px;margin-top:16px;text-shadow:0 0 20px #00d4ff">LVL</div>
   <div class="loader-bar"><div class="loader-fill"></div></div>
   <div class="loader-text" id="loaderText">INITIALIZING SYSTEMS...</div>
 </div>
@@ -23,19 +24,19 @@
 
 <!-- NAVIGATION -->
 <nav id="mainNav">
-  <a class="nav-logo" onclick="showPage('home')">
-    <img src="assets/LVL BW logo.png" alt="LVL" onerror="this.style.display='none'">
+  <a class="nav-logo" href="index.html">
+    <img src="assets/logo.png" alt="LVL" onerror="this.style.display='none'">
     <span class="nav-brand">LVL</span>
   </a>
   <ul class="nav-links">
-    <li><a href="#" onclick="showPage('home')" data-page="home" class="active">HOME</a></li>
-    <li><a href="#" onclick="showPage('rooms')" data-page="rooms">CONSOLES</a></li>
-    <li><a href="#" onclick="showPage('games')" data-page="games">GAMES</a></li>
-    <li><a href="#" onclick="showPage('food')" data-page="food">FOOD</a></li>
-    <li><a href="#" onclick="showPage('about')" data-page="about">ABOUT</a></li>
-    <li><a href="#" onclick="showPage('booking')" data-page="booking">CONTACT</a></li>
+    <li><a href="index.html" data-page="home">HOME</a></li>
+    <li><a href="rooms.html" data-page="rooms">ROOMS</a></li>
+    <li><a href="games.html" data-page="games">GAMES</a></li>
+    <li><a href="food.html" data-page="food">FOOD</a></li>
+    <li><a href="about.html" data-page="about">ABOUT</a></li>
+    <li><a href="booking.html" data-page="booking">CONTACT</a></li>
   </ul>
-  <button class="nav-cta" onclick="showPage('booking')">BOOK SLOT</button>
+  <a class="nav-cta" href="booking.html">BOOK SLOT</a>
   <div class="hamburger" onclick="toggleMobileNav()" id="hamburger">
     <span></span><span></span><span></span>
   </div>
@@ -43,19 +44,19 @@
 
 <!-- MOBILE NAV -->
 <div class="mobile-nav" id="mobileNav">
-  <a href="#" onclick="showPage('home');toggleMobileNav()" data-page="home">HOME</a>
-  <a href="#" onclick="showPage('rooms');toggleMobileNav()" data-page="rooms">CONSOLES</a>
-  <a href="#" onclick="showPage('games');toggleMobileNav()" data-page="games">GAMES</a>
-  <a href="#" onclick="showPage('food');toggleMobileNav()" data-page="food">FOOD</a>
-  <a href="#" onclick="showPage('about');toggleMobileNav()" data-page="about">ABOUT</a>
-  <a href="#" onclick="showPage('booking');toggleMobileNav()" data-page="booking">CONTACT / BOOK</a>
+  <a href="index.html">HOME</a>
+  <a href="rooms.html">ROOMS</a>
+  <a href="games.html">GAMES</a>
+  <a href="food.html">FOOD</a>
+  <a href="about.html">ABOUT</a>
+  <a href="booking.html">CONTACT / BOOK</a>
 </div>
 
 <!-- FLOATING BOOK BUTTON -->
-<button id="floatBook" onclick="showPage('booking')">⚡ BOOK SLOT</button>
+<a id="floatBook" href="booking.html">⚡ BOOK SLOT</a>
 
 <!-- ==================== HOME PAGE ==================== -->
-<div class="page active" id="page-home">
+<div class="page-wrapper">
   <section class="hero">
     <div class="hero-vignette"></div>
     <div class="hero-scanline"></div>
@@ -69,8 +70,8 @@
         <span>Premium Gaming</span> &nbsp;•&nbsp; <span>Private Rooms</span> &nbsp;•&nbsp; <span>Consoles</span> &nbsp;•&nbsp; <span>In-house Food</span>
       </p>
       <div class="hero-ctas">
-        <button class="btn-primary" onclick="showPage('booking')">⚡ BOOK SLOT</button>
-        <button class="btn-outline" onclick="showPage('rooms')">VIEW CONSOLES & PRICING</button>
+        <a class="btn-primary" href="booking.html">⚡ BOOK SLOT</a>
+        <a class="btn-outline" href="rooms.html">VIEW CONSOLES &amp; PRICING</a>
       </div>
       <div class="hero-stats">
         <div class="hero-stat">
@@ -134,433 +135,11 @@
     </div>
   </div>
 
-  <div style="text-align:center;padding:0 2rem 80px">
+  <div class="home-cta-strip">
     <div class="neon-divider" style="margin-bottom:40px"></div>
     <p style="font-family:var(--font-mono);font-size:0.7rem;color:var(--text-muted);letter-spacing:3px;margin-bottom:20px">// READY TO LEVEL UP?</p>
-    <button class="btn-primary" onclick="showPage('booking')" style="margin:0 auto">⚡ BOOK YOUR SLOT NOW</button>
+    <a class="btn-primary" href="booking.html" style="margin:0 auto">⚡ BOOK YOUR SLOT NOW</a>
     <p style="margin-top:16px;font-family:var(--font-mono);font-size:0.7rem;color:var(--text-muted)">Or call us: <a href="tel:9962270902" style="color:var(--neon-blue)">+91 99622 70902</a></p>
-  </div>
-</div>
-
-<!-- ==================== ROOMS PAGE ==================== -->
-<div class="page" id="page-rooms">
-  <div class="page-hero fade-in">
-    <p class="section-label" style="justify-content:center">PRIVATE GAMING ROOMS</p>
-    <h1 class="section-title" style="text-align:center">YOUR OWN<br>GAMING UNIVERSE</h1>
-    <p class="section-sub" style="text-align:center;margin:12px auto 0">Every console lives in a separate private room. Sound-controlled, distraction-free, crafted for the best gaming experience.</p>
-  </div>
-
-  <div class="rooms-section">
-    <div class="rooms-intro">
-      <div class="glass-card room-feat fade-in">
-        <div class="room-feat-icon">🔇</div>
-        <div><h3>SOUND CONTROLLED</h3><p>Acoustic-treated private rooms that block out everything except your game.</p></div>
-      </div>
-      <div class="glass-card room-feat fade-in stagger-1">
-        <div class="room-feat-icon">🚪</div>
-        <div><h3>FULLY PRIVATE</h3><p>Dedicated door, private space — ideal for solo grind or squad sessions.</p></div>
-      </div>
-      <div class="glass-card room-feat fade-in stagger-2">
-        <div class="room-feat-icon">👨‍👩‍👧‍👦</div>
-        <div><h3>GROUPS WELCOME</h3><p>Fits up to 4 players per room. Perfect for friend groups and hangouts.</p></div>
-      </div>
-      <div class="glass-card room-feat fade-in stagger-3">
-        <div class="room-feat-icon">💺</div>
-        <div><h3>PREMIUM SEATING</h3><p>Ergonomic chairs and ambient lighting curated for long gaming sessions.</p></div>
-      </div>
-    </div>
-
-    <p class="section-label">PRICING</p>
-    <h2 class="section-title" style="margin-bottom:32px">CONSOLE & <span style="background:linear-gradient(135deg,var(--neon-blue),var(--neon-purple));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">PRICING</span></h2>
-
-    <div class="consoles-grid">
-      <!-- PS4 -->
-      <div class="glass-card rgb-border console-card ps4-accent fade-in">
-        <div class="console-card-header">
-          <div class="console-badge">PS4</div>
-          <div class="console-name">PlayStation 4</div>
-          <div class="console-tv">📺 55" 4K TV</div>
-        </div>
-        <div class="price-table">
-          <div class="price-row"><span class="price-players">👤 1 Player</span><span class="price-amount">₹100/hr</span></div>
-          <div class="price-row"><span class="price-players">👥 2 Players</span><span class="price-amount">₹180/hr</span></div>
-          <div class="price-row"><span class="price-players">👥 3 Players</span><span class="price-amount">₹260/hr</span></div>
-          <div class="price-row"><span class="price-players">👥 4 Players</span><span class="price-amount">₹340/hr</span></div>
-        </div>
-        <div class="price-note">₹50/hr per accompanying person</div>
-      </div>
-      <!-- PS5 55" -->
-      <div class="glass-card rgb-border console-card ps5-55-accent fade-in stagger-1">
-        <div class="console-card-header">
-          <div class="console-badge">PS5 · 55"</div>
-          <div class="console-name">PlayStation 5</div>
-          <div class="console-tv">📺 55" 4K Neo QLED TV</div>
-        </div>
-        <div class="price-table">
-          <div class="price-row"><span class="price-players">👤 1 Player</span><span class="price-amount">₹120/hr</span></div>
-          <div class="price-row"><span class="price-players">👥 2 Players</span><span class="price-amount">₹220/hr</span></div>
-          <div class="price-row"><span class="price-players">👥 3 Players</span><span class="price-amount">₹320/hr</span></div>
-          <div class="price-row"><span class="price-players">👥 4 Players</span><span class="price-amount">₹420/hr</span></div>
-        </div>
-        <div class="price-note">₹50/hr per accompanying person</div>
-      </div>
-      <!-- PS5 65" -->
-      <div class="glass-card rgb-border console-card fade-in stagger-2">
-        <div class="console-card-header">
-          <div class="console-badge">PS5 · 65"</div>
-          <div class="console-name">PlayStation 5</div>
-          <div class="console-tv">📺 65" 4K QLED TV</div>
-        </div>
-        <div class="price-table">
-          <div class="price-row"><span class="price-players">👤 1 Player</span><span class="price-amount">₹140/hr</span></div>
-          <div class="price-row"><span class="price-players">👥 2 Players</span><span class="price-amount">₹260/hr</span></div>
-          <div class="price-row"><span class="price-players">👥 3 Players</span><span class="price-amount">₹380/hr</span></div>
-          <div class="price-row"><span class="price-players">👥 4 Players</span><span class="price-amount">₹500/hr</span></div>
-        </div>
-        <div class="price-note">₹50/hr per accompanying person</div>
-      </div>
-      <!-- PS5 Pro -->
-      <div class="glass-card rgb-border console-card pspro-accent fade-in stagger-3">
-        <div class="console-card-header">
-          <div class="console-badge">PS5 PRO</div>
-          <div class="console-name">PlayStation 5 Pro</div>
-          <div class="console-tv">📺 65" 4K QLED TV</div>
-        </div>
-        <div class="price-table">
-          <div class="price-row"><span class="price-players">👤 1 Player</span><span class="price-amount">₹160/hr</span></div>
-          <div class="price-row"><span class="price-players">👥 2 Players</span><span class="price-amount">₹300/hr</span></div>
-          <div class="price-row"><span class="price-players">👥 3 Players</span><span class="price-amount">₹440/hr</span></div>
-          <div class="price-row"><span class="price-players">👥 4 Players</span><span class="price-amount">₹580/hr</span></div>
-        </div>
-        <div class="price-note">Parents with children exempt from extra charge</div>
-      </div>
-      
-    </div>
-    <div class="transition-opacity opacity-100 animate-slide-in-up" style=""><div data-slot="card" class="bg-card text-card-foreground flex flex-col gap-6 rounded-xl border py-6 shadow-sm glass-blur border-neon/50 max-w-4xl mx-auto mb-8"><div data-slot="card-header" class="@container/card-header grid auto-rows-min grid-rows-[auto_auto] items-start gap-1.5 px-6 has-data-[slot=card-action]:grid-cols-[1fr_auto] [.border-b]:pb-6"><div data-slot="card-title" class="leading-none font-semibold flex items-center gap-2 neon-text"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-info h-5 w-5" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M12 16v-4"></path><path d="M12 8h.01"></path></svg>Important Notes</div></div><div data-slot="card-content" class="px-6 space-y-3 text-muted-foreground"><p>• ₹50 per person per hour for accompanying persons</p><p>• Parents accompanying children are exempt</p></div></div></div>
-  </div>
-</div>
-
-<!-- ==================== GAMES PAGE ==================== -->
-<div class="page" id="page-games">
-  <div class="page-hero fade-in">
-    <p class="section-label" style="justify-content:center">GAME LIBRARY</p>
-    <h1 class="section-title" style="text-align:center">55+ GAMES<br>ACROSS ALL CONSOLES</h1>
-    <p class="section-sub" style="text-align:center;margin:12px auto 0">Filter by console, players, or genre to find your perfect match.</p>
-  </div>
-
-  <div class="games-section">
-    <div class="filters-wrapper fade-in">
-      <div class="filter-group">
-        <div class="filter-label">CONSOLE</div>
-        <div class="filter-btns">
-          <button class="filter-btn active" data-filter="console" data-value="all">ALL</button>
-          <button class="filter-btn" data-filter="console" data-value="ps4">PS4</button>
-          <button class="filter-btn" data-filter="console" data-value="ps5-55">PS5 55"</button>
-          <button class="filter-btn" data-filter="console" data-value="ps5-65">PS5 65"</button>
-          <button class="filter-btn" data-filter="console" data-value="ps5-pro">PS5 PRO</button>
-        </div>
-      </div>
-      <div class="filter-group">
-        <div class="filter-label">PLAYERS</div>
-        <div class="filter-btns">
-          <button class="filter-btn active" data-filter="players" data-value="all">ALL</button>
-          <button class="filter-btn" data-filter="players" data-value="1">SOLO</button>
-          <button class="filter-btn" data-filter="players" data-value="2">2 PLAYERS</button>
-          <button class="filter-btn" data-filter="players" data-value="multi">MULTIPLAYER</button>
-        </div>
-      </div>
-      <div class="filter-group">
-        <div class="filter-label">GENRE</div>
-        <div class="filter-btns">
-          <button class="filter-btn active" data-filter="genre" data-value="all">ALL</button>
-          <button class="filter-btn" data-filter="genre" data-value="Adventure">ADVENTURE</button>
-          <button class="filter-btn" data-filter="genre" data-value="Roleplay">ROLEPLAY</button>
-          <button class="filter-btn" data-filter="genre" data-value="Racing">RACING</button>
-          <button class="filter-btn" data-filter="genre" data-value="Sports">SPORTS</button>
-          <button class="filter-btn" data-filter="genre" data-value="Fighting">FIGHTING</button>
-        </div>
-      </div>
-    </div>
-    <div class="games-count">Showing <span id="gameCount">55</span> games</div>
-    <div class="games-grid" id="gamesGrid"></div>
-  </div>
-</div>
-
-<!-- ==================== FOOD PAGE ==================== -->
-<div class="page" id="page-food">
-  <div class="page-hero fade-in">
-    <p class="section-label" style="justify-content:center">IN-HOUSE MENU</p>
-    <h1 class="section-title" style="text-align:center">FUEL YOUR<br>SESSION</h1>
-    <p class="section-sub" style="text-align:center;margin:12px auto 0">Hot bites, loaded fries, and cold drinks — delivered to your room.</p>
-  </div>
-
-  <div class="food-section">
-    <div class="food-tabs">
-      <button class="food-tab active" data-panel="veg">🥦 VEG BITES</button>
-      <button class="food-tab" data-panel="nonveg">🍗 NON-VEG DELIGHTS</button>
-      <button class="food-tab" data-panel="combos">🔥 COMBOS</button>
-      <button class="food-tab" data-panel="beverages">🥤 BEVERAGES</button>
-    </div>
-
-    <!-- VEG -->
-    <div class="food-panel active" id="panel-veg">
-      <div class="glass-card rgb-border food-card fade-in">
-        <div class="food-card-img" style="background:linear-gradient(135deg,#1a3a1a,#0d2b0d)">
-          🍟<span class="steam-1">〰</span><span class="steam-2">〰</span><span class="steam-3">〰</span>
-        </div>
-        <div class="food-card-body">
-          <div class="food-card-name">Classic Fries</div>
-          <div class="food-card-price">₹95</div>
-        </div>
-      </div>
-      <div class="glass-card rgb-border food-card fade-in stagger-1">
-        <div class="food-card-img" style="background:linear-gradient(135deg,#2a1a0d,#3a2000)">
-          🍟<span class="steam-1">〰</span><span class="steam-2">〰</span>
-        </div>
-        <div class="food-card-body">
-          <div class="food-card-name">Peri Peri Fries</div>
-          <div class="food-card-price">₹100</div>
-        </div>
-      </div>
-      <div class="glass-card rgb-border food-card fade-in stagger-2">
-        <div class="food-card-img" style="background:linear-gradient(135deg,#1a1a3a,#0d1a3a)">
-          🧆<span class="steam-1">〰</span><span class="steam-2">〰</span><span class="steam-3">〰</span>
-        </div>
-        <div class="food-card-body">
-          <div class="food-card-name">Veg Nuggets</div>
-          <div class="food-card-desc">6 pcs</div>
-          <div class="food-card-price">₹120</div>
-        </div>
-      </div>
-      <div class="glass-card rgb-border food-card fade-in stagger-3">
-        <div class="food-card-img" style="background:linear-gradient(135deg,#1a2a1a,#0a2a0a)">
-          🥢<span class="steam-1">〰</span><span class="steam-2">〰</span>
-        </div>
-        <div class="food-card-body">
-          <div class="food-card-name">Veg Fingers</div>
-          <div class="food-card-desc">6 pcs</div>
-          <div class="food-card-price">₹120</div>
-        </div>
-      </div>
-      <div class="glass-card rgb-border food-card fade-in">
-        <div class="food-card-img" style="background:linear-gradient(135deg,#2a1a2a,#1a0a1a)">
-          🥟<span class="steam-1">〰</span><span class="steam-2">〰</span><span class="steam-3">〰</span>
-        </div>
-        <div class="food-card-body">
-          <div class="food-card-name">Fried Paneer Momos</div>
-          <div class="food-card-desc">6 pcs</div>
-          <div class="food-card-price">₹130</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- NON-VEG -->
-    <div class="food-panel" id="panel-nonveg">
-      <div class="glass-card rgb-border food-card fade-in">
-        <div class="food-card-img" style="background:linear-gradient(135deg,#2a1a0a,#3a1500)">
-          🍜<span class="steam-1">〰</span><span class="steam-2">〰</span><span class="steam-3">〰</span>
-        </div>
-        <div class="food-card-body">
-          <div class="food-card-name">Chicken Cup Noodles</div>
-          <div class="food-card-price">₹80</div>
-        </div>
-      </div>
-      <div class="glass-card rgb-border food-card fade-in stagger-1">
-        <div class="food-card-img" style="background:linear-gradient(135deg,#2a0a0a,#3a1000)">
-          🍟<span class="steam-1">〰</span><span class="steam-2">〰</span>
-        </div>
-        <div class="food-card-body">
-          <div class="food-card-name">Chicken Loaded Fries</div>
-          <div class="food-card-price">₹120</div>
-        </div>
-      </div>
-      <div class="glass-card rgb-border food-card fade-in stagger-2">
-        <div class="food-card-img" style="background:linear-gradient(135deg,#1a0a0a,#2a0808)">
-          🍗<span class="steam-1">〰</span><span class="steam-2">〰</span><span class="steam-3">〰</span>
-        </div>
-        <div class="food-card-body">
-          <div class="food-card-name">Chicken Bites</div>
-          <div class="food-card-desc">6 pcs</div>
-          <div class="food-card-price">₹120</div>
-        </div>
-      </div>
-      <div class="glass-card rgb-border food-card fade-in stagger-3">
-        <div class="food-card-img" style="background:linear-gradient(135deg,#2a1a0a,#1a0808)">
-          🥟<span class="steam-1">〰</span><span class="steam-2">〰</span>
-        </div>
-        <div class="food-card-body">
-          <div class="food-card-name">Fried Chicken Momos</div>
-          <div class="food-card-desc">6 pcs</div>
-          <div class="food-card-price">₹140</div>
-        </div>
-      </div>
-      <div class="glass-card rgb-border food-card fade-in">
-        <div class="food-card-img" style="background:linear-gradient(135deg,#1a0808,#2a0a0a)">
-          🍿<span class="steam-1">〰</span><span class="steam-2">〰</span><span class="steam-3">〰</span>
-        </div>
-        <div class="food-card-body">
-          <div class="food-card-name">Chicken Popcorn</div>
-          <div class="food-card-desc">12 pcs</div>
-          <div class="food-card-price">₹160</div>
-        </div>
-      </div>
-      <div class="glass-card rgb-border food-card fade-in stagger-1">
-        <div class="food-card-img" style="background:linear-gradient(135deg,#2a0d0a,#1a0808)">
-          🍖<span class="steam-1">〰</span><span class="steam-2">〰</span>
-        </div>
-        <div class="food-card-body">
-          <div class="food-card-name">Chicken Nuggets</div>
-          <div class="food-card-desc">8 pcs</div>
-          <div class="food-card-price">₹160</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- COMBOS -->
-    <div class="food-panel" id="panel-combos">
-      <div class="glass-card rgb-border food-card fade-in" style="grid-column:span 1">
-        <div class="food-card-img" style="background:linear-gradient(135deg,#0d2a0d,#1a3a1a);height:140px">
-          🥗🍟<span class="steam-1">〰</span><span class="steam-2">〰</span><span class="steam-3">〰</span>
-        </div>
-        <div class="food-card-body">
-          <div class="combo-badge">VEG COMBO</div>
-          <div class="food-card-name">Veg Combo</div>
-          <div class="food-card-includes">Nuggets 6 pcs + Fingers 4 pcs<br>Peri Peri Fries + 2 Beverages</div>
-          <div class="food-card-price">₹249</div>
-        </div>
-      </div>
-      <div class="glass-card rgb-border food-card fade-in stagger-1">
-        <div class="food-card-img" style="background:linear-gradient(135deg,#2a0808,#3a0d0d);height:140px">
-          🍗🍟<span class="steam-1">〰</span><span class="steam-2">〰</span><span class="steam-3">〰</span>
-        </div>
-        <div class="food-card-body">
-          <div class="combo-badge" style="background:rgba(255,45,85,0.15);border-color:rgba(255,45,85,0.3);color:var(--neon-red)">NON-VEG COMBO</div>
-          <div class="food-card-name">Non-Veg Combo</div>
-          <div class="food-card-includes">Nuggets 6 pcs + Popcorn 10 pcs<br>Peri Peri Fries + 2 Beverages</div>
-          <div class="food-card-price">₹299</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- BEVERAGES -->
-    <div class="food-panel" id="panel-beverages">
-      <div class="bev-card glass-card rgb-border fade-in">
-        <div class="bev-icon">🟡</div>
-        <div class="bev-name">SPRITE</div>
-        <div class="bev-price">₹20</div>
-      </div>
-      <div class="bev-card glass-card rgb-border fade-in stagger-1">
-        <div class="bev-icon">🟠</div>
-        <div class="bev-name">FANTA</div>
-        <div class="bev-price">₹20</div>
-      </div>
-      <div class="bev-card glass-card rgb-border fade-in stagger-2">
-        <div class="bev-icon">🔵</div>
-        <div class="bev-name">PEPSI</div>
-        <div class="bev-price">₹20</div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- ==================== ABOUT PAGE ==================== -->
-<div class="page" id="page-about">
-  <div class="page-hero fade-in">
-    <p class="section-label" style="justify-content:center">ABOUT LVL</p>
-    <h1 class="section-title" style="text-align:center">WHERE GAMING<br>MEETS LUXURY</h1>
-  </div>
-  <div class="about-section">
-    <div class="about-grid">
-      <div class="about-text fade-in">
-        <p>LVL Gaming Café is a <strong>luxury console gaming lounge</strong> crafted for gamers who value comfort, performance, and uninterrupted play. Designed with a premium aesthetic and a focus on exclusivity, LVL offers private gaming rooms that let you fully immerse yourself in the game — whether you're competing, grinding, or unwinding with friends.</p>
-        <p>Each setup features <strong>high-end PlayStation consoles</strong> paired with stunning 4K displays delivering ultra-smooth 120 FPS gameplay, crystal-clear visuals, and responsive performance. Every detail — from ergonomic seating to acoustics and ambient lighting — is curated to elevate your gaming experience to the next level.</p>
-        <p>Beyond gaming, LVL Gaming Café enhances your sessions with a <strong>selection of delicious food and refreshments</strong>, ensuring long hours of play without breaking the flow. The atmosphere strikes the perfect balance between competitive energy and relaxed comfort, making it ideal for solo gamers, friend groups, and special hangouts.</p>
-        <p>📍 Located in <strong>Chennai, India</strong>, LVL Gaming Café is more than just a gaming space — it's a premium destination where gaming meets luxury. Whether you're here to play hard or chill harder, <strong>LVL is where you level up.</strong></p>
-        <div class="about-highlights">
-          <div class="glass-card about-highlight"><div class="highlight-icon">🎮</div><div class="highlight-text">PlayStation 4 & 5 Range</div></div>
-          <div class="glass-card about-highlight"><div class="highlight-icon">📺</div><div class="highlight-text">Up to 65" 4K QLED</div></div>
-          <div class="glass-card about-highlight"><div class="highlight-icon">⚡</div><div class="highlight-text">120 FPS Gameplay</div></div>
-          <div class="glass-card about-highlight"><div class="highlight-icon">🔒</div><div class="highlight-text">100% Private Rooms</div></div>
-        </div>
-      </div>
-      <div class="about-visual fade-in stagger-2">
-        <div class="about-visual-ring"></div>
-        <div class="about-visual-ring2"></div>
-        <img src="logo.png" class="about-logo-display" alt="LVL Logo" onerror="this.outerHTML='<div style=\'font-family:var(--font-display);font-size:6rem;font-weight:900;color:var(--neon-blue);text-shadow:0 0 40px var(--neon-blue)\'>LVL</div>'">
-      </div>
-    </div>
-
-    <div class="map-section fade-in">
-      <h2>📍 FIND US</h2>
-      <div class="contact-bar" style="margin-bottom:20px">
-        <div class="glass-card contact-item">
-          <div class="contact-icon">📍</div>
-          <div class="contact-info">
-            <div class="contact-label">ADDRESS</div>
-            <div class="contact-value">47, Padmavathy Nagar, Madambakkam, 73, 1st St, Selaiyur, Chennai, Tamil Nadu 600126</div>
-          </div>
-        </div>
-        <div class="glass-card contact-item">
-          <div class="contact-icon">📞</div>
-          <div class="contact-info">
-            <div class="contact-label">PHONE</div>
-            <div class="contact-value"><a href="tel:9962270902">+91 99622 70902</a></div>
-          </div>
-        </div>
-        <div class="glass-card contact-item">
-          <div class="contact-icon">📸</div>
-          <div class="contact-info">
-            <div class="contact-label">INSTAGRAM</div>
-            <div class="contact-value"><a href="https://www.instagram.com/lvl_gaming_cafe/" target="_blank">@lvl_gaming_cafe</a></div>
-          </div>
-        </div>
-      </div>
-      <div class="map-wrapper">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.745!2d80.192!3d12.916!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTLCsDU0JzU3LjYiTiA4MMKwMTEnMzEuMiJF!5e0!3m2!1sen!2sin!4v1!5m2!1sen!2sin" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="LVL Gaming Café Location"></iframe>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- ==================== BOOKING PAGE ==================== -->
-<div class="page" id="page-booking">
-  <div class="page-hero fade-in">
-    <p class="section-label" style="justify-content:center">BOOK A SLOT</p>
-    <h1 class="section-title" style="text-align:center">RESERVE YOUR<br>CONSOLE</h1>
-  </div>
-  <div class="booking-section">
-    <div class="booking-intro fade-in">
-      <p style="font-family:var(--font-mono);font-size:0.7rem;color:var(--neon-blue);letter-spacing:3px">// FOR IMMEDIATE BOOKING</p>
-      <p style="margin-top:8px;color:var(--text-muted)">Call or WhatsApp us directly</p>
-      <a href="tel:9962270902" class="booking-phone-big">📞 +91 99622 70902</a>
-    </div>
-    <div class="glass-card form-wrap fade-in stagger-1">
-      <p style="font-family:var(--font-mono);font-size:0.65rem;color:var(--neon-blue);letter-spacing:3px;margin-bottom:24px">// OR SEND A BOOKING REQUEST VIA WHATSAPP</p>
-      <div class="form-group">
-        <label class="form-label" for="bookName">YOUR NAME</label>
-        <input type="text" id="bookName" class="form-input" placeholder="Enter your name">
-      </div>
-      <div class="form-group">
-        <label class="form-label" for="bookPhone">PHONE NUMBER *</label>
-        <input type="tel" id="bookPhone" class="form-input" placeholder="+91 XXXXX XXXXX" required>
-      </div>
-      <div class="form-group">
-        <label class="form-label" for="bookConsole">PREFERRED CONSOLE</label>
-        <select id="bookConsole" class="form-select">
-          <option value="">Select Console</option>
-          <option value="PS4 – 55&quot; 4K TV">PS4 – 55" 4K TV</option>
-          <option value="PS5 – 55&quot; 4K Neo QLED">PS5 – 55" 4K Neo QLED</option>
-          <option value="PS5 – 65&quot; 4K QLED">PS5 – 65" 4K QLED</option>
-          <option value="PS5 Pro – 65&quot; 4K QLED">PS5 Pro – 65" 4K QLED</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label class="form-label" for="bookTime">PREFERRED TIME</label>
-        <input type="text" id="bookTime" class="form-input" placeholder="e.g., Today 5 PM or Tomorrow 3 PM">
-      </div>
-      <button class="form-submit" onclick="submitBooking()">⚡ BOOK SLOT VIA WHATSAPP</button>
-      <p class="form-note">This will open WhatsApp with a pre-filled message to <a href="tel:9962270902">+91 99622 70902</a></p>
-    </div>
   </div>
 </div>
 
@@ -570,7 +149,7 @@
     <div class="footer-top">
       <div class="footer-brand">
         <div class="footer-logo">
-          <img src="logo.png" alt="LVL" onerror="this.style.display='none'">
+          <img src="assets/logo.png" alt="LVL" onerror="this.style.display='none'">
           <span class="footer-logo-text">LVL GAMING CAFÉ</span>
         </div>
         <p class="footer-tagline">// LEVEL UP. LOCK IN. GAME FREE.</p>
@@ -590,11 +169,13 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <p class="footer-copy">© 2026 LVL Gaming Café. All rights reserved.</p>
-      <p class="footer-dev"> <a href="https://linkedin.com/in/bavya-saravanakumar" target="_blank">BS</a></p>
+      <p class="footer-copy">© 2025 LVL Gaming Café. All rights reserved.</p>
+      <p class="footer-dev">Developed by <a href="https://linkedin.com/in/bavya-saravanakumar" target="_blank">Bavya S</a></p>
     </div>
   </div>
 </footer>
+
 <script src="js/script.js"></script>
+<script src="js/home.js"></script>
 </body>
 </html>

@@ -1,0 +1,73 @@
+/* ===================== FOOD PAGE ===================== */
+.food-section{max-width:1200px;margin:0 auto;padding:20px 2rem 80px}
+.food-tabs{
+  display:flex;gap:0;border-bottom:1px solid rgba(0,212,255,0.2);
+  margin-bottom:40px;flex-wrap:wrap;
+}
+.food-tab{
+  background:transparent;border:none;border-bottom:2px solid transparent;
+  color:var(--text-muted);font-family:var(--font-display);font-size:0.65rem;
+  font-weight:700;letter-spacing:2px;padding:12px 20px;cursor:pointer;
+  transition:all 0.3s;text-transform:uppercase;margin-bottom:-1px;
+}
+.food-tab:hover{color:var(--neon-blue)}
+.food-tab.active{color:var(--neon-blue);border-bottom-color:var(--neon-blue);text-shadow:0 0 15px var(--neon-blue)}
+.food-panel{display:none}
+.food-panel.active{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:20px}
+
+/* Food cards */
+.food-card{padding:0;overflow:hidden;cursor:default;position:relative;}
+.food-card-img{
+  height:120px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:3rem;
+  position:relative;overflow:hidden;
+}
+.food-card-img::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(to bottom,transparent 50%,rgba(3,7,18,0.9) 100%);
+}
+.steam-1,.steam-2,.steam-3{
+  position:absolute;font-size:1.2rem;bottom:60%;
+  animation:steam 2s ease-in-out infinite;
+  opacity:0;
+}
+.steam-1{left:40%;animation-delay:0s}
+.steam-2{left:50%;animation-delay:0.4s}
+.steam-3{left:60%;animation-delay:0.8s}
+@keyframes steam{
+  0%{opacity:0;transform:translateY(0) scale(0.8)}
+  30%{opacity:0.6}
+  100%{opacity:0;transform:translateY(-30px) scale(1.2)}
+}
+.food-card-body{padding:16px}
+.food-card-name{
+  font-family:var(--font-display);font-size:0.75rem;font-weight:700;
+  letter-spacing:1px;margin-bottom:6px;
+}
+.food-card-desc{font-size:0.85rem;color:var(--text-muted);margin-bottom:12px}
+.food-card-price{
+  font-family:var(--font-display);font-size:1.2rem;font-weight:900;
+  color:var(--neon-blue);
+}
+.food-card:hover .food-card-price{
+  text-shadow:0 0 20px var(--neon-blue);
+  animation:priceReveal 0.4s ease;
+}
+@keyframes priceReveal{0%{transform:scale(0.8)}100%{transform:scale(1)}}
+
+/* Combo badge */
+.combo-badge{
+  display:inline-block;font-family:var(--font-mono);font-size:0.55rem;
+  letter-spacing:2px;padding:3px 8px;margin-bottom:8px;
+  background:rgba(255,45,85,0.15);border:1px solid rgba(255,45,85,0.3);
+  color:var(--neon-red);
+}
+.food-card-includes{font-size:0.8rem;color:var(--text-muted);margin:6px 0;line-height:1.6;}
+
+/* Beverages */
+.bev-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:16px}
+.bev-card{padding:20px;text-align:center;}
+.bev-icon{font-size:2.5rem;margin-bottom:10px;filter:drop-shadow(0 0 8px var(--neon-blue))}
+.bev-name{font-family:var(--font-display);font-size:0.7rem;font-weight:700;letter-spacing:2px;margin-bottom:6px}
+.bev-price{font-family:var(--font-display);font-size:1rem;font-weight:900;color:var(--neon-blue)}
