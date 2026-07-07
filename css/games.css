@@ -1,79 +1,744 @@
-/* ===================== GAMES PAGE ===================== */
-.games-section{max-width:1400px;margin:0 auto;padding:20px 2rem 80px}
-.filters-wrapper{
-  display:flex;flex-wrap:wrap;gap:16px;margin-bottom:32px;
-  padding:20px;
-  background:rgba(0,0,0,0.4);
-  border:1px solid rgba(0,212,255,0.1);
+/* ===================== GLOBAL TYPOGRAPHY OVERRIDE ===================== */
+* {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
 }
-.filter-group{}
-.filter-label{font-family:var(--font-mono);font-size:0.65rem;color:var(--neon-blue);letter-spacing:2px;margin-bottom:8px}
-.filter-btns{display:flex;flex-wrap:wrap;gap:6px}
-.filter-btn{
-  background:transparent;border:1px solid rgba(255,255,255,0.1);
-  color:var(--text-muted);font-family:var(--font-display);font-size:0.55rem;
-  font-weight:600;letter-spacing:1.5px;padding:6px 12px;cursor:pointer;
-  transition:all 0.25s;text-transform:uppercase;
+
+body {
+  background-color: #080a0f;
+  color: #ffffff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
-.filter-btn:hover{border-color:var(--neon-blue);color:var(--neon-blue)}
-.filter-btn.active{
-  border-color:var(--neon-blue);color:#000;
-  background:var(--neon-blue);
-  box-shadow:0 0 12px rgba(0,212,255,0.4);
+
+/* ===================== MOST PLAYED CAROUSEL SECTION ===================== */
+.most-played-section {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 40px 2rem 20px;
 }
-.games-count{
-  font-family:var(--font-mono);font-size:0.7rem;color:var(--text-muted);
-  margin-bottom:20px;letter-spacing:2px;
+
+.most-played-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
-.games-count span{color:var(--neon-blue)}
-.games-grid{
-  display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));
-  gap:16px;
+
+.most-played-title span.fire {
+  color: #ff5500;
+  text-shadow: 0 0 10px rgba(255, 85, 0, 0.6);
 }
-.game-card{
-  padding:0;overflow:hidden;cursor:pointer;
-  transition:all 0.4s cubic-bezier(0.23,1,0.32,1);
-  position:relative;
+
+.horizontal-scroll-container {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  padding-bottom: 16px;
+  scrollbar-width: thin;
+  scrollbar-color: var(--neon-blue) rgba(0, 0, 0, 0.3);
 }
-.game-card.hidden{display:none}
-.game-thumb{
-  aspect-ratio:16/9;
-  display:flex;align-items:center;justify-content:center;
-  position:relative;overflow:hidden;
+
+.horizontal-scroll-container::-webkit-scrollbar {
+  height: 6px;
 }
-.game-thumb-bg{
-  position:absolute;inset:0;
-  transition:transform 0.6s ease;
+
+.horizontal-scroll-container::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.3);
 }
-.game-card:hover .game-thumb-bg{transform:scale(1.1)}
-.game-thumb-icon{
-  font-size:2.5rem;z-index:1;position:relative;
-  filter:drop-shadow(0 0 10px rgba(0,0,0,0.8));
+
+.horizontal-scroll-container::-webkit-scrollbar-thumb {
+  background-color: var(--neon-blue);
+  border-radius: 3px;
 }
-.game-info{padding:14px 14px 12px}
-.game-title{
-  font-family:var(--font-display);font-size:0.65rem;font-weight:700;
-  letter-spacing:1px;margin-bottom:8px;line-height:1.4;
-  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;
+
+/* Featured cards layout matching image styling */
+.game-card-featured {
+  width: 260px;          /* Forces a fixed, clean desktop baseline width */
+  min-width: 260px;      /* Prevents cards from squishing on small screens */
+  max-width: 260px;      /* Strictly caps the width so it can never blow up */
+  flex: 0 0 260px;       /* Forces flexbox to treat the structural basis exactly as 260px */
+  background: rgba(15, 18, 26, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  cursor: pointer;
 }
-.game-tags{display:flex;gap:4px;flex-wrap:wrap}
-.game-tag{
-  font-family:var(--font-mono);font-size:0.55rem;letter-spacing:1px;
-  padding:2px 6px;border-radius:1px;
+
+.game-card-featured:hover {
+  transform: translateY(-4px);
+  border-color: var(--neon-blue);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.4), 0 0 15px rgba(0,212,255,0.15);
 }
-.tag-type{background:rgba(168,85,247,0.15);color:rgba(168,85,247,0.9);border:1px solid rgba(168,85,247,0.2)}
-.tag-players{background:rgba(0,212,255,0.1);color:rgba(0,212,255,0.8);border:1px solid rgba(0,212,255,0.2)}
-.game-consoles{display:flex;gap:4px;margin-top:8px;flex-wrap:wrap;}
-.game-console-badge{
-  font-family:var(--font-mono);font-size:0.5rem;padding:2px 6px;
-  border-radius:1px;letter-spacing:0.5px;
+
+.card-img-wrapper {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  background: #111;
+  overflow: hidden;
 }
-.badge-ps4{background:rgba(59,130,246,0.15);color:#60a5fa;border:1px solid rgba(59,130,246,0.2)}
-.badge-ps555{background:rgba(168,85,247,0.15);color:#c084fc;border:1px solid rgba(168,85,247,0.2)}
-.badge-ps565{background:rgba(0,212,255,0.1);color:var(--neon-blue);border:1px solid rgba(0,212,255,0.2)}
-.badge-pspro{background:rgba(255,45,85,0.1);color:#ff6b81;border:1px solid rgba(255,45,85,0.2)}
-.game-card:hover{
-  transform:translateY(-6px) scale(1.02);
-  border-color:var(--neon-blue);
-  box-shadow:0 20px 40px rgba(0,0,0,0.5),0 0 20px rgba(0,212,255,0.2);
+
+.card-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.badge-hot {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: linear-gradient(135deg, #ff4e50, #f9d423);
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  box-shadow: 0 2px 8px rgba(255, 78, 80, 0.4);
+}
+
+.card-info {
+  padding: 12px 14px;
+}
+
+.card-info h3 {
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin: 0 0 4px 0;
+  color: #fff;
+}
+
+.card-info p {
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  margin: 0;
+  letter-spacing: 1px;
+}
+
+/* ===================== GAMES PAGE FILTERS & GRID ===================== */
+.games-section {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 20px 2rem 80px;
+}
+
+/* Master clean wrapper for filters layout grid */
+.filters-wrapper {
+  position: relative;   /* Add this */
+  z-index: 10;          /* Add this */
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  margin-bottom: 32px;
+  padding: 24px;
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(0, 212, 255, 0.1);
+  border-radius: 8px;
+}
+
+/* Row specifically separating genre and player groupings */
+.filter-split-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Full screen size desktop distribution handler */
+.console-group-full {
+  width: 100%;
+}
+
+.console-group-full .filter-btns {
+  display: flex;
+}
+
+.console-group-full .filter-btn {
+  flex: 1;
+  text-align: center;
+}
+
+.filter-label {
+  font-size: 0.65rem;
+  color: var(--neon-blue);
+  letter-spacing: 2px;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+}
+
+.filter-btns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.filter-btn {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--text-muted);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  padding: 10px 16px;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  text-transform: uppercase;
+  border-radius: 4px;
+}
+
+.filter-btn:hover {
+  border-color: rgba(0, 212, 255, 0.5);
+  color: #fff;
+  background: rgba(0, 212, 255, 0.05);
+}
+
+.filter-btn.active {
+  border-color: var(--neon-blue);
+  color: #000;
+  background: var(--neon-blue);
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(0, 212, 255, 0.3);
+}
+
+.games-count {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  margin-bottom: 20px;
+  letter-spacing: 2px;
+}
+
+.games-count span {
+  color: var(--neon-blue);
+}
+
+.games-grid {
+  display: grid;
+  /* Updated to strictly match the 260px spacing architecture of the featured items */
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+/* Updated Standard Game Card - Matched to Featured Dimensions */
+.game-card {
+  padding: 0;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  position: relative;
+  background: rgba(15, 18, 26, 0.8); /* Replaced fallback dark color with matching featured opacity tint */
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 8px;
+  
+  /* Layout constraints matching .game-card-featured perfectly */
+  width: 100%;
+  max-width: 260px;
+  margin: 0 auto; /* Centers the cards nicely inside their responsive grid tracking blocks */
+}
+
+.game-card.hidden {
+  display: none;
+}
+
+.game-thumb {
+  aspect-ratio: 16 / 9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  background: #111; /* Matched to featured .card-img-wrapper layer */
+}
+
+.game-thumb-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.game-card:hover .game-thumb-bg {
+  transform: scale(1.05);
+}
+
+.game-thumb-icon {
+  font-size: 2.5rem;
+  z-index: 1;
+  position: relative;
+  filter: drop-shadow(0 0 10px rgba(0,0,0,0.8));
+}
+
+/* Synchronized internal card spacing */
+.game-info {
+  padding: 12px 14px; /* Scaled down from 16px to match .card-info */
+}
+
+.game-title {
+  font-size: 0.85rem; /* Resized down from 0.95rem to match .card-info h3 */
+  font-weight: 700;
+  letter-spacing: 1px; /* Uniform letter styling */
+  margin: 0 0 4px 0; /* Tightened layout alignment */
+  line-height: 1.4;
+  color: #fff;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Genre on Left End, Players on Right End Alignment */
+.game-tags {
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+  width: 100%;
+  margin-bottom: 12px;
+}
+
+.game-tag {
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  text-transform: uppercase;
+}
+
+.tag-type {
+  background: rgba(168, 85, 247, 0.12);
+  color: #c084fc;
+  border: 1px solid rgba(168, 85, 247, 0.25);
+}
+
+.tag-players {
+  background: rgba(0, 212, 255, 0.1);
+  color: #00d4ff;
+  border: 1px solid rgba(0, 212, 255, 0.25);
+}
+
+.game-consoles {
+  display: flex;
+  gap: 6px;
+  margin-top: 10px;
+  flex-wrap: wrap;
+}
+
+.game-console-badge {
+  font-size: 0.55rem;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 3px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.badge-ps4 { background: rgba(59, 130, 246, 0.15); color: #60a5fa; border: 1px solid rgba(59, 130, 246, 0.2); }
+.badge-ps555 { background: rgba(168, 85, 247, 0.15); color: #c084fc; border: 1px solid rgba(168, 85, 247, 0.2); }
+.badge-ps565 { background: rgba(0, 212, 255, 0.1); color: var(--neon-blue); border: 1px solid rgba(0, 212, 255, 0.2); }
+.badge-pspro { background: rgba(255, 45, 85, 0.1); color: #ff6b81; border: 1px solid rgba(255, 45, 85, 0.2); }
+
+.game-card:hover {
+  transform: translateY(-4px); /* Changed from -6px to keep transitions consistent */
+  border-color: var(--neon-blue);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.4), 0 0 15px rgba(0,212,255,0.15);
+}
+/* ===================== PREMIUM CLEAN GAME MODAL ===================== */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 20px;
+}
+
+.modal-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal-surface {
+  background: linear-gradient(180deg, #161920 0%, #0d0f13 100%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  width: 100%;
+  max-width: 820px;
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+  transform: translateY(20px);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.modal-overlay.active .modal-surface {
+  transform: translateY(0);
+}
+
+/* Close Window Trigger button */
+.modal-close-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #fff;
+  font-size: 24px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  transition: all 0.2s ease;
+}
+.modal-close-btn:hover {
+  background: #ef4444;
+  border-color: #ef4444;
+  transform: rotate(90deg);
+}
+
+/* Clear Image / Video Banner Aspect Ratio Container */
+.modal-hero-banner {
+  width: 100%;
+  height: 340px;
+  position: relative;
+  background: #000;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+.modal-hero-banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 20%;
+}
+
+/* Content Layout Padding Grid */
+.modal-content-wrapper {
+  padding: 28px 32px;
+}
+
+/* Header Row Structure */
+.modal-main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 24px;
+  margin-bottom: 14px;
+}
+
+.modal-main-title {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0 0 8px 0;
+  letter-spacing: -0.5px;
+  line-height: 1.2;
+}
+
+.modal-badge-row {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+/* Action Sidebar Placement */
+.modal-actions-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 200px;
+}
+
+.modal-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 20px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  border: none;
+  text-align: center;
+}
+
+.modal-btn-primary {
+  background: linear-gradient(135deg, #ff4e50 0%, #f9d423 100%); /* High visibility action hue */
+  color: #000000;
+  box-shadow: 0 4px 15px rgba(249, 212, 35, 0.3);
+}
+.modal-btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(249, 212, 35, 0.4);
+}
+
+.modal-btn-secondary {
+  background: rgba(255, 255, 255, 0.06);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.modal-btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+}
+
+/* Repositioned Metadata Sub-Strip Line */
+.modal-meta-strip {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #94a3b8;
+  font-size: 0.88rem;
+  font-weight: 500;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+.rating-stars {
+  color: #fbbf24;
+  font-weight: 700;
+}
+.meta-divider {
+  color: rgba(255, 255, 255, 0.15);
+}
+
+.modal-divider-line {
+  border: 0;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.08);
+  margin: 0 0 24px 0;
+}
+
+/* Two Column Bottom Matrix */
+.modal-body-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 40px;
+}
+
+.section-micro-title {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #64748b;
+  margin: 0 0 12px 0;
+  font-weight: 700;
+}
+
+.modal-story-text {
+  color: #cbd5e1;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.modal-stations-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+.modal-studio-footer {
+  font-size: 0.85rem;
+  color: #64748b;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  padding-top: 12px;
+}
+.modal-studio-footer strong {
+  color: #f8fafc;
+}
+
+/* Responsive Scaling Overrides */
+@media (max-width: 768px) {
+  .modal-main-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .modal-actions-sidebar {
+    min-width: 100%;
+  }
+  .modal-body-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  .modal-hero-banner {
+    height: 220px;
+  }
+  .modal-content-wrapper {
+    padding: 20px;
+  }
+}
+/* ===================== SEARCH & SORT CONTAINER ===================== */
+.search-sort-container {
+  position: relative;      /* 1. FORCE THE CONTEXT LAYER */
+  z-index: 5;              /* 2. LIFT IT ABOVE THE CANVAS BACKGROUND */
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px 24px;
+  margin-bottom: 24px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+}
+
+.search-bar-box {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  min-width: 280px;
+  background: rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 8px 16px;
+  gap: 12px;
+  transition: all 0.2s ease;
+}
+
+.search-bar-box:focus-within {
+  border-color: #3b82f6;
+  box-shadow: 0 0 12px rgba(59, 130, 246, 0.25);
+}
+
+.search-bar-box input {
+  position: relative;   /* Add this */
+  z-index: 2;           /* Add this */
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 0.95rem;
+  width: 100%;
+  outline: none;
+  pointer-events: auto; /* Add this to ensure inputs register clicks */
+}
+
+.search-bar-box input::placeholder {
+  color: #64748b;
+}
+
+.counter-badge {
+  background: rgba(255, 255, 255, 0.08);
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  white-space: nowrap;
+  color: #94a3b8;
+}
+
+/* Sorting Dropdown Elements */
+.sort-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.sort-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #64748b;
+  letter-spacing: 0.5px;
+}
+
+.sort-dropdown {
+  position: relative;      /* 1. Force layout layer context */
+  z-index: 15;             /* 2. Push it above background elements and container wraps */
+  background: #161920;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #fff;
+  border-radius: 6px;
+  padding: 8px 12px;
+  font-size: 0.9rem;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.sort-dropdown:hover, .sort-dropdown:focus {
+  border-color: #3b82f6;
+}
+
+/* Live Search Highlighting Marker */
+mark.search-highlight {
+  background: rgba(245, 158, 11, 0.3);
+  color: #f59e0b;
+  border-radius: 2px;
+  padding: 0 2px;
+  font-weight: inherit;
+}
+
+/* Empty State Canvas Configuration */
+.empty-state-canvas {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 60px 20px;
+  animation: modalFadeIn 0.4s ease-out forwards;
+}
+
+.empty-icon {
+  font-size: 3.5rem;
+  margin-bottom: 16px;
+  display: inline-block;
+  animation: floatingPulse 2s ease-in-out infinite;
+}
+
+.empty-state-canvas h3 {
+  color: #f8fafc;
+  font-size: 1.4rem;
+  margin: 0 0 8px 0;
+}
+
+.empty-state-canvas p {
+  color: #64748b;
+  max-width: 400px;
+  margin: 0 auto;
+  font-size: 0.95rem;
+}
+
+/* Framerate Animations */
+@keyframes floatingPulse {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-10px) scale(1.05); }
+}
+
+@keyframes modalFadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+#particleCanvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;          /* Pushes the Three.js background completely out of interactive range */
+  pointer-events: none; /* Stops the background canvas from capturing user mouse actions */
 }

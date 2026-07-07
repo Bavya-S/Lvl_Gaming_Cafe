@@ -25,12 +25,12 @@
 <!-- NAVIGATION -->
 <nav id="mainNav">
   <a class="nav-logo" href="index.html">
-    <img src="assets/logo.png" alt="LVL" onerror="this.style.display='none'">
+    <img src="assets/LVL BW logo.png" alt="LVL" onerror="this.style.display='none'">
     <span class="nav-brand">LVL</span>
   </a>
   <ul class="nav-links">
     <li><a href="index.html">HOME</a></li>
-    <li><a href="rooms.html">ROOMS</a></li>
+    <li><a href="rooms.html">CONSOLES</a></li>
     <li><a href="games.html" class="active">GAMES</a></li>
     <li><a href="food.html">FOOD</a></li>
     <li><a href="about.html">ABOUT</a></li>
@@ -45,7 +45,7 @@
 <!-- MOBILE NAV -->
 <div class="mobile-nav" id="mobileNav">
   <a href="index.html">HOME</a>
-  <a href="rooms.html">ROOMS</a>
+  <a href="rooms.html">CONSOLES</a>
   <a href="games.html" class="active">GAMES</a>
   <a href="food.html">FOOD</a>
   <a href="about.html">ABOUT</a>
@@ -56,35 +56,112 @@
 <a id="floatBook" href="booking.html">⚡ BOOK SLOT</a>
 
 <!-- ==================== GAMES PAGE ==================== -->
-<div class="page-wrapper">
+<div class="page-wrapper custom-layout">
+  
   <div class="page-hero fade-in">
     <p class="section-label" style="justify-content:center">GAME LIBRARY</p>
     <h1 class="section-title" style="text-align:center">55+ GAMES<br>ACROSS ALL CONSOLES</h1>
     <p class="section-sub" style="text-align:center;margin:12px auto 0">Filter by console, players, or genre to find your perfect match.</p>
   </div>
 
-  <div class="games-section">
-    <div class="filters-wrapper fade-in">
-      <div class="filter-group">
-        <div class="filter-label">CONSOLE</div>
-        <div class="filter-btns">
-          <button class="filter-btn active" data-filter="console" data-value="all">ALL</button>
-          <button class="filter-btn" data-filter="console" data-value="ps4">PS4</button>
-          <button class="filter-btn" data-filter="console" data-value="ps5-55">PS5 55"</button>
-          <button class="filter-btn" data-filter="console" data-value="ps5-65">PS5 65"</button>
-          <button class="filter-btn" data-filter="console" data-value="ps5-pro">PS5 PRO</button>
+  <div class="most-played-section fade-in">
+    <h2 class="section-heading"><span class="fire-icon">🔥</span> Most Played</h2>
+    <div class="horizontal-scroll-container">
+      
+      <div class="game-card-featured">
+        <div class="card-img-wrapper">
+          <img src="assets/games/WWE 2K24.jpg" alt="WWE 2K24">
+          <span class="badge-hot">🔥</span>
+        </div>
+        <div class="card-info">
+          <h3>WWE 2K24</h3>
+          <p>Wrestling</p>
         </div>
       </div>
-      <div class="filter-group">
-        <div class="filter-label">PLAYERS</div>
-        <div class="filter-btns">
-          <button class="filter-btn active" data-filter="players" data-value="all">ALL</button>
-          <button class="filter-btn" data-filter="players" data-value="1">SOLO</button>
-          <button class="filter-btn" data-filter="players" data-value="2">2 PLAYERS</button>
-          <button class="filter-btn" data-filter="players" data-value="multi">MULTIPLAYER</button>
+
+      <div class="game-card-featured">
+        <div class="card-img-wrapper">
+          <img src="assets/games/FC 25.jpg" alt="FC 25">
+          <span class="badge-hot">🔥</span>
+        </div>
+        <div class="card-info">
+          <h3>FC 25</h3>
+          <p>Sports</p>
         </div>
       </div>
-      <div class="filter-group">
+
+      <div class="game-card-featured">
+        <div class="card-img-wrapper">
+          <img src="assets/games/Cricket24.jpg" alt="Cricket 24">
+          <span class="badge-hot">🔥</span>
+        </div>
+        <div class="card-info">
+          <h3>Cricket 24</h3>
+          <p>Sports</p>
+        </div>
+      </div>
+
+      <div class="game-card-featured">
+        <div class="card-img-wrapper">
+          <img src="assets/games/Rocket League.jpg" alt="Rocket League">
+          <span class="badge-hot">🔥</span>
+        </div>
+        <div class="card-info">
+          <h3>Rocket League</h3>
+          <p>Sports</p>
+        </div>
+      </div>
+
+      <div class="game-card-featured">
+        <div class="card-img-wrapper">
+          <img src="assets/games/A Way Out.jpg" alt="A Way Out">
+          <span class="badge-hot">🔥</span>
+        </div>
+        <div class="card-info">
+          <h3>A Way Out</h3>
+          <p>Action/Adventure</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+<div class="games-section">
+  
+  <div class="filters-wrapper fade-in">
+    
+    <div class="filter-group console-group-full">
+      <div class="filter-label">CONSOLE</div>
+      <div class="search-sort-container glass-card">
+  <div class="search-bar-box">
+    <span class="search-icon">🔍</span>
+    <input type="text" id="gameSearchInput" placeholder="Search games by name, genre, or system..." autocomplete="off">
+    <span class="counter-badge">🎮 <span id="gameCount">0</span> Games</span>
+  </div>
+
+  <div class="sort-box">
+    <label for="gameSortSelect" class="sort-label">Sort By:</label>
+    <select id="gameSortSelect" class="sort-dropdown">
+      <option value="name-asc" selected>Alphabetical (A-Z)</option>
+      <option value="name-desc">Alphabetical (Z-A)</option>
+      <option value="rating-desc">Highest Rated ⭐</option>
+      <option value="year-desc">Newest Releases 📅</option>
+      <option value="year-asc">Classic Retro 🕹️</option>
+    </select>
+  </div>
+</div>
+      <div class="filter-btns">
+        <button class="filter-btn active" data-filter="console" data-value="all">ALL CONSOLES</button>
+        <button class="filter-btn" data-filter="console" data-value="ps4">PLAYSTATION 4</button>
+        <button class="filter-btn" data-filter="console" data-value="ps5-55">PLAYSTATION 5 55"</button>
+        <button class="filter-btn" data-filter="console" data-value="ps5-65">PLAYSTATION 5 65"</button>
+        <button class="filter-btn" data-filter="console" data-value="ps5-pro">PLAYSTATION 5 PRO</button>
+      </div>
+    </div>
+
+    <div class="filter-split-row">
+      
+      <div class="filter-group split-left">
         <div class="filter-label">GENRE</div>
         <div class="filter-btns">
           <button class="filter-btn active" data-filter="genre" data-value="all">ALL</button>
@@ -95,19 +172,33 @@
           <button class="filter-btn" data-filter="genre" data-value="Fighting">FIGHTING</button>
         </div>
       </div>
+
+      <div class="filter-group split-right">
+        <div class="filter-label">PLAYERS</div>
+        <div class="filter-btns">
+          <button class="filter-btn active" data-filter="players" data-value="all">ALL</button>
+          <button class="filter-btn" data-filter="players" data-value="1">SOLO</button>
+          <button class="filter-btn" data-filter="players" data-value="2">2 PLAYERS</button>
+          <button class="filter-btn" data-filter="players" data-value="multi">MULTIPLAYER</button>
+        </div>
+      </div>
+
     </div>
-    <div class="games-count">Showing <span id="gameCount">55</span> games</div>
-    <div class="games-grid" id="gamesGrid"></div>
+
   </div>
+
+  <div class="games-count">Showing <span id="gameCount">55</span> games</div>
+  <div class="games-grid" id="gamesGrid"></div>
 </div>
 
+</div>
 <!-- ==================== FOOTER ==================== -->
 <footer>
   <div class="footer-inner">
     <div class="footer-top">
       <div class="footer-brand">
         <div class="footer-logo">
-          <img src="assets/logo.png" alt="LVL" onerror="this.style.display='none'">
+          <img src="assets/LVL BW logo.png" alt="LVL" onerror="this.style.display='none'">
           <span class="footer-logo-text">LVL GAMING CAFÉ</span>
         </div>
         <p class="footer-tagline">// LEVEL UP. LOCK IN. GAME FREE.</p>
@@ -127,13 +218,95 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <p class="footer-copy">© 2025 LVL Gaming Café. All rights reserved.</p>
-      <p class="footer-dev">Developed by <a href="https://linkedin.com/in/bavya-saravanakumar" target="_blank">Bavya S</a></p>
+      <p class="footer-copy">© 2026 LVL Gaming Café. All rights reserved.</p>
+      <p class="footer-dev">Developed by <a href="https://linkedin.com/in/bavya-saravanakumar" target="_blank">BS</a></p>
     </div>
   </div>
 </footer>
 
+<!-- Three.js ES modules (latest) -->
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://cdn.jsdelivr.net/npm/three@0.178.0/build/three.module.js",
+    "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.178.0/examples/jsm/"
+  }
+}
+</script>
 <script src="js/script.js"></script>
-<script src="js/games.js"></script>
+<script type="module" src="js/games.js"></script>
+<!-- GAME DETAILS MODAL -->
+<div id="gameModal" class="modal-overlay">
+  <div class="modal-surface">
+    <!-- Close Button -->
+    <button class="modal-close-btn" onclick="closeGameModal()" aria-label="Close modal">×</button>
+
+    <!-- Top Hero Section (Clear Image/Trailer Frame) -->
+    <div id="modalMediaContainer" class="modal-hero-banner">
+      <!-- Injected image or iframe goes here smoothly -->
+    </div>
+
+    <!-- Content & Interactive Details Layout -->
+    <div class="modal-content-wrapper">
+      
+      <!-- Main Row: Strategic Title & Primary Actions -->
+      <div class="modal-main-header">
+        <div class="modal-title-group">
+          <h2 id="modalTitle" class="modal-main-title">Game Title</h2>
+          <div id="modalBadges" class="modal-badge-row">
+            <!-- Dynamic tags injection -->
+          </div>
+        </div>
+        
+        <!-- Action Buttons Layout -->
+        <div class="modal-actions-sidebar">
+          <a href="#booking" onclick="closeGameModal()" class="modal-btn modal-btn-primary">
+            🎟️ Book Session Now
+          </a>
+          <button id="modalTrailerBtn" onclick="toggleTrailerMode()" class="modal-btn modal-btn-secondary">
+            ▶ Play Trailer
+          </button>
+        </div>
+      </div>
+
+      <!-- Quick Meta Row (Ratings & Specs safely repositioned below action items) -->
+      <div class="modal-meta-strip">
+        <span id="modalRating" class="meta-item rating-stars">⭐⭐⭐⭐⭐ 4.8</span>
+        <span class="meta-divider">|</span>
+        <span id="modalAgeRating" class="meta-item">Rating: M</span>
+        <span class="meta-divider">|</span>
+        <span id="modalPlaytime" class="meta-item">⏱️ 30h+</span>
+        <span class="meta-divider">|</span>
+        <span id="modalYear" class="meta-item">📅 2025</span>
+      </div>
+
+      <hr class="modal-divider-line">
+
+      <!-- Bottom Grid Layout: Two Distinct Columns -->
+      <div class="modal-body-grid">
+        <!-- Left Side: Synopsis / Description -->
+        <div class="modal-body-left">
+          <h3 class="section-micro-title">About the Game</h3>
+          <p id="modalStory" class="modal-story-text">
+            Game description narrative goes here...
+          </p>
+        </div>
+
+        <!-- Right Side: Station/Console Availability Tracking & Studio Info -->
+        <div class="modal-body-right">
+          <h3 class="section-micro-title">Available on Stations</h3>
+          <div id="modalConsoles" class="modal-stations-list">
+            <!-- Dynamic station items injection -->
+          </div>
+          
+          <div class="modal-studio-footer">
+            <span>Developer:</span> <strong id="modalDev">Studio Name</strong>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
 </body>
 </html>

@@ -114,3 +114,55 @@
 @media(max-width:600px){
   .about-highlights{grid-template-columns:1fr}
 }
+
+  /* Custom Styles to Expand the Gallery Layout Size */
+  .about-grid {
+    align-items: center !important;
+  }
+  .cafe-gallery-container {
+    display: flex; 
+    flex-direction: column; 
+    width: 100%;
+    margin-top: 20px;
+  }
+  .cafe-gallery {
+    display: flex;
+    overflow-x: auto; /* Re-enabled auto overflow to support touch and swipe gestures native behavior */
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    border-radius: 16px;
+    background: rgba(0,0,0,0.4);
+    box-shadow: 0 0 30px rgba(0, 212, 255, 0.15);
+    border: 1px solid rgba(0, 212, 255, 0.2);
+    -webkit-overflow-scrolling: touch;
+    width: 100%;
+  }
+  /* Hide standard scrollbars cleanly across multiple engine viewports */
+  .cafe-gallery::-webkit-scrollbar {
+    display: none;
+  }
+  .cafe-gallery {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .gallery-item {
+    flex: 0 0 100%;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    scroll-snap-align: start;
+  }
+  /* Enlarged heights for desktop/mobile views */
+  .gallery-item img, .gallery-item video {
+    width: 100%;
+    height: 480px; /* Increased from 320px for a much bigger display presence */
+    object-fit: cover;
+    display: block;
+  }
+  @media (max-width: 768px) {
+    .gallery-item img, .gallery-item video {
+      height: 360px; /* Adjusted optimized height for mobile layout sizing */
+    }
+  }

@@ -8,59 +8,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Rajdhani:wght@300;400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/about.css">
-<style>
-  /* Custom Styles to Expand the Gallery Layout Size */
-  .about-grid {
-    align-items: center !important;
-  }
-  .cafe-gallery-container {
-    display: flex; 
-    flex-direction: column; 
-    width: 100%;
-    margin-top: 20px;
-  }
-  .cafe-gallery {
-    display: flex;
-    overflow-x: auto; /* Re-enabled auto overflow to support touch and swipe gestures native behavior */
-    scroll-snap-type: x mandatory;
-    scroll-behavior: smooth;
-    border-radius: 16px;
-    background: rgba(0,0,0,0.4);
-    box-shadow: 0 0 30px rgba(0, 212, 255, 0.15);
-    border: 1px solid rgba(0, 212, 255, 0.2);
-    -webkit-overflow-scrolling: touch;
-    width: 100%;
-  }
-  /* Hide standard scrollbars cleanly across multiple engine viewports */
-  .cafe-gallery::-webkit-scrollbar {
-    display: none;
-  }
-  .cafe-gallery {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-  }
-  .gallery-item {
-    flex: 0 0 100%;
-    position: relative;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    scroll-snap-align: start;
-  }
-  /* Enlarged heights for desktop/mobile views */
-  .gallery-item img, .gallery-item video {
-    width: 100%;
-    height: 480px; /* Increased from 320px for a much bigger display presence */
-    object-fit: cover;
-    display: block;
-  }
-  @media (max-width: 768px) {
-    .gallery-item img, .gallery-item video {
-      height: 360px; /* Adjusted optimized height for mobile layout sizing */
-    }
-  }
-</style>
+
 </head>
 <body>
 
@@ -78,7 +26,7 @@
 <!-- NAVIGATION (Unchanged) -->
 <nav id="mainNav">
   <a class="nav-logo" href="index.html">
-    <img src="assets/logo.png" alt="LVL" onerror="this.style.display='none'">
+    <img src="assets/LVL BW logo.png" alt="LVL" onerror="this.style.display='none'">
     <span class="nav-brand">LVL</span>
   </a>
   <ul class="nav-links">
@@ -113,7 +61,7 @@
   <!-- HEADER SECTION (Unchanged) -->
   <div class="page-hero fade-in">
     <p class="section-label" style="justify-content:center">ABOUT LVL</p>
-    <h1 class="section-title" style="text-align:center">WHERE GAMING<br>MEETS LUXURY</h1>
+    <h1 class="section-title" style="text-align:center">LEVEL UP YOUR<br>GAMING EXPERIENCE</h1>
   </div>
   
   <div class="about-section">
@@ -251,7 +199,7 @@
     <div class="footer-top">
       <div class="footer-brand">
         <div class="footer-logo">
-          <img src="assets/logo.png" alt="LVL" onerror="this.style.display='none'">
+          <img src="assets/LVL BW logo.png" alt="LVL" onerror="this.style.display='none'">
           <span class="footer-logo-text">LVL GAMING CAFÉ</span>
         </div>
         <p class="footer-tagline">// LEVEL UP. LOCK IN. GAME FREE.</p>
@@ -281,110 +229,6 @@
 <script src="js/about.js"></script>
 
 <!-- SYSTEM GALLERY ROUTING CONTROLLER JS -->
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-  const gallery = document.getElementById("lvlAboutGallery");
-  const slides = gallery.getElementsByClassName("gallery-item");
-  let currentIndex = 0;
-  let slideTimeout;
-  let isUserInteracting = false;
-  let interactionTimer;
 
-  function initGallery() {
-    if (slides.length === 0) return;
-    playSlide(0);
-
-    // Track when user manually swipes to update indices and handle loops gracefully
-    gallery.addEventListener('scroll', () => {
-      if (isUserInteracting) {
-        const slideWidth = gallery.clientWidth;
-        const newIndex = Math.round(gallery.scrollLeft / slideWidth);
-        if (newIndex !== currentIndex && newIndex >= 0 && newIndex < slides.length) {
-          currentIndex = newIndex;
-          // Play current video if swiped manually into a video block
-          const currentSlide = slides[currentIndex];
-          if (currentSlide.getAttribute("data-type") === "video") {
-            const video = currentSlide.querySelector("video");
-            if (video && video.paused) {
-              video.play().catch(() => {});
-            }
-          }
-        }
-      }
-    });
-
-    // Detect touch inputs to temporarily halt automation mechanics
-    gallery.addEventListener('touchstart', userInteractionTrigger, {passive: true});
-    gallery.addEventListener('mousedown', userInteractionTrigger);
-  }
-
-  function userInteractionTrigger() {
-    isUserInteracting = true;
-    clearTimeout(slideTimeout);
-    clearTimeout(interactionTimer);
-
-    // If user drops interaction, wait 6 seconds before turning auto loop back engine on
-    interactionTimer = setTimeout(() => {
-      isUserInteracting = false;
-      playSlide(currentIndex);
-    }, 6000);
-  }
-
-  function playSlide(index) {
-    if (isUserInteracting) return;
-    currentIndex = index;
-    
-    gallery.scrollTo({
-      left: slides[index].offsetLeft,
-      behavior: 'smooth'
-    });
-
-    clearTimeout(slideTimeout);
-
-    const currentSlide = slides[index];
-    const type = currentSlide.getAttribute("data-type");
-
-    // Manage engine tracks
-    Array.from(slides).forEach(slide => {
-      const vid = slide.querySelector("video");
-      if (vid) {
-        vid.pause();
-        vid.currentTime = 0;
-      }
-    });
-
-    if (type === "video") {
-      const video = currentSlide.querySelector("video");
-      if (video) {
-        let playPromise = video.play();
-        if (playPromise !== undefined) {
-          playPromise.then(() => {
-            video.onended = function() {
-              if (!isUserInteracting) nextSlide();
-            };
-          }).catch(() => {
-            slideTimeout = setTimeout(nextSlide, 3000);
-          });
-        }
-      } else {
-        slideTimeout = setTimeout(nextSlide, 3000);
-      }
-    } else {
-      slideTimeout = setTimeout(nextSlide, 3000);
-    }
-  }
-
-  function nextSlide() {
-    if (isUserInteracting) return;
-    let nextIndex = currentIndex + 1;
-    if (nextIndex >= slides.length) {
-      nextIndex = 0;
-    }
-    playSlide(nextIndex);
-  }
-
-  setTimeout(initGallery, 500);
-});
-</script>
 </body>
 </html>
