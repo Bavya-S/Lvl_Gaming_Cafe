@@ -87,7 +87,8 @@
   font-family:var(--font-display);font-size:3rem;font-weight:900;
   color:rgba(0,212,255,0.1);line-height:1;margin-bottom:12px;
 }
-.why-card:hover .card-number{color:rgba(0,212,255,0.3)}
+.why-card:hover .card-number{color:rgba(255,255,255,0.85)}
+.why-card:hover{box-shadow:none;border-color:rgba(255,255,255,0.08)}
 .why-card h3{font-family:var(--font-display);font-size:0.85rem;font-weight:700;letter-spacing:2px;margin-bottom:8px;color:var(--text-primary)}
 .why-card p{color:var(--text-muted);font-size:0.95rem;line-height:1.6}
 
@@ -99,4 +100,485 @@
   .hero-title{font-size:2rem}
   .hero-stats{gap:20px}
   .features-strip{grid-template-columns:1fr 1fr}
+}
+
+
+
+
+
+
+
+/*Index Page: Lvl_Gaming_Cafe/css/style.css*/
+
+
+  .media-intel-section {
+    padding: 60px 0;
+    max-width: 1000px;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+  
+  /* Shared Slider Track Settings */
+  .scroll-container {
+    display: flex;
+    gap: 24px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding: 20px 20px 30px 20px;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Hide scrollbars for a cleaner UI view */
+  .scroll-container::-webkit-scrollbar {
+    height: 6px;
+  }
+  .scroll-container::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.3);
+  }
+  .scroll-container::-webkit-scrollbar-thumb {
+    background: var(--neon-blue, #00d4ff);
+    border-radius: 4px;
+  }
+
+  /* Reel Card Slider Dimensions */
+  .media-card {
+    flex: 0 0 280px; /* Lock widths inside horizontal track */
+    scroll-snap-align: start;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 12px;
+  }
+
+  .short-reel-container {
+    position: relative;
+    padding-bottom: 177.78%; /* 9:16 Aspect Ratio */
+    height: 0;
+    overflow: hidden;
+    border-radius: 8px;
+    background: #000;
+  }
+
+  .short-reel-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+
+  .media-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.9rem;
+    color: #fff;
+    margin: 12px 0 4px 4px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  .media-tag {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--neon-blue, #00d4ff);
+    margin-left: 4px;
+    margin-bottom: 4px;
+  }
+  
+  /* Review Card Slider Dimensions */
+  .review-card {
+    flex: 0 0 260px; /* Lock widths inside horizontal track */
+    scroll-snap-align: start;
+    min-height: 200px;     /* Reduced height from 240px to 200px */
+
+    padding: 16px 24px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 240px;
+  }
+  
+  .review-stars {
+    color: #ffb800;
+    font-size: 0.2rem;
+    margin-bottom: 8px;
+    letter-spacing: 2px;
+  }
+  
+  .review-text {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    color: #e0e0e0;
+    font-style: italic;
+  }
+  
+  .review-author {
+    margin-top: 20px;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.85rem;
+    color: var(--neon-blue, #00d4ff);
+    letter-spacing: 1px;
+  }
+
+  /* Padding adjustment for header controls inside unpadded section wrap */
+  .section-header-wrap {
+    padding: 0 20px;
+  }
+  /* Force 2 Columns per Row on Desktop Grid */
+.console-two-col-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  margin-top: 40px;
+}
+
+/* Custom layout for pricing row lookups */
+.price-tier-row {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+  padding: 6px 0;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 1.05rem;
+}
+.price-tier-row:last-child {
+  border-bottom: none;
+}
+.price-amt {
+  font-family: 'Share Tech Mono', monospace;
+  color: var(--neon-blue, #00d4ff);
+  font-weight: 600;
+}
+
+/* Fallback to single column layout on small mobile screens */
+@media (max-width: 768px) {
+  .console-two-col-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}//* 1. Clear out container limits */
+#homeMostPlayedGrid {
+  display: flex !important;
+  gap: 30px !important;
+  overflow-x: auto !important;
+  overflow-y: visible !important;
+  white-space: nowrap !important;
+  padding: 40px 10px !important; 
+  scrollbar-width: none !important;
+}
+#homeMostPlayedGrid::-webkit-scrollbar {
+  display: none !important;
+}
+
+/* 2. FORCE Double-Width Widescreen Layout on the cards */
+#homeMostPlayedGrid > div,
+#homeMostPlayedGrid .card,
+#homeMostPlayedGrid .game-card {
+  display: inline-block !important;
+  position: relative !important;
+  
+  /* Forces the massive 2-cards-in-1 wide look */
+  flex: 0 0 560px !important;     
+  width: 560px !important;      
+  min-width: 560px !important;
+  height: 320px !important;     
+  
+  border-radius: 16px !important; 
+  overflow: hidden !important;    
+  cursor: pointer !important;
+  
+  transition: transform 0.4s ease, box-shadow 0.4s ease !important;
+}
+
+/* Hover lift and glow */
+#homeMostPlayedGrid > div:hover,
+#homeMostPlayedGrid .card:hover,
+#homeMostPlayedGrid .game-card:hover {
+  transform: translateY(-5px) !important;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8), 0 0 25px rgba(0, 210, 255, 0.25) !important;
+}
+
+/* 3. FORCE the image to break out of the top half and cover 100% of the card */
+#homeMostPlayedGrid img, 
+#homeMostPlayedGrid .card-image,
+#homeMostPlayedGrid .game-card-image,
+#homeMostPlayedGrid div[style*="background"] {
+  width: 100% !important;
+  height: 100% !important;       /* Makes image full height */
+  position: absolute !important; /* Detaches it from the layout flow */
+  top: 0 !important;
+  left: 0 !important;
+  object-fit: cover !important; 
+  object-position: center 20% !important; 
+  z-index: 1 !important;
+  transition: transform 0.5s ease !important;
+}
+
+/* Zoom effect on image hover */
+#homeMostPlayedGrid > div:hover img,
+#homeMostPlayedGrid > div:hover .card-image {
+  transform: scale(1.08) !important;
+}
+
+/* 4. KILL the solid dark bottom block and make it a clean fade overlay */
+#homeMostPlayedGrid > div > div:last-child,
+#homeMostPlayedGrid .card-details,
+#homeMostPlayedGrid .game-card-info {
+  position: absolute !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  height: 60% !important;         
+  padding: 24px 32px !important;  
+  
+  /* Removes solid background, replaces with transparent gradient */
+  background: linear-gradient(to top, rgba(10, 14, 23, 0.95) 0%, rgba(10, 14, 23, 0.6) 50%, rgba(10, 14, 23, 0) 100%) !important;
+  
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: flex-end !important;
+  white-space: normal !important; /* Allows text wrap if titles are long */
+  pointer-events: none !important;
+  z-index: 2 !important; /* Layers text clearly on top of the image */
+}
+
+/* Target the console cards directly */
+.console-two-col-grid .glass-card.why-card {
+  /* Set a transparent default border so the card layout doesn't jump 1px on hover */
+  border: 1px solid transparent !important;
+  transition: border-color 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
+              box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
+              transform 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.console-two-col-grid .glass-card.why-card:hover {
+  border-color: var(--neon-blue, #00d4ff) !important;
+  
+  /* Multi-layered box-shadow for a clean neon atmospheric dispersion */
+  box-shadow: 0 0 15px rgba(0, 212, 255, 0.25), 
+              0 0 30px rgba(0, 212, 255, 0.1), 
+              inset 0 0 10px rgba(0, 212, 255, 0.1) !important;
+              
+  /* Optional: Mild elegant micro-lift to match your cinema grid behavior */
+  transform: translateY(-2px) !important;
+}
+
+
+/*==========View details link styling for console cards==========*/
+.view-details-link {
+  text-decoration: none !important;
+  color: #ffffff !important;
+  font-size: 0.95rem !important;
+  font-family: 'Share Tech Mono', monospace !important;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 6px 14px;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.05);
+  transition: all 0.3s ease !important;
+}
+
+.view-details-link:hover {
+  color: var(--neon-blue) !important;
+  border-color: var(--neon-blue) !important;
+  background: rgba(0, 210, 255, 0.1);
+  box-shadow: 0 0 10px rgba(0, 210, 255, 0.2);
+}
+/* =========================================================
+   LVL HERO - CHARACTER ASSEMBLY
+   Desktop + Tablet + Mobile Responsive
+   ========================================================= */
+
+.hero-game-assembly {
+  position: absolute;
+  inset: 64px 0 0;
+  z-index: 2;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+/* -------------------------
+   CHARACTER BASE
+   ------------------------- */
+
+.hero-game-card.game-character-only {
+  position: absolute;
+  /* Increased size range to ensure faces are clear and detailed */
+  width: clamp(260px, 28vw, 480px);
+  height: auto;
+  padding: 0;
+  margin: 0;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  backdrop-filter: none;
+  overflow: visible;
+  opacity: 0;
+  transform: translate3d(var(--mx, 0px), var(--my, 0px), 0) scale(.45) rotate(0deg);
+  filter: brightness(.85) saturate(1);
+  will-change: transform, opacity;
+}
+
+.hero-game-card.game-character-only::before {
+  display: none;
+}
+
+.hero-game-card.game-character-only img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  transform: scale(1);
+  transform-origin: center center;
+  filter: drop-shadow(0 15px 30px rgba(0, 0, 0, .7)) drop-shadow(0 0 20px rgba(0, 212, 255, .2));
+}
+
+/* =========================================================
+   DESKTOP POSITIONS (Pushed to Edges)
+   ========================================================= */
+
+/* Top Left Character (Atsu / Ghost) */
+.game-card-1 {
+  left: -2%;
+  top: 5%;
+  animation: gameCardLeft 1s .25s cubic-bezier(.2,.8,.2,1) forwards, gameFloat 5s 1.35s ease-in-out infinite;
+}
+
+/* Bottom Left Character (Eve) */
+.game-card-2 {
+  left: 10%;
+  bottom: -10%;
+  animation: gameCardBottomLeft 1s .5s cubic-bezier(.2,.8,.2,1) forwards, gameFloat 5.5s 1.6s ease-in-out infinite;
+}
+
+/* Top Center Character (Hidden or subtle background accent) */
+.game-card-3 {
+  left: 50%;
+  top: 2%;
+  margin-left: -14vw;
+  animation: gameCardTop 1s .75s cubic-bezier(.2,.8,.2,1) forwards, gameFloat 5s 1.9s ease-in-out infinite;
+}
+
+/* Bottom Right Character (Kratos) */
+.game-card-4 {
+  right: 8%;
+  bottom: -15%;
+  animation: gameCardBottomRight 1s 1s cubic-bezier(.2,.8,.2,1) forwards, gameFloat 5.7s 2.1s ease-in-out infinite;
+}
+
+/* Top Right Character (Spider-Man) */
+.game-card-5 {
+  right: -3%;
+  top: 5%;
+  animation: gameCardRight 1s 1.25s cubic-bezier(.2,.8,.2,1) forwards, gameFloat 5.2s 2.35s ease-in-out infinite;
+}
+
+/* =========================================================
+   ANIMATIONS (Adjusted final angles for edge framing)
+   ========================================================= */
+
+@keyframes gameCardLeft {
+  from {
+    opacity: 0;
+    transform: translate3d(-280px, 80px, 0) scale(.45) rotate(-16deg);
+  }
+  to {
+    opacity: .95;
+    transform: translate3d(var(--mx, 0px), var(--my, 0px), 0) scale(1) rotate(-4deg);
+  }
+}
+
+@keyframes gameCardBottomLeft {
+  from {
+    opacity: 0;
+    transform: translate3d(-180px, 260px, 0) scale(.45) rotate(13deg);
+  }
+  to {
+    opacity: .9;
+    transform: translate3d(var(--mx, 0px), var(--my, 0px), 0) scale(1) rotate(2deg);
+  }
+}
+
+@keyframes gameCardTop {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -220px, 0) scale(.45) rotate(-8deg);
+  }
+  to {
+    opacity: .4;
+    transform: translate3d(var(--mx, 0px), var(--my, 0px), 0) scale(1) rotate(0deg);
+  }
+}
+
+@keyframes gameCardBottomRight {
+  from {
+    opacity: 0;
+    transform: translate3d(180px, 260px, 0) scale(.45) rotate(-13deg);
+  }
+  to {
+    opacity: .9;
+    transform: translate3d(var(--mx, 0px), var(--my, 0px), 0) scale(1) rotate(-2deg);
+  }
+}
+
+@keyframes gameCardRight {
+  from {
+    opacity: 0;
+    transform: translate3d(280px, 80px, 0) scale(.45) rotate(16deg);
+  }
+  to {
+    opacity: .95;
+    transform: translate3d(var(--mx, 0px), var(--my, 0px), 0) scale(1) rotate(4deg);
+  }
+}
+
+@keyframes gameFloat {
+  0%, 100% {
+    filter: brightness(.85) saturate(1);
+  }
+  50% {
+    filter: brightness(1) saturate(1.15);
+  }
+}
+
+/* =========================================================
+   TABLET & MOBILE BREAKPOINTS
+   ========================================================= */
+
+@media (max-width: 900px) {
+  .hero-game-card.game-character-only {
+    width: clamp(180px, 30vw, 280px);
+  }
+  .game-card-1 { left: -8%; top: 8%; }
+  .game-card-2 { left: 2%; bottom: -5%; }
+  .game-card-4 { right: 2%; bottom: -5%; }
+  .game-card-5 { right: -8%; top: 8%; }
+}
+
+@media (max-width: 600px) {
+  .hero-game-card.game-character-only {
+    width: 140px;
+    opacity: 0.4; /* Soften on mobile so central text is easily readable */
+  }
+  .game-card-1 { left: -15%; top: 10%; }
+  .game-card-2 { left: -10%; bottom: 2%; }
+  .game-card-4 { right: -10%; bottom: 2%; }
+  .game-card-5 { right: -15%; top: 10%; }
+}
+
+
+/* =========================================================
+   CANVAS PARTICLE BACKGROUND
+   ========================================================= */
+
+#hero-particle-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1; /* Sits behind character layer (z-index: 2) */
+  pointer-events: none;
 }

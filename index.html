@@ -8,12 +8,14 @@
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Rajdhani:wght@300;400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/home.css">
+<link rel="stylesheet" href="css/games.css">
+
 </head>
 <body>
 
 <!-- LOADING SCREEN -->
 <div id="loader">
-  <img src="assets/LVL BW logo.png" class="loader-logo" alt="LVL Logo" onerror="this.style.display='none'">
+  <img src="assets/LVL Gaming Cafe LOGO.png" class="loader-logo" alt="LVL Logo" onerror="this.style.display='none'">
   <div style="font-family:'Orbitron',monospace;font-size:1.2rem;font-weight:900;color:#00d4ff;letter-spacing:4px;margin-top:16px;text-shadow:0 0 20px #00d4ff">LVL</div>
   <div class="loader-bar"><div class="loader-fill"></div></div>
   <div class="loader-text" id="loaderText">INITIALIZING SYSTEMS...</div>
@@ -24,9 +26,8 @@
 
 <!-- NAVIGATION -->
 <nav id="mainNav">
-  <a class="nav-logo" href="index.html">
-    <img src="assets/logo.png" alt="LVL" onerror="this.style.display='none'">
-    <span class="nav-brand">LVL</span>
+  <a class="nav-logo" href="index.html" style="display: flex; align-items: center;">
+   <img src="assets/LVL Gaming Cafe LOGO.png" alt="LVL" style="mix-blend-mode: screen; filter: brightness(1.15);" onerror="this.style.display='none'">    <span class="nav-brand">LVL</span>
   </a>
   <ul class="nav-links">
     <li><a href="index.html" data-page="home">HOME</a></li>
@@ -45,11 +46,11 @@
 <!-- MOBILE NAV -->
 <div class="mobile-nav" id="mobileNav">
   <a href="index.html">HOME</a>
-  <a href="rooms.html">ROOMS</a>
+  <a href="rooms.html">CONSOLES</a>
   <a href="games.html">GAMES</a>
   <a href="food.html">FOOD</a>
   <a href="about.html">ABOUT</a>
-  <a href="booking.html">CONTACT / BOOK</a>
+  <a href="booking.html">CONTACT</a>
 </div>
 
 <!-- FLOATING BOOK BUTTON -->
@@ -60,6 +61,31 @@
   <section class="hero">
     <div class="hero-vignette"></div>
     <div class="hero-scanline"></div>
+
+    <!-- SIMPLE GAME CHARACTER / GAME ART ASSEMBLY -->
+    <!-- HERO – GAME ART ASSEMBLY -->
+<div class="hero-game-assembly">
+  <!-- Dynamic Particle Layer -->
+  <canvas id="hero-particle-canvas"></canvas>
+
+  <div class="hero-energy-ring"></div>
+
+  <!-- Character Cards -->
+  <div class="hero-game-card game-card-1 game-character-only" data-depth="0.75">
+    <img src="assets/games/Atsu.png" alt="Ghost game art">
+  </div>
+  <div class="hero-game-card game-card-2 game-character-only" data-depth="0.45">
+    <img src="assets/games/eve.png" alt="Stellar Blade game art">
+  </div>
+  <div class="hero-game-card game-card-4 game-character-only" data-depth="0.5">
+    <img src="assets/games/kratos.png" alt="God of War game art">
+  </div>
+  <div class="hero-game-card game-card-5 game-character-only" data-depth="0.7">
+    <img src="assets/games/Spidey.png" alt="Spider-Man game art">
+  </div>
+</div>
+
+    <div class="hero-energy-ring"></div>
     <div style="position:relative;z-index:3">
       <p class="hero-eyebrow">// CHENNAI'S PREMIUM CONSOLE LOUNGE</p>
       <h1 class="hero-title">
@@ -75,19 +101,19 @@
       </div>
       <div class="hero-stats">
         <div class="hero-stat">
-          <div class="hero-stat-num" data-count="4">0</div>
+          <div class="hero-stat-num" data-count="4">4</div>
           <div class="hero-stat-label">Consoles</div>
         </div>
         <div class="hero-stat">
-          <div class="hero-stat-num" data-count="55">0</div>
+          <div class="hero-stat-num" data-count="55">55</div>
           <div class="hero-stat-label">+ Games</div>
         </div>
         <div class="hero-stat">
-          <div class="hero-stat-num" data-count="4">0</div>
-          <div class="hero-stat-label">Max Players</div>
+          <div class="hero-stat-num" data-count="4">1- 4+</div>
+          <div class="hero-stat-label">Players</div>
         </div>
         <div class="hero-stat">
-          <div class="hero-stat-num" data-count="120">0</div>
+          <div class="hero-stat-num" data-count="120">120</div>
           <div class="hero-stat-label">FPS Gameplay</div>
         </div>
       </div>
@@ -110,12 +136,12 @@
   <div class="home-section">
     <p class="section-label">WHY LVL</p>
     <h2 class="section-title">THE ULTIMATE<br>GAMING EXPERIENCE</h2>
-    <p class="section-sub">More than a café. It's where gaming meets luxury.</p>
+    <p class="section-sub">More than a café. It's where gaming meets comfort.</p>
     <div class="why-grid">
       <div class="glass-card rgb-border why-card fade-in">
         <div class="card-number">01</div>
         <h3>TOTAL PRIVACY</h3>
-        <p>Each console is in its own private room. No distractions, no noise — just you and the game.</p>
+        <p>Each console is in its own room. No distractions, no noise — just you and the game.</p>
       </div>
       <div class="glass-card rgb-border why-card fade-in stagger-1">
         <div class="card-number">02</div>
@@ -134,12 +160,275 @@
       </div>
     </div>
   </div>
+   <!-- ==================== MOST PLAYED GAMES ==================== -->
+<div class="home-section">
+  <p class="section-label">// POPULAR SELECTIONS</p>
+  <h2 class="section-title">MOST PLAYED<br>GAMES</h2>
+  <p class="section-sub">The absolute favorite and hottest picks. Ready to drop in?</p>
 
-  <div class="home-cta-strip">
-    <div class="neon-divider" style="margin-bottom:40px"></div>
-    <p style="font-family:var(--font-mono);font-size:0.7rem;color:var(--text-muted);letter-spacing:3px;margin-bottom:20px">// READY TO LEVEL UP?</p>
-    <a class="btn-primary" href="booking.html" style="margin:0 auto">⚡ BOOK YOUR SLOT NOW</a>
-    <p style="margin-top:16px;font-family:var(--font-mono);font-size:0.7rem;color:var(--text-muted)">Or call us: <a href="tel:9962270902" style="color:var(--neon-blue)">+91 99622 70902</a></p>
+  <div class="most-played-section" style="padding: 30px 0 0;">
+    <div class="horizontal-scroll-container" id="homeMostPlayedGrid"></div>
+  </div>
+</div>
+<!-- ==================== CONSOLE TIER INTEL ==================== -->
+  <div class="home-section">
+    <p class="section-label">// CONSOLE FLEET</p>
+    <h2 class="section-title">CHOOSE YOUR<br>BATTLESTATION</h2>
+    <p class="section-sub">Premium hardware paired with massive screens. Rates per hour.</p>
+    
+    <!-- Forced 2-Cards Per Row Layout -->
+    <div class="console-two-col-grid">
+      
+      <!-- Card 1: PS4 -->
+      <div class="glass-card rgb-border why-card fade-in">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+          <h2>PLAYSTATION 4</h2>
+         <a href="rooms.html" class="view-details-link">
+          <span>🎮 View Details</span>
+        </a>
+        </div>
+        <p style="color: var(--neon-blue); font-family: 'Share Tech Mono', monospace; font-size: 0.9rem; margin-bottom: 20px; text-transform: uppercase;">55" 4K TV</p>
+        
+        <div class="price-tier-row"><span>One Player</span><span class="price-amt">₹120</span></div>
+        <div class="price-tier-row"><span>Two Players</span><span class="price-amt">₹190</span></div>
+        <div class="price-tier-row"><span>Three Players</span><span class="price-amt">₹260</span></div>
+        <div class="price-tier-row"><span>Four Players</span><span class="price-amt">₹340</span></div>
+      </div>
+      
+      <!-- Card 2: PS5 55" -->
+      <div class="glass-card rgb-border why-card fade-in stagger-1">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+          <h2>PLAYSTATION 5 (55")</h2>
+          <a href="rooms.html" class="view-details-link">
+          <span>🎮 View Details</span>
+        </a>
+        </div>
+        <p style="color: var(--neon-blue); font-family: 'Share Tech Mono', monospace; font-size: 0.9rem; margin-bottom: 20px; text-transform: uppercase;">55" 4K NEO QLED TV</p>
+        
+        <div class="price-tier-row"><span>One Player</span><span class="price-amt">₹140</span></div>
+        <div class="price-tier-row"><span>Two Players</span><span class="price-amt">₹230</span></div>
+        <div class="price-tier-row"><span>Three Players</span><span class="price-amt">₹320</span></div>
+        <div class="price-tier-row"><span>Four Players</span><span class="price-amt">₹420</span></div>
+      </div>
+      
+      <!-- Card 3: PS5 65" -->
+      <div class="glass-card rgb-border why-card fade-in stagger-2">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+          <h2>PLAYSTATION 5 (65")</h2>
+          <a href="rooms.html" class="view-details-link">
+          <span>🎮 View Details</span>
+        </a>
+        </div>
+        <p style="color: var(--neon-blue); font-family: 'Share Tech Mono', monospace; font-size: 0.9rem; margin-bottom: 20px; text-transform: uppercase;">65" 4K QLED TV</p>
+        
+        <div class="price-tier-row"><span>One Player</span><span class="price-amt">₹160</span></div>
+        <div class="price-tier-row"><span>Two Players</span><span class="price-amt">₹270</span></div>
+        <div class="price-tier-row"><span>Three Players</span><span class="price-amt">₹380</span></div>
+        <div class="price-tier-row"><span>Four Players</span><span class="price-amt">₹500</span></div>
+      </div>
+      
+      <!-- Card 4: PS5 Pro -->
+      <div class="glass-card rgb-border why-card fade-in stagger-3">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+          <h2>PLAYSTATION 5 PRO</h2>
+          <a href="rooms.html" class="view-details-link">
+          <span>🎮 View Details</span>
+        </a>
+        </div>
+        <p style="color: var(--neon-blue); font-family: 'Share Tech Mono', monospace; font-size: 0.9rem; margin-bottom: 20px; text-transform: uppercase;">65" 4K QLED TV</p>
+        
+        <div class="price-tier-row"><span>One Player</span><span class="price-amt">₹180</span></div>
+        <div class="price-tier-row"><span>Two Players</span><span class="price-amt">₹310</span></div>
+        <div class="price-tier-row"><span>Three Players</span><span class="price-amt">₹440</span></div>
+        <div class="price-tier-row"><span>Four Players</span><span class="price-amt">₹580</span></div>
+      </div>
+
+    </div>
+    
+    <!-- Companion Notice -->
+    <p style="text-align: center; font-family: 'Share Tech Mono', monospace; font-size: 0.8rem; color: var(--text-muted); margin-top: 35px; letter-spacing: 0.5px;">
+      * Rs.50 per person per hour is charged for accompanying persons, except for parents accompanying their children.
+    </p>
+  </div>
+ 
+  <!-- ==================== INTEL & TRANSMISSIONS SECTION ==================== -->
+  <div class="home-section media-intel-section">
+    <div class="section-header-wrap">
+      <p class="section-label">// LIVE INTEL</p>
+      <h2 class="section-title">GAMEPLAY &amp; REELS</h2>
+      <p class="section-sub">Play exiting games. Swipe or scroll horizontally to browse.</p>
+    </div>
+    
+    <!-- Sideways Sliding Reels Track -->
+  <div class="scroll-container">
+ 
+      <div class="glass-card rgb-border media-card">
+        <div class="short-reel-container">
+          <iframe src="https://www.youtube.com/embed/largPDgI7n0?rel=0" title="LVL Journey Launch" allowfullscreen></iframe>
+        </div>
+        <div class="media-title">The Journey Starts Now</div>
+        <div class="media-tag">// LOUNGE_LAUNCH</div>
+      </div>
+
+      <!-- Reel 2 -->
+      <div class="glass-card rgb-border media-card">
+        <div class="short-reel-container">
+
+          <iframe src="https://www.youtube.com/embed/iP-cDce0jKE?rel=0" title="The Last of Us" allowfullscreen></iframe>
+        </div>
+        <div class="media-title">It would be the last face you ever see</div>
+        <div class="media-tag">// LAST OF US</div>
+      </div>
+ <!-- Reel 2 -->
+      <div class="glass-card rgb-border media-card">
+        <div class="short-reel-container">
+          <iframe src="https://www.youtube.com/embed/_tXxHL8coCE?rel=0" title="Faye faye kratos" allowfullscreen></iframe>
+        </div>
+        <div class="media-title">Faye Faye is the true protagonist of the Norse God of War saga.</div>
+        <div class="media-tag">// KRATOS</div>
+      </div>
+
+
+      <!-- Reel 4 -->
+      <div class="glass-card rgb-border media-card">
+        <div class="short-reel-container">
+          <iframe src="https://www.youtube.com/embed/B2gZufeGHcA?rel=0" title="KRATOS" allowfullscreen></iframe>
+        </div>
+        <div class="media-title">U will always be Monster 👿</div>
+        <div class="media-tag">// KRATOS</div>
+      </div>
+
+      <!-- Reel 6 -->
+        <div class="glass-card rgb-border media-card">
+    <div class="short-reel-container">
+      <iframe src="https://www.youtube.com/embed/RURkXKforYM?rel=0" title="LVL Gaming" allowfullscreen></iframe>
+    </div>
+    <div class="media-title">Sandman never saw it coming! 🎥</div>
+    <div class="media-tag">// SPIDER MAN</div>
+  </div>
+
+      
+    </div>
+
+    <!-- Sideways Sliding Reviews Track -->
+    <div style="margin-top: 40px;">
+      <div class="section-header-wrap">
+        <p class="section-label">// GOOGLE REVIEWS</p>
+        <h2 class="section-title">VERIFIED LOGS</h2>
+        <p class="section-sub">What the customers say about their experience.</p>
+      </div>
+      
+      <div class="scroll-container">
+        <!-- Google Review 1 -->
+        <div class="glass-card rgb-border review-card">
+          <div>
+            <div class="review-stars">★★★★★</div>
+            <p class="review-text">"Honestly one of the best experiences I’ve had in Chennai! This gaming cafe was next-level - the ambiance, the setup, the vibe, everything was perfect. Went with my friends, and we ended up spending hours just having the time of our lives."</p>
+          </div>
+          <div class="review-author">- Bavya S. <span style="color: var(--text-muted)">[Verified Customer]</span></div>
+        </div>
+
+        <!-- Google Review 2 -->
+        <div class="glass-card rgb-border review-card">
+          <div>
+            <div class="review-stars">★★★★★</div>
+            <p class="review-text">"Played on the PS5 Pro setup with the boys. Total audio sound control works cleanly, and the food service directly to the couch means you never break focus."</p>
+          </div>
+          <div class="review-author">- Tarun R. <span style="color: var(--text-muted)">[Verified Gamer]</span></div>
+        </div>
+
+        <!-- Google Review 3 -->
+        <div class="glass-card rgb-border review-card">
+          <div>
+            <div class="review-stars">★★★★★</div>
+            <p class="review-text">"LVL Gaming Cafe is hands down one of the best places for PlayStation gaming in Chennai! The setup is clean, the PS5 experience is smooth with zero lag, and the atmosphere is perfect for gaming with friends."</p>
+          </div>
+          <div class="review-author">- Peter Coc. <span style="color: var(--text-muted)"></span></div>
+        </div>
+
+        <!-- Google Review 4 -->
+        <div class="glass-card rgb-border review-card">
+          <div>
+            <div class="review-stars">★★★★★</div>
+            <p class="review-text">"One of the best gaming cafe, good experience, lots of fun, and the chat food are good in taste,
+Recommend this cafe, owner is so polite and friendly 🫂"</p>
+          </div>
+          <div class="review-author">- Mithilesh Kumar. <span style="color: var(--text-muted)">[Happy Customer]</span></div>
+        </div>
+
+        <!-- Google Review 5 -->
+        <div class="glass-card rgb-border review-card">
+          <div>
+            <div class="review-stars">★★★★★</div>
+            <p class="review-text">"Perfect spot to unlock late-night co-op missions. The private room layout feels extremely high-end, and the neon aesthetics are incredible for pictures."</p>
+          </div>
+          <div class="review-author">- Kaviya B. <span style="color: var(--text-muted)">[Streamer]</span></div>
+        </div>
+
+        <!-- Google Review 6 -->
+        <div class="glass-card rgb-border review-card">
+          <div>
+            <div class="review-stars">★★★★★</div>
+            <p class="review-text">""Lit gaming spot! 🔥 The vibe's immaculate, chill tunes, comfy seats, and the decor's on point. Food's , drinks flowin', and the gaming rigs are beast mode! 10/10 would chill here again 😎👾."</p>
+          </div>
+          <div class="review-author">- Josphin Marry Thersa. <span style="color: var(--text-muted)">[Verified Client]</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!-- ==================== ENHANCED HERO CTA STRIP ==================== -->
+  <div class="home-cta-strip" style="text-align:center; padding: 100px 2rem 120px; max-width: 800px; margin: 0 auto;">
+    <div class="neon-divider" style="margin-bottom: 50px; height: 2px; background: linear-gradient(90deg, transparent, var(--neon-blue), transparent); box-shadow: 0 0 15px var(--neon-blue);"></div>
+    
+    <!-- Large, Loud Eyebrow -->
+    <p style="font-family: var(--font-mono); font-size: 0.9rem; color: var(--neon-blue); letter-spacing: 6px; margin-bottom: 16px; text-transform: uppercase; text-shadow: 0 0 10px rgba(0, 212, 255, 0.4);">
+      // READY TO GAME?    </p>
+    
+    <!-- High-Impact Headline -->
+    <h2 style="font-family: var(--font-display); font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 900; color: #fff; text-transform: uppercase; margin-bottom: 40px; line-height: 1.1;">
+      SECURE YOUR <span style="background: linear-gradient(135deg, var(--neon-blue), var(--neon-purple, #9d4edd)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; filter: drop-shadow(0 0 15px rgba(0,212,255,0.3));">SPOT !</span>
+    </h2>
+    
+    <!-- Massive Interactive Booking Button -->
+    <div style="margin-bottom: 32px;">
+      <a class="btn-primary" href="booking.html" style="
+        display: inline-block;
+        padding: 20px 48px;
+        font-family: var(--font-display);
+        font-size: 1.3rem;
+        font-weight: 800;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: #0a0e17;
+        background: var(--neon-blue, #00d4ff);
+        border-radius: 8px;
+        text-decoration: none;
+        box-shadow: 0 0 30px rgba(0, 212, 255, 0.4), inset 0 0 10px rgba(255,255,255,0.5);
+        transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease, background-color 0.3s ease;
+      " 
+      onmouseover="this.style.transform='scale(1.08)'; this.style.boxShadow='0 0 45px rgba(0, 212, 255, 0.7)';" 
+      onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 0 30px rgba(0, 212, 255, 0.4)';">
+        ⚡ BOOK YOUR SLOT NOW
+      </a>
+    </div>
+    
+    <!-- High-Visibility Secondary Contact Info -->
+    <p style="font-family: var(--font-mono); font-size: 0.9rem; color: var(--text-muted); letter-spacing: 1px;">
+      Or dial direct for instant setup: 
+      <a href="tel:9962270902" style="
+        color: #fff; 
+        text-decoration: none; 
+        font-weight: 700; 
+        border-bottom: 2px dashed var(--neon-blue); 
+        padding-bottom: 2px;
+        transition: color 0.3s ease;
+      "
+      onmouseover="this.style.color='var(--neon-blue)'"
+      onmouseout="this.style.color='#fff'">
+        +91 99622 70902
+      </a>
+    </p>
   </div>
 </div>
 
@@ -149,7 +438,7 @@
     <div class="footer-top">
       <div class="footer-brand">
         <div class="footer-logo">
-          <img src="assets/logo.png" alt="LVL" onerror="this.style.display='none'">
+          <img src="assets/LVL Gaming Cafe LOGO.png" alt="LVL" style="mix-blend-mode: screen; filter: brightness(1.15);" onerror="this.style.display='none'">
           <span class="footer-logo-text">LVL GAMING CAFÉ</span>
         </div>
         <p class="footer-tagline">// LEVEL UP. LOCK IN. GAME FREE.</p>
@@ -170,12 +459,56 @@
     </div>
     <div class="footer-bottom">
       <p class="footer-copy">© 2026 LVL Gaming Café. All rights reserved.</p>
-      <p class="footer-dev">Developed by <a href="https://linkedin.com/in/bavya-saravanakumar" target="_blank">BS</a></p>
+      <!-- <p class="footer-dev">Developed by <a href="https://linkedin.com/in/bavya-saravanakumar" target="_blank">BS</a></p> -->
     </div>
   </div>
 </footer>
 
+<!-- GAME DETAILS MODAL -->
+<div id="gameModal" class="modal-overlay">
+  <div class="modal-surface">
+    <button class="modal-close-btn" onclick="closeGameModal()" aria-label="Close modal">×</button>
+    <div id="modalMediaContainer" class="modal-hero-banner"></div>
+    <div class="modal-content-wrapper">
+      <div class="modal-main-header">
+        <div class="modal-title-group">
+          <h2 id="modalTitle" class="modal-main-title">Game Title</h2>
+          <div id="modalBadges" class="modal-badge-row"></div>
+        </div>
+        <div class="modal-actions-sidebar">
+          <a href="booking.html" onclick="closeGameModal()" class="modal-btn modal-btn-primary">🎟️ Book Session Now</a>
+          <button id="modalTrailerBtn" onclick="toggleTrailerMode()" class="modal-btn modal-btn-secondary">▶ Play Trailer</button>
+        </div>
+      </div>
+      <div class="modal-meta-strip">
+        <span id="modalRating" class="meta-item rating-stars">⭐⭐⭐⭐⭐ 4.8</span>
+        <span class="meta-divider">|</span>
+        <span id="modalAgeRating" class="meta-item">Rating: M</span>
+        <span class="meta-divider">|</span>
+        <span id="modalPlaytime" class="meta-item">⏱️ 30h+</span>
+        <span class="meta-divider">|</span>
+        <span id="modalYear" class="meta-item">📅 2025</span>
+      </div>
+      <hr class="modal-divider-line">
+      <div class="modal-body-grid">
+        <div class="modal-body-left">
+          <h3 class="section-micro-title">About the Game</h3>
+          <p id="modalStory" class="modal-story-text">Game description narrative goes here...</p>
+        </div>
+        <div class="modal-body-right">
+          <h3 class="section-micro-title">Available on Stations</h3>
+          <div id="modalConsoles" class="modal-stations-list"></div>
+          <div class="modal-studio-footer">
+            <span>Developer:</span> <strong id="modalDev">Studio Name</strong>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <script src="js/script.js"></script>
 <script src="js/home.js"></script>
+<script type="module" src="js/games.js"></script>
 </body>
 </html>

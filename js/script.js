@@ -128,3 +128,4 @@ function observeAnimations(){
   els.forEach(el=>io.observe(el));
 }
 document.addEventListener('DOMContentLoaded',()=>observeAnimations());
+

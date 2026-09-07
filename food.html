@@ -64,174 +64,238 @@
   </div>
 
   <div class="food-section">
-    <div class="food-tabs">
-      <button class="food-tab active" data-panel="veg">🥦 VEG BITES</button>
-      <button class="food-tab" data-panel="nonveg">🍗 NON-VEG DELIGHTS</button>
-      <button class="food-tab" data-panel="combos">🔥 COMBOS</button>
-      <button class="food-tab" data-panel="beverages">🥤 BEVERAGES</button>
+    <div class="filter-container">
+      <label class="swiggy-toggle">
+        <input type="checkbox" id="vegToggle">
+        <span class="slider round"></span>
+        <span class="toggle-label">VEG BITES 🥦</span>
+      </label>
+      <label class="swiggy-toggle non-veg-toggle">
+        <input type="checkbox" id="nonVegToggle">
+        <span class="slider round"></span>
+        <span class="toggle-label">NON-VEG 🍗</span>
+      </label>
     </div>
 
-    <!-- VEG -->
-    <div class="food-panel active" id="panel-veg">
-      <div class="glass-card rgb-border food-card fade-in">
-        <div class="food-card-img" style="background:linear-gradient(135deg,#1a3a1a,#0d2b0d)">
-          🍟<span class="steam-1">〰</span><span class="steam-2">〰</span><span class="steam-3">〰</span>
+    <div class="category-group" id="group-veg">
+      <h2 class="category-header">🥦 VEG BITES</h2>
+      <div class="food-grid">
+        
+        <div class="glass-card rgb-border food-card fade-in food-item veg">
+          <div class="food-card-left">
+            <span class="diet-indicator veg-dot">●</span>
+            <div class="food-card-name">Classic Fries</div>
+            <div class="food-card-price">₹95</div>
+            <div class="food-card-desc">Crispy, golden salted potato fries cooked to perfection. The ultimate gaming snack.</div>
+          </div>
+          <div class="food-card-right">
+            <div class="food-card-img" style="background:linear-gradient(135deg,#1a3a1a,#0d2b0d)">🍟</div>
+        
+          </div>
         </div>
-        <div class="food-card-body">
-          <div class="food-card-name">Classic Fries</div>
-          <div class="food-card-price">₹95</div>
-        </div>
-      </div>
-      <div class="glass-card rgb-border food-card fade-in stagger-1">
-        <div class="food-card-img" style="background:linear-gradient(135deg,#2a1a0d,#3a2000)">
-          🍟<span class="steam-1">〰</span><span class="steam-2">〰</span>
-        </div>
-        <div class="food-card-body">
-          <div class="food-card-name">Peri Peri Fries</div>
-          <div class="food-card-price">₹100</div>
-        </div>
-      </div>
-      <div class="glass-card rgb-border food-card fade-in stagger-2">
-        <div class="food-card-img" style="background:linear-gradient(135deg,#1a1a3a,#0d1a3a)">
-          🧆<span class="steam-1">〰</span><span class="steam-2">〰</span><span class="steam-3">〰</span>
-        </div>
-        <div class="food-card-body">
-          <div class="food-card-name">Veg Nuggets</div>
-          <div class="food-card-desc">6 pcs</div>
-          <div class="food-card-price">₹120</div>
-        </div>
-      </div>
-      <div class="glass-card rgb-border food-card fade-in stagger-3">
-        <div class="food-card-img" style="background:linear-gradient(135deg,#1a2a1a,#0a2a0a)">
-          🥢<span class="steam-1">〰</span><span class="steam-2">〰</span>
-        </div>
-        <div class="food-card-body">
-          <div class="food-card-name">Veg Fingers</div>
-          <div class="food-card-desc">6 pcs</div>
-          <div class="food-card-price">₹120</div>
-        </div>
-      </div>
-      <div class="glass-card rgb-border food-card fade-in">
-        <div class="food-card-img" style="background:linear-gradient(135deg,#2a1a2a,#1a0a1a)">
-          🥟<span class="steam-1">〰</span><span class="steam-2">〰</span><span class="steam-3">〰</span>
-        </div>
-        <div class="food-card-body">
-          <div class="food-card-name">Fried Paneer Momos</div>
-          <div class="food-card-desc">6 pcs</div>
-          <div class="food-card-price">₹130</div>
-        </div>
-      </div>
-    </div>
 
-    <!-- NON-VEG -->
-    <div class="food-panel" id="panel-nonveg">
-      <div class="glass-card rgb-border food-card fade-in">
-        <div class="food-card-img" style="background:linear-gradient(135deg,#2a1a0a,#3a1500)">
-          🍜<span class="steam-1">〰</span><span class="steam-2">〰</span><span class="steam-3">〰</span>
+        <div class="glass-card rgb-border food-card fade-in food-item veg">
+          <div class="food-card-left">
+            <span class="diet-indicator veg-dot">●</span>
+            <div class="food-card-name">Peri Peri Fries</div>
+            <div class="food-card-price">₹100</div>
+            <div class="food-card-desc">Our classic golden fries tossed in a fiery, hot and spicy African peri-peri seasoning mix.</div>
+          </div>
+          <div class="food-card-right">
+            <div class="food-card-img" style="background:linear-gradient(135deg,#2a1a0d,#3a2000)">🍟</div>
+            <button class="add-btn">ADD</button>
+          </div>
         </div>
-        <div class="food-card-body">
-          <div class="food-card-name">Chicken Cup Noodles</div>
-          <div class="food-card-price">₹80</div>
+
+        <div class="glass-card rgb-border food-card fade-in food-item veg">
+          <div class="food-card-left">
+            <span class="diet-indicator veg-dot">●</span>
+            <div class="food-card-name">Veg Nuggets (6 Pcs)</div>
+            <div class="food-card-price">₹120</div>
+            <div class="food-card-desc">Finely mashed vegetables seasoned with aromatic spices, battered and breaded to crunchy perfection.</div>
+          </div>
+          <div class="food-card-right">
+            <div class="food-card-img" style="background:linear-gradient(135deg,#1a1a3a,#0d1a3a)">🧆</div>
+         
+          </div>
         </div>
-      </div>
-      <div class="glass-card rgb-border food-card fade-in stagger-1">
-        <div class="food-card-img" style="background:linear-gradient(135deg,#2a0a0a,#3a1000)">
-          🍟<span class="steam-1">〰</span><span class="steam-2">〰</span>
+
+        <div class="glass-card rgb-border food-card fade-in food-item veg">
+          <div class="food-card-left">
+            <span class="diet-indicator veg-dot">●</span>
+            <div class="food-card-name">Veg Fingers (6 Pcs)</div>
+            <div class="food-card-price">₹120</div>
+            <div class="food-card-desc">Crispy, finger-sized mixed veggie sticks infused with mild herbs, perfect for dipping.</div>
+          </div>
+          <div class="food-card-right">
+            <div class="food-card-img" style="background:linear-gradient(135deg,#1a2a1a,#0a2a0a)">🥢</div>
+            
+          </div>
         </div>
-        <div class="food-card-body">
-          <div class="food-card-name">Chicken Loaded Fries</div>
-          <div class="food-card-price">₹120</div>
+
+        <div class="glass-card rgb-border food-card fade-in food-item veg">
+          <div class="food-card-left">
+            <span class="diet-indicator veg-dot">●</span>
+            <div class="food-card-name">Fried Paneer Momos (6 Pcs)</div>
+            <div class="food-card-price">₹130</div>
+            <div class="food-card-desc">Crispy fried dumplings stuffed with spiced paneer filling, served with hot authentic schezwan dip.</div>
+          </div>
+          <div class="food-card-right">
+            <div class="food-card-img" style="background:linear-gradient(135deg,#2a1a2a,#1a0a1a)">🥟</div>
+            
+          </div>
         </div>
-      </div>
-      <div class="glass-card rgb-border food-card fade-in stagger-2">
-        <div class="food-card-img" style="background:linear-gradient(135deg,#1a0a0a,#2a0808)">
-          🍗<span class="steam-1">〰</span><span class="steam-2">〰</span><span class="steam-3">〰</span>
-        </div>
-        <div class="food-card-body">
-          <div class="food-card-name">Chicken Bites</div>
-          <div class="food-card-desc">6 pcs</div>
-          <div class="food-card-price">₹120</div>
-        </div>
-      </div>
-      <div class="glass-card rgb-border food-card fade-in stagger-3">
-        <div class="food-card-img" style="background:linear-gradient(135deg,#2a1a0a,#1a0808)">
-          🥟<span class="steam-1">〰</span><span class="steam-2">〰</span>
-        </div>
-        <div class="food-card-body">
-          <div class="food-card-name">Fried Chicken Momos</div>
-          <div class="food-card-desc">6 pcs</div>
-          <div class="food-card-price">₹140</div>
-        </div>
-      </div>
-      <div class="glass-card rgb-border food-card fade-in">
-        <div class="food-card-img" style="background:linear-gradient(135deg,#1a0808,#2a0a0a)">
-          🍿<span class="steam-1">〰</span><span class="steam-2">〰</span><span class="steam-3">〰</span>
-        </div>
-        <div class="food-card-body">
-          <div class="food-card-name">Chicken Popcorn</div>
-          <div class="food-card-desc">12 pcs</div>
-          <div class="food-card-price">₹160</div>
-        </div>
-      </div>
-      <div class="glass-card rgb-border food-card fade-in stagger-1">
-        <div class="food-card-img" style="background:linear-gradient(135deg,#2a0d0a,#1a0808)">
-          🍖<span class="steam-1">〰</span><span class="steam-2">〰</span>
-        </div>
-        <div class="food-card-body">
-          <div class="food-card-name">Chicken Nuggets</div>
-          <div class="food-card-desc">8 pcs</div>
-          <div class="food-card-price">₹160</div>
-        </div>
+
       </div>
     </div>
 
-    <!-- COMBOS -->
-    <div class="food-panel" id="panel-combos">
-      <div class="glass-card rgb-border food-card fade-in">
-        <div class="food-card-img" style="background:linear-gradient(135deg,#0d2a0d,#1a3a1a);height:140px">
-          🥗🍟<span class="steam-1">〰</span><span class="steam-2">〰</span><span class="steam-3">〰</span>
+    <div class="category-group" id="group-nonveg">
+      <h2 class="category-header">🍗 NON-VEG DELIGHTS</h2>
+      <div class="food-grid">
+
+        <div class="glass-card rgb-border food-card fade-in food-item nonveg">
+          <div class="food-card-left">
+            <span class="diet-indicator nonveg-triangle">▲</span>
+            <div class="food-card-name">Chicken Cup Noodles</div>
+            <div class="food-card-price">₹80</div>
+            <div class="food-card-desc">Instant warmth in a cup! Comforting, savory chicken broth noodles with micro-veggies.</div>
+          </div>
+          <div class="food-card-right">
+            <div class="food-card-img" style="background:linear-gradient(135deg,#2a1a0a,#3a1500)">🍜</div>
+           
+          </div>
         </div>
-        <div class="food-card-body">
-          <div class="combo-badge">VEG COMBO</div>
-          <div class="food-card-name">Veg Combo</div>
-          <div class="food-card-includes">Nuggets 6 pcs + Fingers 4 pcs<br>Peri Peri Fries + 2 Beverages</div>
-          <div class="food-card-price">₹249</div>
+
+        <div class="glass-card rgb-border food-card fade-in food-item nonveg">
+          <div class="food-card-left">
+            <span class="diet-indicator nonveg-triangle">▲</span>
+            <div class="food-card-name">Chicken Loaded Fries</div>
+            <div class="food-card-price">₹120</div>
+            <div class="food-card-desc">Golden fries heavily topped with shredded chicken, smoky barbecue drizzle, and creamy liquid cheese.</div>
+          </div>
+          <div class="food-card-right">
+            <div class="food-card-img" style="background:linear-gradient(135deg,#2a0a0a,#3a1000)">🍟</div>
+            
+          </div>
         </div>
+
+        <div class="glass-card rgb-border food-card fade-in food-item nonveg">
+          <div class="food-card-left">
+            <span class="diet-indicator nonveg-triangle">▲</span>
+            <div class="food-card-name">Chicken Bites (6 Pcs)</div>
+            <div class="food-card-price">₹120</div>
+            <div class="food-card-desc">Tender, juicy chunks of chicken marinated in spices and flash-fried for a crunchy coating.</div>
+          </div>
+          <div class="food-card-right">
+            <div class="food-card-img" style="background:linear-gradient(135deg,#1a0a0a,#2a0808)">🍗</div>
+           
+          </div>
+        </div>
+
+        <div class="glass-card rgb-border food-card fade-in food-item nonveg">
+          <div class="food-card-left">
+            <span class="diet-indicator nonveg-triangle">▲</span>
+            <div class="food-card-name">Fried Chicken Momos (6 Pcs)</div>
+            <div class="food-card-price">₹140</div>
+            <div class="food-card-desc">Deep-fried dumplings loaded with juicy minced chicken filling and aromatic Himalayan herbs.</div>
+          </div>
+          <div class="food-card-right">
+            <div class="food-card-img" style="background:linear-gradient(135deg,#2a1a0a,#1a0808)">🥟</div>
+           
+          </div>
+        </div>
+
+        <div class="glass-card rgb-border food-card fade-in food-item nonveg">
+          <div class="food-card-left">
+            <span class="diet-indicator nonveg-triangle">▲</span>
+            <div class="food-card-name">Chicken Popcorn (12 Pcs)</div>
+            <div class="food-card-price">₹160</div>
+            <div class="food-card-desc">Bite-sized, poppable bursts of seasoned chicken breast meat crisped down to an ultimate crunch.</div>
+          </div>
+          <div class="food-card-right">
+            <div class="food-card-img" style="background:linear-gradient(135deg,#1a0808,#2a0a0a)">🍿</div>
+          
+          </div>
+        </div>
+
+        <div class="glass-card rgb-border food-card fade-in food-item nonveg">
+          <div class="food-card-left">
+            <span class="diet-indicator nonveg-triangle">▲</span>
+            <div class="food-card-name">Chicken Nuggets (8 Pcs)</div>
+            <div class="food-card-price">₹160</div>
+            <div class="food-card-desc">Classic breaded white-meat chicken nuggets. Perfectly crispy on the outside, tender inside.</div>
+          </div>
+          <div class="food-card-right">
+            <div class="food-card-img" style="background:linear-gradient(135deg,#2a0d0a,#1a0808)">🍖</div>
+            
+          </div>
+        </div>
+
       </div>
-      <div class="glass-card rgb-border food-card fade-in stagger-1">
-        <div class="food-card-img" style="background:linear-gradient(135deg,#2a0808,#3a0d0d);height:140px">
-          🍗🍟<span class="steam-1">〰</span><span class="steam-2">〰</span><span class="steam-3">〰</span>
+    </div>
+
+    <div class="category-group" id="group-combos">
+      <h2 class="category-header">🔥 COMBO DEALS</h2>
+      <div class="food-grid">
+        
+        <div class="glass-card rgb-border food-card fade-in food-item veg-combo">
+          <div class="food-card-left">
+            <div class="combo-badge">VEG COMBO</div>
+            <div class="food-card-name">Squad Veggie Pack</div>
+            <div class="food-card-price">₹249</div>
+            <div class="food-card-desc">Includes: Veg Nuggets (6 pcs) + Veg Fingers (4 pcs) + Large Peri Peri Fries + 2 Cold Beverages.</div>
+          </div>
+          <div class="food-card-right">
+            <div class="food-card-img" style="background:linear-gradient(135deg,#0d2a0d,#1a3a1a)">🥗</div>
+           
+          </div>
         </div>
-        <div class="food-card-body">
-          <div class="combo-badge" style="background:rgba(255,45,85,0.15);border-color:rgba(255,45,85,0.3);color:var(--neon-red)">NON-VEG COMBO</div>
-          <div class="food-card-name">Non-Veg Combo</div>
-          <div class="food-card-includes">Nuggets 6 pcs + Popcorn 10 pcs<br>Peri Peri Fries + 2 Beverages</div>
-          <div class="food-card-price">₹299</div>
+
+        <div class="glass-card rgb-border food-card fade-in food-item nonveg-combo">
+          <div class="food-card-left">
+            <div class="combo-badge" style="background:rgba(255,45,85,0.15);border-color:rgba(255,45,85,0.3);color:var(--neon-red)">NON-VEG COMBO</div>
+            <div class="food-card-name">Gamer Fuel Heavy Pack</div>
+            <div class="food-card-price">₹299</div>
+            <div class="food-card-desc">Includes: Chicken Nuggets (6 pcs) + Chicken Popcorn (10 pcs) + Large Peri Peri Fries + 2 Cold Beverages.</div>
+          </div>
+          <div class="food-card-right">
+            <div class="food-card-img" style="background:linear-gradient(135deg,#2a0808,#3a0d0d)">🍗</div>
+            
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="category-group">
+      <h2 class="category-header">🥤 BEVERAGES</h2>
+      <div class="bev-grid">
+        <div class="bev-card glass-card rgb-border fade-in">
+          <div class="bev-icon">🟡</div>
+          <div class="bev-info">
+            <div class="bev-name">SPRITE</div>
+            <div class="bev-price">₹20</div>
+          </div>
+        </div>
+        <div class="bev-card glass-card rgb-border fade-in">
+          <div class="bev-icon">🟠</div>
+          <div class="bev-info">
+            <div class="bev-name">FANTA</div>
+            <div class="bev-price">₹20</div>
+          </div>
+        </div>
+        <div class="bev-card glass-card rgb-border fade-in">
+          <div class="bev-icon">🔵</div>
+          <div class="bev-info">
+            <div class="bev-name">PEPSI</div>
+            <div class="bev-price">₹20</div>
+          </div>
         </div>
       </div>
     </div>
 
-    <!-- BEVERAGES -->
-    <div class="food-panel" id="panel-beverages">
-      <div class="bev-card glass-card rgb-border fade-in">
-        <div class="bev-icon">🟡</div>
-        <div class="bev-name">SPRITE</div>
-        <div class="bev-price">₹20</div>
-      </div>
-      <div class="bev-card glass-card rgb-border fade-in stagger-1">
-        <div class="bev-icon">🟠</div>
-        <div class="bev-name">FANTA</div>
-        <div class="bev-price">₹20</div>
-      </div>
-      <div class="bev-card glass-card rgb-border fade-in stagger-2">
-        <div class="bev-icon">🔵</div>
-        <div class="bev-name">PEPSI</div>
-        <div class="bev-price">₹20</div>
-      </div>
-    </div>
   </div>
 </div>
-
 <!-- ==================== FOOTER ==================== -->
 <footer>
   <div class="footer-inner">

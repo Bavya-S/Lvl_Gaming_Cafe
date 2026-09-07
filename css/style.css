@@ -144,20 +144,9 @@ nav{
   backdrop-filter:blur(10px);
   border:1px solid rgba(0,212,255,0.15);
   border-radius:4px;
-  transition:all 0.4s cubic-bezier(0.23,1,0.32,1);
+  transition:border-color 0.3s ease, box-shadow 0.3s ease;
   position:relative;overflow:hidden;
 }
-.glass-card::before{
-  content:'';position:absolute;inset:0;
-  background:linear-gradient(135deg,rgba(0,212,255,0.05) 0%,transparent 60%);
-  opacity:0;transition:opacity 0.4s;
-}
-.glass-card:hover{
-  border-color:var(--neon-blue);
-  box-shadow:0 0 30px rgba(0,212,255,0.2),inset 0 0 30px rgba(0,212,255,0.03);
-  transform:translateY(-4px);
-}
-.glass-card:hover::before{opacity:1}
 
 /* RGB border animation */
 .rgb-border{position:relative;}
@@ -169,8 +158,16 @@ nav{
   animation:rgbFlow 3s linear infinite;
   opacity:0;transition:opacity 0.3s;
 }
-.rgb-border:hover::after{opacity:1}
+/* disable hover glow on index cards */
+.rgb-border:hover::after{opacity:0;}
 @keyframes rgbFlow{0%{background-position:0% 50%}100%{background-position:300% 50%}}
+
+.glass-card:hover,
+.rgb-border:hover{
+  border-color:rgba(0,212,255,0.15);
+  box-shadow:none;
+}
+
 
 /* ===================== BUTTONS ===================== */
 .btn-primary{
@@ -270,3 +267,8 @@ footer{
 @media(max-width:600px){
   .footer-top{grid-template-columns:1fr}
 }
+
+
+
+
+

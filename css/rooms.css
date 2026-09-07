@@ -73,6 +73,8 @@
 
 .console-card:hover {
   background: rgba(10, 10, 14, 0.85) !important;
+  border-color: rgba(0, 212, 255, 0.45) !important;
+  box-shadow: 0 0 16px rgba(0, 212, 255, 0.12) !important;
 }
 .console-card::before, 
 .console-card::after,
