@@ -9,12 +9,29 @@
   letter-spacing:6px;text-transform:uppercase;margin-bottom:24px;
   animation:fadeSlideDown 0.8s ease forwards;opacity:0;
 }
-.hero-title{
-  font-family:var(--font-display);
-  font-size:clamp(2.5rem,8vw,6rem);
-  font-weight:900;line-height:1;
-  color:#fff;text-transform:uppercase;
-  animation:fadeSlideDown 0.8s ease 0.2s forwards;opacity:0;
+.hero-title {
+  display: flex;
+  flex-direction: column;
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  font-weight: 900;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+/* Smaller lead-in text matching reference layout */
+.hero-lead-in {
+  font-size: 0.35em;
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  opacity: 0.85;
+  margin-bottom: 0.3rem;
+}
+
+/* Secondary tagline beneath the main title */
+.hero-tagline {
+  font-size: 0.5em;
+  margin-top: 0.5rem;
+  letter-spacing: 0.05em;
 }
 .hero-title .accent{
   display:block;
