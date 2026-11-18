@@ -775,3 +775,53 @@ mark.search-highlight {
   pointer-events: none; /* Stops the background canvas from capturing user mouse actions */
 }
 
+/* Mobile Viewport Fit Fixes */
+html, body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* Modal Overlay Styling */
+.modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(8px);
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.modal-overlay.active {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-surface {
+  width: 92%;
+  max-width: 900px;
+  max-height: 90vh;
+  margin: auto;
+  overflow-y: auto;
+  background: #0d0f12;
+  border: 1px solid rgba(0, 212, 255, 0.2);
+  border-radius: 12px;
+  box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+  .modal-surface {
+    width: 95%;
+    max-height: 95vh;
+    padding: 16px;
+  }
+  
+  .modal-body-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+}

@@ -54,7 +54,6 @@ const GAMES = [
   { name: "Where Winds Meet", type: "Roleplay", players: "1", ps4: false, "ps5-55": false, "ps5-65": false, "ps5-pro": true, image: "assets/games/where-winds-meet.jpg", rating: "4.7", dev: "Everstone Studio", year: "2025", playtime: "30h+", trailer: "3q0cUkf5z7w", popular: true, age: "M", story: "Immerse yourself in a vast martial arts open-world roleplay during the chaotic twilight era of ancient Chinese dynasties, executing gravity-defying Wuxia combat movements." },
   { name: "Ghost of Yōtei", type: "Adventure", players: "1", ps4: false, "ps5-55": false, "ps5-65": false, "ps5-pro": true, image: "assets/games/ghost-of-yotei.jpg", rating: "4.9", dev: "Sucker Punch", year: "2025", playtime: "30h+", trailer: "7z7kqwuf0a8", popular: true, age: "M", story: "Set out around the snow-crested wilderness of Mount Yōtei. Guide a lone warrior tracking down personal targets across beautiful wilderness landscapes." }
 ];
-
 const gameEmojis = { Adventure: "⚔️", Roleplay: "🗺️", Racing: "🏎️", Sports: "⚽", Fighting: "👊" };
 const gameBgs = {
   Adventure: "linear-gradient(135deg,#0a1a2a,#1a0a2a)",
@@ -67,16 +66,19 @@ const gameBgs = {
 // ===================== STATE CONFIGURATION =====================
 let activeFilters = { console: 'all', players: 'all', genre: 'all' };
 let searchQuery = '';
-let sortBy = 'default';
+let sortBy = 'name-asc';
 
 let currentSelectedGame = null;
 let isTrailerPlaying = false;
+let isModalOpen = false;
 
+// Helper: Generate Star Ratings
 function generateStars(rating) {
   const count = Math.round(parseFloat(rating));
   return "⭐".repeat(count) + ` ${rating}`;
 }
 
+// Helper: Render Home Page Most Played Section (if present)
 function renderHomeMostPlayed() {
   const container = document.getElementById('homeMostPlayedGrid');
   if (!container) return;
@@ -86,7 +88,7 @@ function renderHomeMostPlayed() {
     const type = g.type.split('/')[0].trim();
     return `<div class="game-card-featured home-most-played-card" data-game-name="${g.name}">
       <div class="card-img-wrapper">
-        <img src="${g.image || ''}" alt="${g.name}" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <img src="${g.image || ''}" alt="${g.name}" loading="lazy" decoding="async" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
         <div class="game-thumb-fallback" style="display:none; background:${gameBgs[type]||gameBgs.Adventure}; width:100%; height:100%; align-items:center; justify-content:center; position:absolute; inset:0;">
           <div class="game-thumb-icon">${gameEmojis[type]||'🎮'}</div>
         </div>
@@ -109,12 +111,11 @@ function renderHomeMostPlayed() {
 }
 
 // ===================== RENDER PIPELINE =====================
-// ===================== EXPANDED RENDER PIPELINE =====================
-function renderGames(){
+function renderGames() {
   const grid = document.getElementById('gamesGrid');
-  if(!grid) return;
+  if (!grid) return;
 
-  // 1. Filter the games array based on Active Badges AND Search Query
+  // 1. Filter games array
   let filtered = GAMES.filter(g => {
     const cf = activeFilters.console;
     const pf = activeFilters.players;
@@ -124,7 +125,6 @@ function renderGames(){
     const playersOk = pf === 'all' || (pf === '1' && g.players === '1') || (pf === '2' && g.players === '2') || (pf === 'multi' && g.players.includes('-'));
     const genreOk = gf === 'all' || g.type.includes(gf);
    
-    // Search match looks into Title, Developer, and Story text
     const query = searchQuery.toLowerCase().trim();
     const searchOk = !query || 
                      g.name.toLowerCase().includes(query) || 
@@ -134,7 +134,7 @@ function renderGames(){
     return consoleOk && playersOk && genreOk && searchOk;
   });
 
-  // 2. Sort the filtered array
+  // 2. Sort filtered array
   if (sortBy === 'rating-desc') {
     filtered.sort((a, b) => parseFloat(b.rating) - parseFloat(a.rating));
   } else if (sortBy === 'year-desc') {
@@ -143,13 +143,19 @@ function renderGames(){
     filtered.sort((a, b) => parseInt(a.year) - parseInt(b.year));
   } else if (sortBy === 'name-asc') {
     filtered.sort((a, b) => a.name.localeCompare(b.name));
+  } else if (sortBy === 'name-desc') {
+    filtered.sort((a, b) => b.name.localeCompare(a.name));
   }
   
+  // Sync count elements
   const countEl = document.getElementById('gameCount');
-  if(countEl) countEl.textContent = filtered.length;
+  if (countEl) countEl.textContent = filtered.length;
+  
+  const countBadgeEl = document.getElementById('gameCountBadge');
+  if (countBadgeEl) countBadgeEl.textContent = filtered.length;
 
-  // 3. Render Cards to DOM (REMOVED 'rgb-border' below)
-  grid.innerHTML = filtered.map((g, index) => {
+  // 3. Render Cards to DOM
+  grid.innerHTML = filtered.map((g) => {
     const type = g.type.split('/')[0].trim();
     const playerString = g.players === '1' ? '👤 1 Player' : `👥 ${g.players} Players`;
     const consoles = [
@@ -159,10 +165,9 @@ function renderGames(){
       g['ps5-pro'] && '<span class="game-console-badge badge-pspro">PS5 PRO</span>'
     ].filter(Boolean).join('');
 
-    // CHANGED: Removed 'rgb-border' class from the container below
     return `<div class="glass-card game-card" data-index="${GAMES.indexOf(g)}">
       <div class="game-thumb">
-        <img class="game-thumb-bg" src="${g.image || ''}" alt="${g.name}" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <img class="game-thumb-bg" src="${g.image || ''}" alt="${g.name}" loading="lazy" decoding="async" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
         <div class="game-thumb-fallback" style="display:none; background:${gameBgs[type]||gameBgs.Adventure}; width:100%; height:100%; align-items:center; justify-content:center; position:absolute; inset:0;">
           <div class="game-thumb-icon">${gameEmojis[type]||'🎮'}</div>
         </div>
@@ -186,7 +191,7 @@ function renderGames(){
   });
 }
 
-// ===================== MODAL MANAGEMENT =====================
+// ===================== MODAL MANAGEMENT & HISTORY HANDLING =====================
 window.openGameModal = function(game) {
   currentSelectedGame = game;
   isTrailerPlaying = false;
@@ -197,7 +202,7 @@ window.openGameModal = function(game) {
   document.getElementById('modalDev').textContent = game.dev;
   document.getElementById('modalYear').textContent = game.year;
   document.getElementById('modalPlaytime').textContent = game.playtime;
-  document.getElementById('modalStory').textContent = game.story; // Injecting the unique game story dynamically [cite: 164]
+  document.getElementById('modalStory').textContent = game.story;
 
   setModalMediaMode(false);
 
@@ -217,13 +222,47 @@ window.openGameModal = function(game) {
     ${game.popular ? '<span class="modal-tag tag-popular" style="background:#f97316; color:#fff; padding:4px 8px; border-radius:4px; font-size:0.75rem; font-weight:600;">🔥 POPULAR</span>' : ''}
   `;
 
-  document.getElementById('gameModal').classList.add('active');
+  // Display Modal
+  const modal = document.getElementById('gameModal');
+  if (modal) {
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden'; // Lock background scrolling
+  }
+
+  // Push history state for mobile back button behavior
+  if (!isModalOpen) {
+    isModalOpen = true;
+    history.pushState({ modalOpen: true }, '', '#game-detail');
+  }
 };
 
 window.closeGameModal = function() {
-  document.getElementById('modalMediaContainer').innerHTML = '';
-  document.getElementById('gameModal').classList.remove('active');
+  const modal = document.getElementById('gameModal');
+  if (modal) {
+    document.getElementById('modalMediaContainer').innerHTML = '';
+    modal.classList.remove('active');
+    document.body.style.overflow = ''; // Restore scrolling
+  }
+
+  if (isModalOpen) {
+    isModalOpen = false;
+    // If modal closed manually via X or overlay click, revert history state
+    if (window.location.hash === '#game-detail') {
+      history.back();
+    }
+  }
 };
+
+// Handle Browser and Mobile Physical Back Button Event
+window.addEventListener('popstate', function() {
+  const modal = document.getElementById('gameModal');
+  if (modal && modal.classList.contains('active')) {
+    document.getElementById('modalMediaContainer').innerHTML = '';
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+    isModalOpen = false;
+  }
+});
 
 window.toggleTrailerMode = function() {
   if (!currentSelectedGame) return;
@@ -239,7 +278,7 @@ function setModalMediaMode(wantsVideo) {
     container.innerHTML = `<iframe width="100%" height="100%" src="https://www.youtube.com/embed/${currentSelectedGame.trailer}?autoplay=1&mute=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border:none;"></iframe>`;
     btn.textContent = "🖼️ Show Image Cover";
   } else {
-    container.innerHTML = `<img src="${currentSelectedGame.image || ''}" alt="${currentSelectedGame.name}" style="width:100%; height:100%; object-fit:cover;">`;
+    container.innerHTML = `<img src="${currentSelectedGame.image || ''}" alt="${currentSelectedGame.name}" style="width:100%; height:100%; object-fit:cover;" loading="lazy">`;
     btn.textContent = "▶ Play Trailer";
   }
 }
@@ -249,7 +288,7 @@ document.getElementById('gameModal')?.addEventListener('click', (e) => {
   if (e.target.id === 'gameModal') closeGameModal();
 });
 
-// ===================== INITIALIZE NEW LISTENERS =====================
+// ===================== INITIALIZE EVENT LISTENERS =====================
 document.addEventListener('DOMContentLoaded', () => {
   renderHomeMostPlayed();
   renderGames();
@@ -265,7 +304,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Search Event Listener (triggers on every keystroke) [cite: 158]
+  // Search Input Listener
   const searchInput = document.getElementById('gameSearchInput');
   if (searchInput) {
     searchInput.addEventListener('input', (e) => {
@@ -274,7 +313,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Sorting Drop-down Listener [cite: 160]
+  // Sorting Dropdown Listener
   const sortSelect = document.getElementById('gameSortSelect');
   if (sortSelect) {
     sortSelect.addEventListener('change', (e) => {
@@ -283,13 +322,12 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Connect static "Most Played" carousel items to look up dynamic database [cite: 172]
+  // Connect static "Most Played" carousel cards to games database
   document.querySelectorAll('.game-card-featured').forEach(featuredCard => {
     featuredCard.addEventListener('click', () => {
       const headingText = featuredCard.querySelector('.card-info h3')?.textContent.trim();
       if (!headingText) return;
       
-      // Perform loose database title match (handles version differences gracefully e.g. WWE 2K24/2K25 or FC 25/26) [cite: 173]
       const matchedGame = GAMES.find(g =>
         g.name.toLowerCase() === headingText.toLowerCase() ||
         g.name.toLowerCase().substring(0, 5) === headingText.toLowerCase().substring(0, 5)
