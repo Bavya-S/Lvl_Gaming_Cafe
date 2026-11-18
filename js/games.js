@@ -9,16 +9,16 @@ const GAMES = [
   { name: "Fantasy Strike", type: "Fighting", players: "1-2", ps4: true, "ps5-55": false, "ps5-65": false, "ps5-pro": false, image: "assets/games/Fantasy Strike.png", rating: "4.1", dev: "Sirlin Games", year: "2019", playtime: "Continuous", trailer: "18D9M5CeJLs", popular: false, age: "E10+", story: "An accessible, color-coordinated martial arts title focused on positioning strategy over complex execution inputs. Excellent for quick, pick-up-and-play casual showdown sessions." },
   { name: "Need for Speed Heat", type: "Racing", players: "1", ps4: true, "ps5-55": false, "ps5-65": false, "ps5-pro": false, image: "assets/games/nfs-heat.jpg", rating: "4.4", dev: "Ghost Games", year: "2019", playtime: "13h - 40h", trailer: "9ewiJJe_nYI", popular: false, age: "T", story: "Race by day and risk it all by night in high-stakes street circuit runs. Evade rogue tactical police forces across neon-soaked urban grid environments using highly personalized tuners." },
   { name: "Need for Speed Hot Pursuit", type: "Racing", players: "1", ps4: false, "ps5-55": true, "ps5-65": false, "ps5-pro": false, image: "assets/games/nfs-hot-pursuit.jpg", rating: "4.5", dev: "Criterion Games", year: "2020", playtime: "15h+", trailer: "fJdfuMRvx_U", popular: false, age: "E10+", story: "Feel the thrilling rush of both tactical tracking pursuits and high-octane escapes. Master super-powered interceptors equipped with spike strips and EMP shields to outwit the law." },
-  { name: "Cricket 24", type: "Sports", players: "1-4", ps4: true, "ps5-55": true, "ps5-65": true, "ps5-pro": false, image: "assets/games/cricket24.jpg", rating: "4.2", dev: "Big Ant Studios", year: "2023", playtime: "Continuous", trailer: "ZobU-Ka6K00", popular: true, age: "E", story: "The most realistic simulation of the gentleman’s game yet. Lead fully licensed international teams down to the pitch with precise batting strokes and tactical spin bowling options." },
+  { name: "Cricket 24", type: "Sports", players: "1-4", ps4: true, "ps5-55": true, "ps5-65": true, "ps5-pro": false, image: "assets/games/Cricket24.jpg", rating: "4.2", dev: "Big Ant Studios", year: "2023", playtime: "Continuous", trailer: "ZobU-Ka6K00", popular: true, age: "E", story: "The most realistic simulation of the gentleman’s game yet. Lead fully licensed international teams down to the pitch with precise batting strokes and tactical spin bowling options." },
   { name: "Rise of the Tomb Raider", type: "Adventure", players: "1", ps4: true, "ps5-55": false, "ps5-65": false, "ps5-pro": false, image: "assets/games/tomb-raider.jpg", rating: "4.7", dev: "Crystal Dynamics", year: "2015", playtime: "14h - 40h", trailer: "nFBrgeSjj-0", popular: false, age: "M", story: "Join Lara Croft on her first epic expedition into remote Siberia to discover the secret of immortality before a ruthless shadow syndicate beats her to the ancient truth." },
-  { name: "A Way Out", type: "Roleplay", players: "2", ps4: true, "ps5-55": true, "ps5-65": true, "ps5-pro": true, image: "assets/games/A Way Out.png", rating: "4.8", dev: "Hazelight", year: "2018", playtime: "6h", trailer: "yGZGSdgJVPM", popular: true, age: "M", story: "An exclusive co-op story experience designed specifically for two side-by-side players. Control Leo and Vincent as they pull off an audacious prison break and outrun cross-state authorities." },
+  { name: "A Way Out", type: "Roleplay", players: "2", ps4: true, "ps5-55": true, "ps5-65": true, "ps5-pro": true, image: "assets/games/A Way Out.jpg", rating: "4.8", dev: "Hazelight", year: "2018", playtime: "6h", trailer: "yGZGSdgJVPM", popular: true, age: "M", story: "An exclusive co-op story experience designed specifically for two side-by-side players. Control Leo and Vincent as they pull off an audacious prison break and outrun cross-state authorities." },
   { name: "Resident Evil Village", type: "Adventure", players: "1", ps4: true, "ps5-55": false, "ps5-65": false, "ps5-pro": false, image: "assets/games/re-village.png", rating: "4.8", dev: "Capcom", year: "2021", playtime: "10h - 25h", trailer: "JSapXD9vxYA", popular: true, age: "M", story: "Navigate the terrifying, snowy gothic domain of a mysterious European settlement. Help Ethan Winters battle terrifying bosses and giant monstrosities to save his captured daughter." },
   { name: "Batman Return of Arkham", type: "Adventure", players: "1", ps4: true, "ps5-55": false, "ps5-65": false, "ps5-pro": false, image: "assets/games/batman-arkham.jpg", rating: "4.7", dev: "Rocksteady / Virtuos", year: "2016", playtime: "25h - 60h", trailer: "AWv07fouYvs", popular: false, age: "T", story: "Step into the shadows as the Dark Knight in remastered fidelity. Put a stop to the devious plans of the Joker and Harley Quinn inside the asylum and across the walled districts of Arkham City." },
   { name: "Assassin's Creed Unity", type: "Roleplay", players: "1-4", ps4: false, "ps5-55": true, "ps5-65": false, "ps5-pro": false, image: "assets/games/ac-unity.jpg", rating: "4.3", dev: "Ubisoft", year: "2014", playtime: "17h - 80h", trailer: "m7Tb1pFl5_8", popular: false, age: "M", story: "Roam a gorgeously historical, massive scale rendition of Paris during the chaos of the French Revolution. Work together with fellow assassins in localized multiplayer co-op stealth missions." },
   { name: "Assassin's Creed Mirage", type: "Roleplay", players: "1", ps4: false, "ps5-55": false, "ps5-65": true, "ps5-pro": false, image: "assets/games/ac-mirage.jpg", rating: "4.5", dev: "Ubisoft", year: "2023", playtime: "12h - 30h", trailer: "IRNOoOYVn80", popular: true, age: "M", story: "Return to the historic roots of the franchise in 9th-century Baghdad. Follow Basim’s journey from a clever street thief to a master assassin utilizing traditional parkour tactics." },
   { name: "Brawlhalla", type: "Fighting", players: "1-4", ps4: false, "ps5-55": true, "ps5-65": false, "ps5-pro": true, image: "assets/games/brawlhalla.jpg", rating: "4.4", dev: "Blue Mammoth", year: "2017", playtime: "Continuous", trailer: "baixpNzE9es", popular: false, age: "E10+", story: "An energetic 2D platform brawler arena clash. Knock your friends off balancing ledges and grab floating weapon drops in rapid-fire local party match brackets." },
   { name: "Dirt 5", type: "Racing", players: "1-4", ps4: false, "ps5-55": true, "ps5-65": true, "ps5-pro": true, image: "assets/games/dirt5.jpg", rating: "4.3", dev: "Codemasters", year: "2020", playtime: "10h - 30h", trailer: "rPIj7Lxi-Q8", popular: false, age: "E", story: "Conquer mud, gravel, and ice-covered circuits worldwide. Experience intense arcade style split-screen four-player racing matches with ultra-responsive buggy vehicles." },
-  { name: "Fortnite", type: "Roleplay", players: "1-4", ps4: false, "ps5-55": true, "ps5-65": false, "ps5-pro": false, image: "assets/games/fortnite.png", rating: "4.6", dev: "Epic Games", year: "2017", playtime: "Continuous", trailer: "FG97IPDAmjA", popular: true, age: "T", story: "Drop out of the battle bus, gather materials, build structural cover, and outlast 99 other combatants in the definitive pop-culture battle royale experience." },
+  { name: "Fortnite", type: "Roleplay", players: "1-4", ps4: false, "ps5-55": true, "ps5-65": false, "ps5-pro": false, image: "assets/games/Fortnite.png", rating: "4.6", dev: "Epic Games", year: "2017", playtime: "Continuous", trailer: "FG97IPDAmjA", popular: true, age: "T", story: "Drop out of the battle bus, gather materials, build structural cover, and outlast 99 other combatants in the definitive pop-culture battle royale experience." },
   { name: "GTA 5", type: "Roleplay", players: "1-4", ps4: false, "ps5-55": true, "ps5-65": true, "ps5-pro": true, image: "assets/games/GTA 5.jpg", rating: "4.9", dev: "Rockstar Games", year: "2013", playtime: "30h - 100h+", trailer: "tV95N0TIltc", popular: true, age: "M", story: "Weave through the interconnected criminal underworld lives of three unique anti-heroes in Los Santos. Pull off complex multi-stage heists across a vast modern sandbox." },
   { name: "It Takes Two", type: "Roleplay", players: "2", ps4: false, "ps5-55": true, "ps5-65": true, "ps5-pro": true, image: "assets/games/it-takes-two.jpg", rating: "4.9", dev: "Hazelight", year: "2021", playtime: "14h", trailer: "ohClxMmNLQQ", popular: true, age: "T", story: "An award-winning platforming challenge narrative built explicitly for split-screen co-op. Work through wild, imaginative obstacles together to mend a broken relationship." },
   { name: "Spider-Man", type: "Adventure", players: "1", ps4: false, "ps5-55": false, "ps5-65": true, "ps5-pro": false, image: "assets/games/Spider-Man.png", rating: "4.8", dev: "Insomniac Games", year: "2018", playtime: "17h - 45h", trailer: "q4GdJVvdxss", popular: true, age: "T", story: "Swing effortlessly across a beautiful open-world Manhattan skyline. Battle an assortment of iconic Super Villains using acrobatic martial arts combos and web gadget trickery." },
@@ -26,7 +26,7 @@ const GAMES = [
   { name: "Marvel's Spider-Man 2", type: "Adventure", players: "1", ps4: false, "ps5-55": false, "ps5-65": false, "ps5-pro": true, image: "assets/games/spiderman2.jpeg", rating: "4.9", dev: "Insomniac Games", year: "2023", playtime: "15h - 30h", trailer: "9fVYKsEmuRo", popular: true, age: "T", story: "Switch dynamically between Peter Parker and Miles Morales. Confront the horrifying emergence of Venom and Kraven the Hunter across an expanded New York City map grid." },
   { name: "Power Rangers", type: "Fighting", players: "1-2", ps4: false, "ps5-55": true, "ps5-65": true, "ps5-pro": false, image: "assets/games/power-rangers.jpg", rating: "4.2", dev: "nWay", year: "2019", playtime: "5h+", trailer: "TGRxUGGHGIQ", popular: false, age: "T", story: "Battle across eras of the franchise's history in premium tag-team layouts. Master air juggles, assists, and giant Megazord summon mechanics to smash your local opponents." },
   { name: "Rocket League", type: "Sports", players: "1-4", ps4: false, "ps5-55": true, "ps5-65": true, "ps5-pro": true, image: "assets/games/Rocket League.jpg", rating: "4.7", dev: "Psyonix", year: "2015", playtime: "Continuous", trailer: "OmMF9EDbmQQ", popular: true, age: "E", story: "High-flying arcade vehicular soccer. Boost up walls and perform acrobatic aerial flips to smash a giant soccer ball directly into your opponent's net frame." },
-  { name: "Sackboy", type: "Adventure", players: "1-4", ps4: false, "ps5-55": true, "ps5-65": false, "ps5-pro": false, image: "assets/games/sackboy.jpg", rating: "4.6", dev: "Sumo Digital", year: "2020", playtime: "11h - 30h", trailer: "ZOk3fj5ujNM", popular: false, age: "E", story: "Embark on a charming 3D cooperative platforming expedition with friends. Navigate unique craft worlds, using tools and expressions to defeat Vex’s nightmare constructs." },
+  { name: "Sackboy", type: "Adventure", players: "1-4", ps4: false, "ps5-55": true, "ps5-65": false, "ps5-pro": false, image: "assets/games/Sackboy.jpg", rating: "4.6", dev: "Sumo Digital", year: "2020", playtime: "11h - 30h", trailer: "ZOk3fj5ujNM", popular: false, age: "E", story: "Embark on a charming 3D cooperative platforming expedition with friends. Navigate unique craft worlds, using tools and expressions to defeat Vex’s nightmare constructs." },
   { name: "Ninja Turtles", type: "Fighting", players: "1-4", ps4: false, "ps5-55": true, "ps5-65": false, "ps5-pro": false, image: "assets/games/Ninja Turtles.jpg", rating: "4.6", dev: "Tribute Games", year: "2022", playtime: "3h - 10h", trailer: "b_RnIOj126E", popular: false, age: "E10+", story: "A radical, beautifully styled retro pixel beat 'em up action game. Pick your favorite half-shell ninja turtle or ally and slice through Shredder’s Foot Clan." },
   { name: "Asphalt Legends", type: "Racing", players: "1-4", ps4: false, "ps5-55": false, "ps5-65": true, "ps5-pro": true, image: "assets/games/Asphalt Legends.jpg", rating: "4.3", dev: "Gameloft", year: "2018", playtime: "Continuous", trailer: "9j7XtelJYkk", popular: false, age: "E", story: "Tear through hyper-realistic world tracks in real-world licensed hypercars. Deploy intense nitro charges and perform 360-degree spins to smash through other racers." },
   { name: "Contra", type: "Adventure", players: "1-2", ps4: false, "ps5-55": false, "ps5-65": true, "ps5-pro": true, image: "assets/games/Contra.jpg", rating: "4.0", dev: "WayForward", year: "2024", playtime: "5h+", trailer: "S-CZ59JP058", popular: false, age: "E10+", story: "Reimagine the legendary run-and-gun arcade shooter framework. Blast through alien swarms using multi-tiered upgrades, defensive dashes, and cooperative combo setups." },
@@ -34,7 +34,7 @@ const GAMES = [
   { name: "UFC 4", type: "Fighting", players: "1-2", ps4: false, "ps5-55": false, "ps5-65": true, "ps5-pro": false, image: "assets/games/ufc4.jpg", rating: "4.4", dev: "EA Vancouver", year: "2020", playtime: "12h+", trailer: "-Pq2ENj4Ekw", popular: false, age: "T", story: "Develop your fighting style in high-stakes octagon matches. Features deep clinch positioning frameworks, reworked takedown systems, and intense striking feedback mechanics." },
   { name: "Ghost of Tsushima", type: "Adventure", players: "1", ps4: false, "ps5-55": false, "ps5-65": true, "ps5-pro": false, image: "assets/games/ghost-of-tsushima.jpg", rating: "4.9", dev: "Sucker Punch", year: "2020", playtime: "25h - 60h+", trailer: "iqysmS4lxwQ", popular: true, age: "M", story: "Unbound by rigid samurai tradition, a desperate warrior must take up the mantle of the Ghost to wage an unconventional guerrilla liberation war for feudal Tsushima." },
   { name: "God of War", type: "Adventure", players: "1", ps4: false, "ps5-55": false, "ps5-65": true, "ps5-pro": false, image: "assets/games/God of War.jpeg", rating: "4.9", dev: "Santa Monica Studio", year: "2018", playtime: "20h - 50h", trailer: "HqQMh_tij0c", popular: true, age: "M", story: "Living as a man outside the shadow of the Greek gods, Kratos must venture into the brutal Norse realm of Midgard alongside his son Atreus on a deeply personal quest." },
-  { name: "God of War Ragnarök", type: "Adventure", players: "1", ps4: false, "ps5-55": false, "ps5-65": true, "ps5-pro": false, image: "assets/games/God of War Ragnarök.jpg", rating: "4.9", dev: "Santa Monica Studio", year: "2022", playtime: "25h - 60h", trailer: "EE-4GvjKcfs", popular: true, age: "M", story: "Fimbulwinter approaches. Kratos and Atreus must journey across all Nine Realms seeking answers as Asgardian forces prepare for a prophesied war to end the world." },
+  { name: "God of War Ragnarök", type: "Adventure", players: "1", ps4: false, "ps5-55": false, "ps5-65": true, "ps5-pro": false, image: "assets/games/God of War Ragnarok.jpg", rating: "4.9", dev: "Santa Monica Studio", year: "2022", playtime: "25h - 60h", trailer: "EE-4GvjKcfs", popular: true, age: "M", story: "Fimbulwinter approaches. Kratos and Atreus must journey across all Nine Realms seeking answers as Asgardian forces prepare for a prophesied war to end the world." },
   { name: "God of War 3 Remastered", type: "Adventure", players: "1", ps4: false, "ps5-55": false, "ps5-65": true, "ps5-pro": true, image: "assets/games/God of War 3 Remastered.jpg", rating: "4.8", dev: "Santa Monica Studio", year: "2015", playtime: "10h", trailer: "EWghbLMynz0", popular: false, age: "M", story: "Scale the heights of Mount Olympus in raw fury. Control Kratos as he tears down ancient Greek deities and titans alike in a brutal, uncompromising quest for vengeance." },
   { name: "RDR 2", type: "Roleplay", players: "1", ps4: false, "ps5-55": false, "ps5-65": true, "ps5-pro": true, image: "assets/games/RDR 2.jpg", rating: "4.9", dev: "Rockstar Games", year: "2018", playtime: "50h - 150h+", trailer: "eaW0tYpxyp0", popular: true, age: "M", story: "Witness the dying days of the American Wild West outlaw era. Follow Arthur Morgan and the Van der Linde gang as they rob, fight, and survive across a massive landscape." },
   { name: "Stick Fight", type: "Fighting", players: "1-4", ps4: false, "ps5-55": false, "ps5-65": true, "ps5-pro": false, image: "assets/games/Stick Fight.png", rating: "4.4", dev: "Landfall Games", year: "2017", playtime: "Continuous", trailer: "kgKGxQ6Ro_A", popular: false, age: "T", story: "A physics-based couch brawler where stick-figure combatants battle across collapsing hazard platforms using laser rifles, melee weapons, and falling physics cubes." },
@@ -54,6 +54,11 @@ const GAMES = [
   { name: "Where Winds Meet", type: "Roleplay", players: "1", ps4: false, "ps5-55": false, "ps5-65": false, "ps5-pro": true, image: "assets/games/where-winds-meet.jpg", rating: "4.7", dev: "Everstone Studio", year: "2025", playtime: "30h+", trailer: "3q0cUkf5z7w", popular: true, age: "M", story: "Immerse yourself in a vast martial arts open-world roleplay during the chaotic twilight era of ancient Chinese dynasties, executing gravity-defying Wuxia combat movements." },
   { name: "Ghost of Yōtei", type: "Adventure", players: "1", ps4: false, "ps5-55": false, "ps5-65": false, "ps5-pro": true, image: "assets/games/ghost-of-yotei.jpg", rating: "4.9", dev: "Sucker Punch", year: "2025", playtime: "30h+", trailer: "7z7kqwuf0a8", popular: true, age: "M", story: "Set out around the snow-crested wilderness of Mount Yōtei. Guide a lone warrior tracking down personal targets across beautiful wilderness landscapes." }
 ];
+// Optimised WebP variants live in assets/games/web/ (generated from the originals).
+// Original files stay in assets/games/ and are used as a fallback if a variant is missing.
+const webSlug = (p) => p.split('/').pop().replace(/\.[^.]+$/, '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+const webSrc = (p, w) => p ? `assets/games/web/${webSlug(p)}-${w}.webp` : '';
+const imgFail = "if(!this.dataset.fb){this.dataset.fb=1;this.src=this.dataset.orig;}else{this.style.display='none';if(this.nextElementSibling)this.nextElementSibling.style.display='flex';}";
 const gameEmojis = { Adventure: "⚔️", Roleplay: "🗺️", Racing: "🏎️", Sports: "⚽", Fighting: "👊" };
 const gameBgs = {
   Adventure: "linear-gradient(135deg,#0a1a2a,#1a0a2a)",
@@ -71,6 +76,7 @@ let sortBy = 'name-asc';
 let currentSelectedGame = null;
 let isTrailerPlaying = false;
 let isModalOpen = false;
+let lastFocus = null;
 
 // Helper: Generate Star Ratings
 function generateStars(rating) {
@@ -88,7 +94,7 @@ function renderHomeMostPlayed() {
     const type = g.type.split('/')[0].trim();
     return `<div class="game-card-featured home-most-played-card" data-game-name="${g.name}">
       <div class="card-img-wrapper">
-        <img src="${g.image || ''}" alt="${g.name}" loading="lazy" decoding="async" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <img src="${webSrc(g.image,640)}" data-orig="${g.image || ''}" width="640" height="360" alt="${g.name}" loading="lazy" decoding="async" onerror="${imgFail}">
         <div class="game-thumb-fallback" style="display:none; background:${gameBgs[type]||gameBgs.Adventure}; width:100%; height:100%; align-items:center; justify-content:center; position:absolute; inset:0;">
           <div class="game-thumb-icon">${gameEmojis[type]||'🎮'}</div>
         </div>
@@ -128,7 +134,8 @@ function renderGames() {
     const query = searchQuery.toLowerCase().trim();
     const searchOk = !query || 
                      g.name.toLowerCase().includes(query) || 
-                     g.dev.toLowerCase().includes(query) || 
+                     g.dev.toLowerCase().includes(query) ||
+                     g.type.toLowerCase().includes(query) || 
                      g.story.toLowerCase().includes(query);
    
     return consoleOk && playersOk && genreOk && searchOk;
@@ -167,7 +174,7 @@ function renderGames() {
 
     return `<div class="glass-card game-card" data-index="${GAMES.indexOf(g)}">
       <div class="game-thumb">
-        <img class="game-thumb-bg" src="${g.image || ''}" alt="${g.name}" loading="lazy" decoding="async" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <img class="game-thumb-bg" src="${webSrc(g.image,640)}" data-orig="${g.image || ''}" alt="${g.name}" loading="lazy" decoding="async" onerror="${imgFail}">
         <div class="game-thumb-fallback" style="display:none; background:${gameBgs[type]||gameBgs.Adventure}; width:100%; height:100%; align-items:center; justify-content:center; position:absolute; inset:0;">
           <div class="game-thumb-icon">${gameEmojis[type]||'🎮'}</div>
         </div>
@@ -225,8 +232,12 @@ window.openGameModal = function(game) {
   // Display Modal
   const modal = document.getElementById('gameModal');
   if (modal) {
+    lastFocus = document.activeElement;
     modal.classList.add('active');
+    modal.setAttribute('aria-hidden','false');
     document.body.style.overflow = 'hidden'; // Lock background scrolling
+    document.body.classList.add('modal-open');
+    (modal.querySelector('.modal-close, [data-close-modal]') || modal).focus?.();
   }
 
   // Push history state for mobile back button behavior
@@ -241,7 +252,10 @@ window.closeGameModal = function() {
   if (modal) {
     document.getElementById('modalMediaContainer').innerHTML = '';
     modal.classList.remove('active');
+    modal.setAttribute('aria-hidden','true');
     document.body.style.overflow = ''; // Restore scrolling
+    document.body.classList.remove('modal-open');
+    lastFocus?.focus?.();
   }
 
   if (isModalOpen) {
@@ -259,7 +273,9 @@ window.addEventListener('popstate', function() {
   if (modal && modal.classList.contains('active')) {
     document.getElementById('modalMediaContainer').innerHTML = '';
     modal.classList.remove('active');
+    modal.setAttribute('aria-hidden','true');
     document.body.style.overflow = '';
+    document.body.classList.remove('modal-open');
     isModalOpen = false;
   }
 });
@@ -278,7 +294,7 @@ function setModalMediaMode(wantsVideo) {
     container.innerHTML = `<iframe width="100%" height="100%" src="https://www.youtube.com/embed/${currentSelectedGame.trailer}?autoplay=1&mute=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="border:none;"></iframe>`;
     btn.textContent = "🖼️ Show Image Cover";
   } else {
-    container.innerHTML = `<img src="${currentSelectedGame.image || ''}" alt="${currentSelectedGame.name}" style="width:100%; height:100%; object-fit:cover;" loading="lazy">`;
+    container.innerHTML = `<img src="${webSrc(currentSelectedGame.image,1280)}" data-orig="${currentSelectedGame.image || ''}" alt="${currentSelectedGame.name}" style="width:100%; height:100%; object-fit:cover;" loading="lazy">`;
     btn.textContent = "▶ Play Trailer";
   }
 }
@@ -323,7 +339,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // Connect static "Most Played" carousel cards to games database
-  document.querySelectorAll('.game-card-featured').forEach(featuredCard => {
+  document.querySelectorAll('.game-card-featured:not([data-game-name])').forEach(featuredCard => {
     featuredCard.addEventListener('click', () => {
       const headingText = featuredCard.querySelector('.card-info h3')?.textContent.trim();
       if (!headingText) return;
@@ -337,4 +353,23 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
+});
+
+// ===================== MODAL: wiring that used to be inline onclick =====================
+document.addEventListener('click', (e) => {
+  if (e.target.closest('[data-close-modal]')) closeGameModal();
+  if (e.target.closest('#modalTrailerBtn')) toggleTrailerMode();
+  if (e.target.closest('#gameModal a[href]')) closeGameModal();
+});
+document.addEventListener('keydown', (e) => {
+  const modal = document.getElementById('gameModal');
+  if (!modal || !modal.classList.contains('active')) return;
+  if (e.key === 'Escape') { closeGameModal(); return; }
+  if (e.key === 'Tab') { // keep focus inside the dialog
+    const f = [...modal.querySelectorAll('a[href],button:not([disabled])')].filter(x => x.offsetParent !== null);
+    if (!f.length) return;
+    const first = f[0], last = f[f.length - 1];
+    if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+    else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+  }
 });

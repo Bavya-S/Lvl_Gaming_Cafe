@@ -1,99 +1,20 @@
-/* ===================== HOME – HERO ===================== */
-.hero{
-  min-height:100vh;
-  display:flex;flex-direction:column;align-items:center;justify-content:center;
-  text-align:center;padding:2rem;position:relative;overflow:hidden;
-}
-.hero-eyebrow{
-  font-family:var(--font-mono);font-size:0.75rem;color:var(--neon-blue);
-  letter-spacing:6px;text-transform:uppercase;margin-bottom:24px;
-  animation:fadeSlideDown 0.8s ease forwards;opacity:0;
-}
-.hero-title {
-  display: flex;
-  flex-direction: column;
-  font-size: clamp(2.5rem, 6vw, 5rem);
-  font-weight: 900;
-  line-height: 1;
-  text-transform: uppercase;
-}
+/* =========================================================
+   HOME – sections below the hero (hero lives in hero.css)
+   ========================================================= */
 
-/* Smaller lead-in text matching reference layout */
-.hero-lead-in {
-  font-size: 0.35em;
-  font-weight: 600;
-  letter-spacing: 0.25em;
-  opacity: 0.85;
-  margin-bottom: 0.3rem;
-}
-
-/* Secondary tagline beneath the main title */
-.hero-tagline {
-  font-size: 0.5em;
-  margin-top: 0.5rem;
-  letter-spacing: 0.05em;
-}
-.hero-title .accent{
-  display:block;
-  background:linear-gradient(135deg,var(--neon-blue),var(--neon-purple));
-  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
-  filter:drop-shadow(0 0 20px rgba(0,212,255,0.5));
-}
-.hero-sub{
-  margin-top:20px;color:var(--text-muted);font-size:1.1rem;
-  letter-spacing:2px;font-weight:300;
-  animation:fadeSlideDown 0.8s ease 0.4s forwards;opacity:0;
-}
-.hero-sub span{color:var(--neon-blue);font-weight:500}
-.hero-ctas{
-  display:flex;gap:16px;margin-top:40px;flex-wrap:wrap;justify-content:center;
-  animation:fadeSlideDown 0.8s ease 0.6s forwards;opacity:0;
-}
-.hero-stats{
-  display:flex;gap:40px;margin-top:60px;flex-wrap:wrap;justify-content:center;
-  animation:fadeSlideDown 0.8s ease 0.8s forwards;opacity:0;
-}
-.hero-stat{text-align:center}
-.hero-stat-num{
-  font-family:var(--font-display);font-size:2rem;font-weight:900;
-  color:var(--neon-blue);text-shadow:0 0 20px var(--neon-blue);
-}
-.hero-stat-label{font-size:0.75rem;color:var(--text-muted);letter-spacing:2px;text-transform:uppercase;margin-top:4px}
-.hero-scanline{
-  position:absolute;top:0;left:0;right:0;bottom:0;
-  background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,0,0,0.03) 2px,rgba(0,0,0,0.03) 4px);
-  pointer-events:none;z-index:2;
-}
-.hero-vignette{
-  position:absolute;inset:0;
-  background:radial-gradient(ellipse at center,transparent 40%,rgba(0,0,0,0.8) 100%);
-  pointer-events:none;z-index:1;
-}
-.scroll-indicator{
-  position:absolute;bottom:30px;left:50%;transform:translateX(-50%);
-  display:flex;flex-direction:column;align-items:center;gap:6px;
-  animation:bounce 2s ease-in-out infinite;
-}
-.scroll-dot{width:4px;height:4px;border-radius:50%;background:var(--neon-blue)}
-.scroll-line{width:1px;height:40px;background:linear-gradient(to bottom,var(--neon-blue),transparent)}
-@keyframes bounce{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(8px)}}
-@keyframes fadeSlideDown{from{opacity:0;transform:translateY(-20px)}to{opacity:1;transform:translateY(0)}}
-
-/* ===================== HOME – FEATURES STRIP ===================== */
+/* ===================== FEATURES STRIP ===================== */
+.features-band{background:rgba(0,212,255,0.04);border-top:1px solid rgba(0,212,255,0.1);border-bottom:1px solid rgba(0,212,255,0.1)}
 .features-strip{
-  background:rgba(0,212,255,0.04);
-  border-top:1px solid rgba(0,212,255,0.1);
-  border-bottom:1px solid rgba(0,212,255,0.1);
   padding:40px 2rem;
   display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
   gap:30px;max-width:1200px;margin:0 auto;
 }
-.feature-item{text-align:center;animation:fadeUp 0.6s ease both;}
+.feature-item{text-align:center}
 .feature-icon{font-size:2rem;margin-bottom:10px;filter:drop-shadow(0 0 10px var(--neon-blue))}
 .feature-title{font-family:var(--font-display);font-size:0.75rem;font-weight:700;letter-spacing:2px;color:var(--text-primary);margin-bottom:4px}
-.feature-desc{font-size:0.9rem;color:var(--text-muted)}
+.feature-desc{font-size:0.95rem;color:var(--text-muted)}
 
-/* ===================== HOME – WHY US ===================== */
+/* ===================== WHY US ===================== */
 .home-section{max-width:1200px;margin:0 auto;padding:80px 2rem}
 .why-grid{
   display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
@@ -107,495 +28,171 @@
 .why-card:hover .card-number{color:rgba(255,255,255,0.85)}
 .why-card:hover{box-shadow:none;border-color:rgba(255,255,255,0.08)}
 .why-card h3{font-family:var(--font-display);font-size:0.85rem;font-weight:700;letter-spacing:2px;margin-bottom:8px;color:var(--text-primary)}
-.why-card p{color:var(--text-muted);font-size:0.95rem;line-height:1.6}
+.why-card p{color:var(--text-muted);font-size:1rem;line-height:1.6}
 
-/* ===================== HOME – CTA STRIP ===================== */
-.home-cta-strip{text-align:center;padding:0 2rem 80px}
-
-/* ===================== RESPONSIVE ===================== */
-@media(max-width:600px){
-  .hero-title{font-size:2rem}
-  .hero-stats{gap:20px}
-  .features-strip{grid-template-columns:1fr 1fr}
+/* ===================== HORIZONTAL SLIDERS (reels, reviews) ===================== */
+.media-intel-section{padding:60px 0;max-width:1000px;margin:0 auto;overflow:hidden}
+.scroll-container{
+  display:flex;gap:24px;overflow-x:auto;
+  scroll-snap-type:x mandatory;
+  padding:20px 20px 30px 20px;scroll-padding-inline:20px;
+  scroll-behavior:smooth;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain;
 }
+.scroll-container::-webkit-scrollbar{height:6px}
+.scroll-container::-webkit-scrollbar-track{background:rgba(0,0,0,0.3)}
+.scroll-container::-webkit-scrollbar-thumb{background:var(--neon-blue,#00d4ff);border-radius:4px}
+.section-header-wrap{padding:0 20px}
 
-
-
-
-
-
-
-/*Index Page: Lvl_Gaming_Cafe/css/style.css*/
-
-
-  .media-intel-section {
-    padding: 60px 0;
-    max-width: 1000px;
-    margin: 0 auto;
-    overflow: hidden;
-  }
-  
-  /* Shared Slider Track Settings */
-  .scroll-container {
-    display: flex;
-    gap: 24px;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    padding: 20px 20px 30px 20px;
-    scroll-behavior: smooth;
-    -webkit-overflow-scrolling: touch;
-  }
-
-  /* Hide scrollbars for a cleaner UI view */
-  .scroll-container::-webkit-scrollbar {
-    height: 6px;
-  }
-  .scroll-container::-webkit-scrollbar-track {
-    background: rgba(0, 0, 0, 0.3);
-  }
-  .scroll-container::-webkit-scrollbar-thumb {
-    background: var(--neon-blue, #00d4ff);
-    border-radius: 4px;
-  }
-
-  /* Reel Card Slider Dimensions */
-  .media-card {
-    flex: 0 0 280px; /* Lock widths inside horizontal track */
-    scroll-snap-align: start;
-    background: rgba(0, 0, 0, 0.6);
-    padding: 12px;
-    display: flex;
-    flex-direction: column;
-    border-radius: 12px;
-  }
-
-  .short-reel-container {
-    position: relative;
-    padding-bottom: 177.78%; /* 9:16 Aspect Ratio */
-    height: 0;
-    overflow: hidden;
-    border-radius: 8px;
-    background: #000;
-  }
-
-  .short-reel-container iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border: none;
-  }
-
-  .media-title {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 0.9rem;
-    color: #fff;
-    margin: 12px 0 4px 4px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-  }
-
-  .media-tag {
-    font-family: 'Share Tech Mono', monospace;
-    font-size: 0.75rem;
-    color: var(--neon-blue, #00d4ff);
-    margin-left: 4px;
-    margin-bottom: 4px;
-  }
-  
-  /* Review Card Slider Dimensions */
-  .review-card {
-    flex: 0 0 260px; /* Lock widths inside horizontal track */
-    scroll-snap-align: start;
-    min-height: 200px;     /* Reduced height from 240px to 200px */
-
-    padding: 16px 24px;
-    text-align: left;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    min-height: 240px;
-  }
-  
-  .review-stars {
-    color: #ffb800;
-    font-size: 0.2rem;
-    margin-bottom: 8px;
-    letter-spacing: 2px;
-  }
-  
-  .review-text {
-    font-family: 'Rajdhani', sans-serif;
-    font-size: 0.9rem;
-    line-height: 1.4;
-    color: #e0e0e0;
-    font-style: italic;
-  }
-  
-  .review-author {
-    margin-top: 20px;
-    font-family: 'Share Tech Mono', monospace;
-    font-size: 0.85rem;
-    color: var(--neon-blue, #00d4ff);
-    letter-spacing: 1px;
-  }
-
-  /* Padding adjustment for header controls inside unpadded section wrap */
-  .section-header-wrap {
-    padding: 0 20px;
-  }
-  /* Force 2 Columns per Row on Desktop Grid */
-.console-two-col-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 30px;
-  margin-top: 40px;
+/* Reel cards */
+.media-card{
+  flex:0 0 280px;scroll-snap-align:start;
+  background:rgba(0,0,0,0.6);padding:12px;display:flex;flex-direction:column;border-radius:12px;
 }
-
-/* Custom layout for pricing row lookups */
-.price-tier-row {
-  display: flex;
-  justify-content: space-between;
-  border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
-  padding: 6px 0;
-  font-family: 'Rajdhani', sans-serif;
-  font-size: 1.05rem;
+.short-reel-container{
+  position:relative;aspect-ratio:9/16;overflow:hidden;border-radius:8px;background:#000;
 }
-.price-tier-row:last-child {
-  border-bottom: none;
+.short-reel-container iframe{position:absolute;inset:0;width:100%;height:100%;border:none}
+/* Click-to-load facade: a YouTube embed costs ~1 MB, so it only loads when tapped */
+.reel-facade{
+  position:absolute;inset:0;width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;
+  border:0;cursor:pointer;color:#fff;font-family:var(--font-display);
+  background:
+    radial-gradient(120% 70% at 50% 0%,rgba(0,212,255,.28),transparent 60%),
+    radial-gradient(90% 60% at 50% 100%,rgba(168,85,247,.28),transparent 65%),
+    linear-gradient(180deg,#07101f,#02050c);
 }
-.price-amt {
-  font-family: 'Share Tech Mono', monospace;
-  color: var(--neon-blue, #00d4ff);
-  font-weight: 600;
+.reel-play{
+  display:grid;place-items:center;width:68px;height:68px;border-radius:50%;
+  border:2px solid var(--neon-blue);background:rgba(0,212,255,.1);
+  box-shadow:0 0 28px rgba(0,212,255,.45),inset 0 0 18px rgba(0,212,255,.25);
+  transition:transform .3s var(--ease-out);
 }
-
-/* Fallback to single column layout on small mobile screens */
-@media (max-width: 768px) {
-  .console-two-col-grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-}//* 1. Clear out container limits */
-#homeMostPlayedGrid {
-  display: flex !important;
-  gap: 30px !important;
-  overflow-x: auto !important;
-  overflow-y: visible !important;
-  white-space: nowrap !important;
-  padding: 40px 10px !important; 
-  scrollbar-width: none !important;
+.reel-play svg{width:26px;height:26px;fill:var(--neon-blue);margin-left:4px}
+.reel-facade:active .reel-play{transform:scale(.92)}
+.reel-hint{font-size:.62rem;letter-spacing:3px;color:var(--text-muted)}
+.media-title{
+  font-family:'Orbitron','LVL Rupee',sans-serif;font-size:0.9rem;color:#fff;
+  margin:12px 0 4px 4px;letter-spacing:1px;text-transform:uppercase;
 }
-#homeMostPlayedGrid::-webkit-scrollbar {
-  display: none !important;
+.media-tag{font-family:'Share Tech Mono','LVL Rupee',monospace;font-size:0.75rem;color:var(--neon-blue,#00d4ff);margin-left:4px;margin-bottom:4px}
+
+/* Review cards */
+.review-card{
+  flex:0 0 260px;scroll-snap-align:start;
+  padding:16px 24px;text-align:left;
+  display:flex;flex-direction:column;justify-content:space-between;min-height:240px;
 }
+.review-stars{color:#ffb800;font-size:1rem;margin-bottom:8px;letter-spacing:2px}
+.review-text{font-family:'Rajdhani','LVL Rupee',sans-serif;font-size:1rem;line-height:1.4;color:#e0e0e0;font-style:italic}
+.review-author{margin-top:20px;font-family:'Share Tech Mono','LVL Rupee',monospace;font-size:0.85rem;color:var(--neon-blue,#00d4ff);letter-spacing:1px}
+.reviews-block{margin-top:40px}
 
-/* 2. FORCE Double-Width Widescreen Layout on the cards */
-#homeMostPlayedGrid > div,
-#homeMostPlayedGrid .card,
-#homeMostPlayedGrid .game-card {
-  display: inline-block !important;
-  position: relative !important;
-  
-  /* Forces the massive 2-cards-in-1 wide look */
-  flex: 0 0 560px !important;     
-  width: 560px !important;      
-  min-width: 560px !important;
-  height: 320px !important;     
-  
-  border-radius: 16px !important; 
-  overflow: hidden !important;    
-  cursor: pointer !important;
-  
-  transition: transform 0.4s ease, box-shadow 0.4s ease !important;
+/* ===================== CONSOLE CARDS ===================== */
+.console-two-col-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:30px;margin-top:40px}
+.console-head{display:flex;justify-content:space-between;align-items:center;gap:10px 12px;flex-wrap:wrap;margin-bottom:15px}
+.console-spec{color:var(--neon-blue);font-family:'Share Tech Mono','LVL Rupee',monospace;font-size:0.9rem;margin-bottom:20px;text-transform:uppercase}
+.price-tier-row{
+  display:flex;justify-content:space-between;
+  border-bottom:1px dashed rgba(255,255,255,0.1);padding:6px 0;
+  font-family:'Rajdhani','LVL Rupee',sans-serif;font-size:1.05rem;
 }
+.price-tier-row:last-child{border-bottom:none}
+.price-amt{font-family:'Share Tech Mono','LVL Rupee',monospace;color:var(--neon-blue,#00d4ff);font-weight:600}
+.console-note{text-align:center;font-family:'Share Tech Mono','LVL Rupee',monospace;font-size:0.8rem;color:var(--text-muted);margin-top:35px;letter-spacing:0.5px;line-height:1.5}
 
-/* Hover lift and glow */
-#homeMostPlayedGrid > div:hover,
-#homeMostPlayedGrid .card:hover,
-#homeMostPlayedGrid .game-card:hover {
-  transform: translateY(-5px) !important;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8), 0 0 25px rgba(0, 210, 255, 0.25) !important;
+.console-two-col-grid .glass-card.why-card{
+  border:1px solid transparent!important;
+  transition:border-color .4s var(--ease-out),box-shadow .4s var(--ease-out),transform .4s var(--ease-out)!important;
 }
-
-/* 3. FORCE the image to break out of the top half and cover 100% of the card */
-#homeMostPlayedGrid img, 
-#homeMostPlayedGrid .card-image,
-#homeMostPlayedGrid .game-card-image,
-#homeMostPlayedGrid div[style*="background"] {
-  width: 100% !important;
-  height: 100% !important;       /* Makes image full height */
-  position: absolute !important; /* Detaches it from the layout flow */
-  top: 0 !important;
-  left: 0 !important;
-  object-fit: cover !important; 
-  object-position: center 20% !important; 
-  z-index: 1 !important;
-  transition: transform 0.5s ease !important;
-}
-
-/* Zoom effect on image hover */
-#homeMostPlayedGrid > div:hover img,
-#homeMostPlayedGrid > div:hover .card-image {
-  transform: scale(1.08) !important;
-}
-
-/* 4. KILL the solid dark bottom block and make it a clean fade overlay */
-#homeMostPlayedGrid > div > div:last-child,
-#homeMostPlayedGrid .card-details,
-#homeMostPlayedGrid .game-card-info {
-  position: absolute !important;
-  bottom: 0 !important;
-  left: 0 !important;
-  right: 0 !important;
-  height: 60% !important;         
-  padding: 24px 32px !important;  
-  
-  /* Removes solid background, replaces with transparent gradient */
-  background: linear-gradient(to top, rgba(10, 14, 23, 0.95) 0%, rgba(10, 14, 23, 0.6) 50%, rgba(10, 14, 23, 0) 100%) !important;
-  
-  display: flex !important;
-  flex-direction: column !important;
-  justify-content: flex-end !important;
-  white-space: normal !important; /* Allows text wrap if titles are long */
-  pointer-events: none !important;
-  z-index: 2 !important; /* Layers text clearly on top of the image */
-}
-
-/* Target the console cards directly */
-.console-two-col-grid .glass-card.why-card {
-  /* Set a transparent default border so the card layout doesn't jump 1px on hover */
-  border: 1px solid transparent !important;
-  transition: border-color 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
-              box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
-              transform 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
-}
-
-.console-two-col-grid .glass-card.why-card:hover {
-  border-color: var(--neon-blue, #00d4ff) !important;
-  
-  /* Multi-layered box-shadow for a clean neon atmospheric dispersion */
-  box-shadow: 0 0 15px rgba(0, 212, 255, 0.25), 
-              0 0 30px rgba(0, 212, 255, 0.1), 
-              inset 0 0 10px rgba(0, 212, 255, 0.1) !important;
-              
-  /* Optional: Mild elegant micro-lift to match your cinema grid behavior */
-  transform: translateY(-2px) !important;
-}
-
-
-/*==========View details link styling for console cards==========*/
-.view-details-link {
-  text-decoration: none !important;
-  color: #ffffff !important;
-  font-size: 0.95rem !important;
-  font-family: 'Share Tech Mono', monospace !important;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  padding: 6px 14px;
-  border-radius: 6px;
-  background: rgba(255, 255, 255, 0.05);
-  transition: all 0.3s ease !important;
-}
-
-.view-details-link:hover {
-  color: var(--neon-blue) !important;
-  border-color: var(--neon-blue) !important;
-  background: rgba(0, 210, 255, 0.1);
-  box-shadow: 0 0 10px rgba(0, 210, 255, 0.2);
-}
-/* =========================================================
-   LVL HERO - CHARACTER ASSEMBLY
-   Desktop + Tablet + Mobile Responsive
-   ========================================================= */
-
-.hero-game-assembly {
-  position: absolute;
-  inset: 64px 0 0;
-  z-index: 2;
-  pointer-events: none;
-  overflow: hidden;
-}
-
-/* -------------------------
-   CHARACTER BASE
-   ------------------------- */
-
-.hero-game-card.game-character-only {
-  position: absolute;
-  /* Increased size range to ensure faces are clear and detailed */
-  width: clamp(260px, 28vw, 480px);
-  height: auto;
-  padding: 0;
-  margin: 0;
-  background: transparent;
-  border: none;
-  box-shadow: none;
-  backdrop-filter: none;
-  overflow: visible;
-  opacity: 0;
-  transform: translate3d(var(--mx, 0px), var(--my, 0px), 0) scale(.45) rotate(0deg);
-  filter: brightness(.85) saturate(1);
-  will-change: transform, opacity;
-}
-
-.hero-game-card.game-character-only::before {
-  display: none;
-}
-
-.hero-game-card.game-character-only img {
-  display: block;
-  width: 100%;
-  height: auto;
-  object-fit: contain;
-  transform: scale(1);
-  transform-origin: center center;
-  filter: drop-shadow(0 15px 30px rgba(0, 0, 0, .7)) drop-shadow(0 0 20px rgba(0, 212, 255, .2));
-}
-
-/* =========================================================
-   DESKTOP POSITIONS (Pushed to Edges)
-   ========================================================= */
-
-/* Top Left Character (Atsu / Ghost) */
-.game-card-1 {
-  left: -2%;
-  top: 5%;
-  animation: gameCardLeft 1s .25s cubic-bezier(.2,.8,.2,1) forwards, gameFloat 5s 1.35s ease-in-out infinite;
-}
-
-/* Bottom Left Character (Eve) */
-.game-card-2 {
-  left: 10%;
-  bottom: -10%;
-  animation: gameCardBottomLeft 1s .5s cubic-bezier(.2,.8,.2,1) forwards, gameFloat 5.5s 1.6s ease-in-out infinite;
-}
-
-/* Top Center Character (Hidden or subtle background accent) */
-.game-card-3 {
-  left: 50%;
-  top: 2%;
-  margin-left: -14vw;
-  animation: gameCardTop 1s .75s cubic-bezier(.2,.8,.2,1) forwards, gameFloat 5s 1.9s ease-in-out infinite;
-}
-
-/* Bottom Right Character (Kratos) */
-.game-card-4 {
-  right: 8%;
-  bottom: -15%;
-  animation: gameCardBottomRight 1s 1s cubic-bezier(.2,.8,.2,1) forwards, gameFloat 5.7s 2.1s ease-in-out infinite;
-}
-
-/* Top Right Character (Spider-Man) */
-.game-card-5 {
-  right: -3%;
-  top: 5%;
-  animation: gameCardRight 1s 1.25s cubic-bezier(.2,.8,.2,1) forwards, gameFloat 5.2s 2.35s ease-in-out infinite;
-}
-
-/* =========================================================
-   ANIMATIONS (Adjusted final angles for edge framing)
-   ========================================================= */
-
-@keyframes gameCardLeft {
-  from {
-    opacity: 0;
-    transform: translate3d(-280px, 80px, 0) scale(.45) rotate(-16deg);
-  }
-  to {
-    opacity: .95;
-    transform: translate3d(var(--mx, 0px), var(--my, 0px), 0) scale(1) rotate(-4deg);
+@media (hover:hover){
+  .console-two-col-grid .glass-card.why-card:hover{
+    border-color:var(--neon-blue,#00d4ff)!important;
+    box-shadow:0 0 15px rgba(0,212,255,.25),0 0 30px rgba(0,212,255,.1),inset 0 0 10px rgba(0,212,255,.1)!important;
+    transform:translateY(-2px)!important;
   }
 }
 
-@keyframes gameCardBottomLeft {
-  from {
-    opacity: 0;
-    transform: translate3d(-180px, 260px, 0) scale(.45) rotate(13deg);
-  }
-  to {
-    opacity: .9;
-    transform: translate3d(var(--mx, 0px), var(--my, 0px), 0) scale(1) rotate(2deg);
-  }
+/* View details link on console cards */
+.view-details-link{
+  text-decoration:none!important;color:#fff!important;font-size:0.95rem!important;
+  font-family:'Share Tech Mono','LVL Rupee',monospace!important;
+  border:1px solid rgba(255,255,255,0.2);padding:6px 14px;border-radius:6px;
+  background:rgba(255,255,255,0.05);transition:all .3s ease!important;
+  display:inline-flex;align-items:center;min-height:36px;
+}
+.view-details-link:active{background:rgba(0,210,255,.18);border-color:var(--neon-blue)}
+@media (hover:hover){
+  .view-details-link:hover{color:var(--neon-blue)!important;border-color:var(--neon-blue)!important;background:rgba(0,210,255,.1);box-shadow:0 0 10px rgba(0,210,255,.2)}
 }
 
-@keyframes gameCardTop {
-  from {
-    opacity: 0;
-    transform: translate3d(0, -220px, 0) scale(.45) rotate(-8deg);
-  }
-  to {
-    opacity: .4;
-    transform: translate3d(var(--mx, 0px), var(--my, 0px), 0) scale(1) rotate(0deg);
-  }
+/* ===================== MOST PLAYED SLIDER (cards rendered by games.js) ===================== */
+.most-played-home{--mp-w:560px;--mp-h:320px;padding:30px 0 0}
+#homeMostPlayedGrid{
+  display:flex!important;gap:30px!important;
+  overflow-x:auto!important;overflow-y:visible!important;white-space:nowrap!important;
+  padding:40px 10px!important;scrollbar-width:none!important;
+  scroll-snap-type:x proximity;overscroll-behavior-x:contain;
 }
-
-@keyframes gameCardBottomRight {
-  from {
-    opacity: 0;
-    transform: translate3d(180px, 260px, 0) scale(.45) rotate(-13deg);
-  }
-  to {
-    opacity: .9;
-    transform: translate3d(var(--mx, 0px), var(--my, 0px), 0) scale(1) rotate(-2deg);
-  }
+#homeMostPlayedGrid::-webkit-scrollbar{display:none!important}
+#homeMostPlayedGrid > div,#homeMostPlayedGrid .card,#homeMostPlayedGrid .game-card{
+  display:inline-block!important;position:relative!important;
+  flex:0 0 var(--mp-w)!important;width:var(--mp-w)!important;min-width:var(--mp-w)!important;height:var(--mp-h)!important;
+  border-radius:16px!important;overflow:hidden!important;cursor:pointer!important;
+  scroll-snap-align:center;
+  transition:transform .4s ease,box-shadow .4s ease!important;
 }
-
-@keyframes gameCardRight {
-  from {
-    opacity: 0;
-    transform: translate3d(280px, 80px, 0) scale(.45) rotate(16deg);
-  }
-  to {
-    opacity: .95;
-    transform: translate3d(var(--mx, 0px), var(--my, 0px), 0) scale(1) rotate(4deg);
-  }
+#homeMostPlayedGrid img,#homeMostPlayedGrid .card-image,#homeMostPlayedGrid .game-card-image{
+  width:100%!important;height:100%!important;position:absolute!important;top:0!important;left:0!important;
+  object-fit:cover!important;object-position:center 20%!important;z-index:1!important;
+  transition:transform .5s ease,opacity .5s ease!important;
 }
-
-@keyframes gameFloat {
-  0%, 100% {
-    filter: brightness(.85) saturate(1);
-  }
-  50% {
-    filter: brightness(1) saturate(1.15);
-  }
+#homeMostPlayedGrid > div > div:last-child,#homeMostPlayedGrid .card-details,#homeMostPlayedGrid .game-card-info{
+  position:absolute!important;bottom:0!important;left:0!important;right:0!important;height:60%!important;
+  padding:24px 32px!important;
+  background:linear-gradient(to top,rgba(10,14,23,.95) 0%,rgba(10,14,23,.6) 50%,rgba(10,14,23,0) 100%)!important;
+  display:flex!important;flex-direction:column!important;justify-content:flex-end!important;
+  white-space:normal!important;pointer-events:none!important;z-index:2!important;
 }
-
-/* =========================================================
-   TABLET & MOBILE BREAKPOINTS
-   ========================================================= */
-
-@media (max-width: 900px) {
-  .hero-game-card.game-character-only {
-    width: clamp(180px, 30vw, 280px);
+@media (hover:hover){
+  #homeMostPlayedGrid > div:hover,#homeMostPlayedGrid .card:hover,#homeMostPlayedGrid .game-card:hover{
+    transform:translateY(-5px)!important;box-shadow:0 20px 40px rgba(0,0,0,.8),0 0 25px rgba(0,210,255,.25)!important;
   }
-  .game-card-1 { left: -8%; top: 8%; }
-  .game-card-2 { left: 2%; bottom: -5%; }
-  .game-card-4 { right: 2%; bottom: -5%; }
-  .game-card-5 { right: -8%; top: 8%; }
+  #homeMostPlayedGrid > div:hover img,#homeMostPlayedGrid > div:hover .card-image{transform:scale(1.08)!important}
 }
+#homeMostPlayedGrid > div:active{transform:scale(.985)!important}
 
-@media (max-width: 600px) {
-  .hero-game-card.game-character-only {
-    width: 140px;
-    opacity: 0.4; /* Soften on mobile so central text is easily readable */
-  }
-  .game-card-1 { left: -15%; top: 10%; }
-  .game-card-2 { left: -10%; bottom: 2%; }
-  .game-card-4 { right: -10%; bottom: 2%; }
-  .game-card-5 { right: -15%; top: 10%; }
-}
+/* ===================== CTA STRIP ===================== */
+.home-cta-strip{text-align:center;padding:100px 2rem 120px;max-width:800px;margin:0 auto}
+.home-cta-strip .neon-divider{margin-bottom:50px;height:2px;background:linear-gradient(90deg,transparent,var(--neon-blue),transparent);box-shadow:0 0 15px var(--neon-blue)}
+.cta-kicker{font-family:var(--font-mono);font-size:.9rem;color:var(--neon-blue);letter-spacing:6px;margin-bottom:16px;text-transform:uppercase;text-shadow:0 0 10px rgba(0,212,255,.4)}
+.cta-title{font-family:var(--font-display);font-size:clamp(1.75rem,5vw,3.5rem);font-weight:900;color:#fff;text-transform:uppercase;margin-bottom:40px;line-height:1.1}
+.cta-title .grad{background:linear-gradient(135deg,var(--neon-blue),var(--neon-purple,#9d4edd));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;white-space:nowrap}
+.cta-btn{padding:20px 48px;font-size:1.05rem;font-weight:800;letter-spacing:2px;color:#0a0e17;background:var(--neon-blue,#00d4ff);box-shadow:0 0 30px rgba(0,212,255,.4),inset 0 0 10px rgba(255,255,255,.5)}
+.cta-call{font-family:var(--font-mono);font-size:.95rem;color:var(--text-muted);letter-spacing:1px;margin-top:32px;line-height:1.9}
+.cta-call a{color:#fff;text-decoration:none;font-weight:700;border-bottom:2px dashed var(--neon-blue);padding:8px 0;white-space:nowrap;display:inline-block}
 
-
-/* =========================================================
-   CANVAS PARTICLE BACKGROUND
-   ========================================================= */
-
-#hero-particle-canvas {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1; /* Sits behind character layer (z-index: 2) */
-  pointer-events: none;
+/* ===================== PHONE LAYOUT ===================== */
+@media(max-width:767px){
+  .features-strip{padding:32px 16px;grid-template-columns:1fr 1fr;gap:22px 12px}
+  .feature-title{font-size:.7rem;letter-spacing:1.2px}
+  .home-section{padding:56px 20px}
+  .why-grid{margin-top:32px;gap:14px}
+  .why-card{padding:22px 20px}
+  .console-two-col-grid{grid-template-columns:1fr;gap:16px;margin-top:28px}
+  .console-head h2{font-size:1.25rem}
+  .view-details-link{min-height:44px;padding:8px 14px}
+  .console-note{margin-top:26px;font-size:.78rem}
+  .media-intel-section{padding:44px 0}
+  .scroll-container{gap:16px;padding:16px 20px 26px}
+  .media-card{flex-basis:min(74vw,290px)}
+  .review-card{flex-basis:min(80vw,310px);padding:18px 20px}
+  .most-played-home{--mp-w:min(84vw,360px);--mp-h:min(56vw,232px)}
+  #homeMostPlayedGrid{gap:14px!important;padding:24px 20px!important}
+  #homeMostPlayedGrid > div > div:last-child,#homeMostPlayedGrid .card-details,#homeMostPlayedGrid .game-card-info{padding:16px 18px!important}
+  .home-cta-strip{padding:64px 20px 72px}
+  .home-cta-strip .neon-divider{margin-bottom:36px}
+  .cta-kicker{letter-spacing:4px;font-size:.8rem}
+  .cta-title{margin-bottom:28px}
+  .cta-btn{padding:18px 28px;font-size:.95rem;width:100%;max-width:340px}
+  .cta-call{margin-top:24px;font-size:.88rem}
 }

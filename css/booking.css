@@ -68,3 +68,11 @@
   z-index: 15; /* Guarantees the fields capture your mouse clicks and touches */
   pointer-events: auto !important;
 }
+/* inline validation message (replaces alert()) */
+.form-error{color:#ff6b8a;font-size:.95rem;margin:-4px 0 12px;font-family:var(--font-body)}
+.form-error[hidden]{display:none}
+.form-input[aria-invalid="true"]{border-color:#ff6b8a}
+/* 16px inputs stop iOS/Android from zooming the page on focus */
+@media(max-width:900px){.form-input,.form-select{font-size:16px}}
+/* keep the big phone number on a single line at every phone width */
+.booking-phone-big{white-space:nowrap;font-size:clamp(1.15rem,6.6vw,2rem)}

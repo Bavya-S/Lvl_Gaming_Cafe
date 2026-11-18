@@ -1,0 +1,256 @@
+/* =========================================================
+   LVL HERO — art-directed key-art poster
+
+   Phones & tablets (≤1023px): a dedicated vertical poster.
+     ┌────────────────────────────┐
+     │      Spider-Man swoops in  │   back  (z1)  upper right
+     │ Eve   ┌ KRATOS ┐   Atsu    │   focal (z4)  centre, tallest
+     │ (z3)  │        │   (z2)    │   support left / right
+     └ floor ring + light cones ──┘
+        ENTER THE WORLD / OF GAMING.   title overlaps the stage fade
+        [ BOOK SLOT ]  [ CONSOLES ]    CTAs sit under the characters
+   Every figure is sized from the STAGE HEIGHT (--sh), which is derived
+   from the real viewport height (svh), so short and tall phones both
+   get a balanced poster instead of a scaled-down desktop layout.
+
+   Desktop (≥1024px): the original corner composition, re-fitted.
+   ========================================================= */
+
+.hero{
+  --vh100:100vh;
+  --chrome:calc(var(--nav-h) + var(--safe-top));
+  position:relative;overflow:hidden;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  text-align:center;
+  min-height:calc(var(--vh100) - var(--chrome));
+  background:
+    radial-gradient(70% 45% at 50% 38%,rgba(0,212,255,.10),transparent 70%),
+    radial-gradient(50% 35% at 12% 70%,rgba(57,255,20,.05),transparent 70%),
+    var(--bg-dark);
+}
+@supports (height:100svh){.hero{--vh100:100svh}}
+
+/* ---------- atmosphere ---------- */
+.hero-vignette{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 40%,transparent 38%,rgba(0,0,0,.78) 100%);pointer-events:none;z-index:1}
+.hero-scanline{position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,0,0,.035) 2px,rgba(0,0,0,.035) 4px);pointer-events:none;z-index:2}
+
+.hero-stage{position:relative;z-index:2;width:100%;pointer-events:none}
+.hero-atmos{position:absolute;inset:0;z-index:0}
+.hero-beam{
+  position:absolute;top:-4%;height:96%;pointer-events:none;
+  -webkit-mask-image:linear-gradient(90deg,transparent,#000 28%,#000 72%,transparent);
+          mask-image:linear-gradient(90deg,transparent,#000 28%,#000 72%,transparent);
+}
+.hero-beam-a{left:50%;width:78%;translate:-50% 0;background:linear-gradient(180deg,rgba(0,212,255,.34),rgba(0,212,255,.06) 70%,transparent);clip-path:polygon(22% 0,78% 0,100% 100%,0 100%);opacity:.4}
+.hero-beam-b{left:-6%;width:58%;background:linear-gradient(180deg,rgba(57,255,20,.20),rgba(57,255,20,.03) 72%,transparent);clip-path:polygon(18% 0,70% 0,100% 100%,0 100%);opacity:.28;transform-origin:50% 0;rotate:-8deg}
+.hero-floor{
+  position:absolute;left:50%;bottom:-6%;width:132%;height:40%;translate:-50% 0;border-radius:50%;
+  background:radial-gradient(closest-side,rgba(0,212,255,.42),rgba(0,212,255,.10) 58%,transparent 72%);
+}
+.hero-ring{
+  position:absolute;left:50%;bottom:3%;width:92%;height:15%;translate:-50% 0;border-radius:50%;
+  border:1.5px solid rgba(0,212,255,.6);
+  box-shadow:0 0 22px rgba(0,212,255,.5),inset 0 0 22px rgba(0,212,255,.28);
+}
+.hero-ring::after{content:'';position:absolute;inset:-14%;border-radius:50%;border:1px solid rgba(57,255,20,.4)}
+.hero-motes{position:absolute;inset:0;overflow:hidden;pointer-events:none}
+.hero-motes i{
+  position:absolute;bottom:-4%;left:var(--x);width:var(--s);height:var(--s);border-radius:50%;
+  background:var(--c,#00d4ff);box-shadow:0 0 8px var(--c,#00d4ff);opacity:0;
+  animation:moteRise var(--t) linear var(--dl) infinite;
+}
+@keyframes moteRise{0%{opacity:0;transform:translate3d(0,0,0)}12%{opacity:.85}100%{opacity:0;transform:translate3d(var(--dx),-340px,0)}}
+
+/* ---------- characters ---------- */
+.hero-game-assembly{
+  position:absolute;inset:0;z-index:1;pointer-events:none;overflow:hidden;
+  /* fade the lower body so hard-cropped artwork melts into the floor and the headline */
+  -webkit-mask-image:linear-gradient(180deg,#000 0,#000 74%,transparent 98%);
+          mask-image:linear-gradient(180deg,#000 0,#000 74%,transparent 98%);
+}
+.hero-game-card.game-character-only{
+  position:absolute;
+  left:var(--cx);bottom:var(--b,0);translate:-50% 0;
+  height:var(--h);aspect-ratio:var(--r);
+  margin:0;padding:0;background:none;border:0;box-shadow:none;
+  z-index:var(--z,1);
+}
+.hc-par{
+  width:100%;height:100%;
+  transform:translate3d(var(--px,0px),var(--py,0px),0);
+  will-change:transform;
+}
+.hero-game-card img{
+  display:block;width:100%;height:100%;object-fit:contain;
+  filter:brightness(var(--br,.92)) drop-shadow(0 0 1px var(--rim,rgba(0,212,255,.9))) drop-shadow(0 6px 18px rgba(0,0,0,.6)) drop-shadow(0 0 18px var(--glow,rgba(0,212,255,.28)));
+}
+
+/* Poster composition for phones (portrait) — values are fractions of stage height / width */
+.hero-stage{
+  --sh:clamp(236px,calc(var(--vh100) - var(--chrome) - var(--dock-h) - var(--safe-bottom) - 392px),500px);
+  height:var(--sh);
+}
+.hc-kratos{--cx:50%;--h:min(calc(var(--sh)*.86),calc(60vw/.7478));--r:.7478;--b:-3%;--z:4;--br:1;--rim:rgba(120,230,255,.95)}
+.hc-eve{--cx:17%;--h:min(calc(var(--sh)*.80),calc(40vw/.4926));--r:.4926;--b:-1%;--z:3;--br:.95;--rim:rgba(57,255,20,.85);--glow:rgba(57,255,20,.22)}
+.hc-atsu{--cx:83%;--h:min(calc(var(--sh)*.68),calc(42vw/.6909));--r:.6909;--b:0%;--z:2;--br:.86;--glow:rgba(168,85,247,.28)}
+.hc-spidey{--cx:64%;--h:min(calc(var(--sh)*.46),calc(54vw/1.0933));--r:1.0933;--b:50%;--z:1;--br:.9}
+
+/* edge-anchored supporting cast: guaranteed inside the screen at every width */
+.hero-game-card.game-character-only.hc-atsu{left:auto;right:2.5%;translate:0 0}
+.hero-game-card.game-character-only.hc-eve{left:2.5%;translate:0 0}
+
+/* ---------- copy ---------- */
+.hero-copy{position:relative;z-index:5;width:100%;padding:0 20px;margin-top:calc(var(--sh)*-.1)}
+.hero-eyebrow{
+  font-family:var(--font-mono);font-size:clamp(.6rem,3.1vw,.74rem);color:var(--neon-blue);
+  letter-spacing:2px;text-transform:uppercase;margin-bottom:12px;white-space:nowrap;
+  text-shadow:0 0 12px rgba(0,212,255,.45);
+}
+.hero-title{
+  display:flex;flex-direction:column;align-items:center;
+  font-family:var(--font-display);font-weight:900;line-height:1;text-transform:uppercase;
+  font-size:clamp(1.85rem,9.4vw,3.4rem);
+  text-shadow:0 2px 24px rgba(0,0,0,.85);
+}
+.hero-title .ln{display:block;overflow:hidden;padding:.06em 0}
+.hero-title .ln>span{display:block}
+.hero-lead-in{font-size:.36em;font-weight:600;letter-spacing:.3em;opacity:.9;margin-bottom:.35rem;padding-left:.3em}
+.hero-tagline{display:block;font-size:.52em;margin-top:.55rem;letter-spacing:.04em}
+.hero-title .accent{
+  display:inline-block;
+  background:linear-gradient(135deg,var(--neon-blue),var(--neon-purple));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+  filter:drop-shadow(0 0 14px rgba(0,212,255,.45));
+}
+.hero-ctas{display:flex;flex-direction:column;align-items:center;gap:10px;margin:22px auto 0;width:min(100%,340px)}
+.hero-ctas .btn-primary{width:100%;font-size:.8rem;min-height:54px;box-shadow:0 0 28px rgba(0,212,255,.35)}
+.hero-ctas .btn-outline{width:100%;font-size:.68rem;min-height:46px}
+.hero-stats{
+  position:relative;z-index:5;width:100%;padding:0 12px;margin:20px 0 0;
+  display:grid;grid-template-columns:repeat(4,1fr);gap:4px;
+}
+.hero-stat{text-align:center;min-width:0}
+.hero-stat-num{font-family:var(--font-display);font-size:1.25rem;font-weight:900;color:var(--neon-blue);text-shadow:0 0 16px var(--neon-blue);white-space:nowrap}
+.hero-stat-label{font-size:.72rem;color:var(--text-muted);letter-spacing:1.5px;text-transform:uppercase;margin-top:3px;line-height:1.15}
+.scroll-indicator{display:none}
+
+/* ---------- entrance choreography (one orchestrated moment, then calm) ---------- */
+
+html{--hd:0s}
+html.first-visit{--hd:1s}
+.hero-atmos{animation:atmosIn 1.4s ease var(--hd) both}
+.hero-game-card{animation:heroRise .95s var(--ease-out) calc(var(--hd) + var(--d,0s)) both}
+.hc-kratos{--d:0s;animation-name:heroFocal;animation-duration:.8s;animation-delay:0s}
+.hc-eve{--d:.28s}
+.hc-atsu{--d:.38s}
+.hc-spidey{--d:.55s;animation-name:heroSwoop;animation-duration:1.15s}
+.hero-eyebrow{animation:heroFade .8s ease calc(var(--hd) + .45s) both}
+.hero-title .ln:nth-child(1)>span{animation:lineUp .85s var(--ease-out) calc(var(--hd) + .55s) both}
+.hero-title .ln:nth-child(2)>span{animation:lineUp .85s var(--ease-out) calc(var(--hd) + .67s) both}
+.hero-tagline{animation:heroFadeUp .8s var(--ease-out) calc(var(--hd) + .85s) both}
+.hero-ctas{animation:heroFadeUp .8s var(--ease-out) calc(var(--hd) + .95s) both}
+.hero-stats{animation:heroFadeUp .8s var(--ease-out) calc(var(--hd) + 1.1s) both}
+@keyframes atmosIn{from{opacity:0}to{opacity:1}}
+@keyframes heroRise{from{opacity:0;transform:translate3d(0,34px,0) scale(.95)}to{opacity:1;transform:none}}
+/* focal character: visible from the first paint (helps LCP), only slides up */
+@keyframes heroFocal{from{opacity:.02;transform:translate3d(0,26px,0) scale(.97)}to{opacity:1;transform:none}}
+@keyframes heroSwoop{from{opacity:0;transform:translate3d(70px,-46px,0) rotate(9deg) scale(.88)}to{opacity:1;transform:none}}
+@keyframes lineUp{from{opacity:1;transform:translate3d(0,108%,0)}to{opacity:1;transform:none}}
+@keyframes heroFade{from{opacity:0}to{opacity:1}}
+@keyframes heroFadeUp{from{opacity:0;transform:translate3d(0,16px,0)}to{opacity:1;transform:none}}
+
+/* idle life — slow, small, offset per character */
+.hero-game-card img{animation:heroFloat var(--ft,6s) ease-in-out calc(var(--hd) + 1.6s) infinite alternate}
+.hc-eve img{--ft:6.8s}
+.hc-atsu img{--ft:7.4s}
+.hc-spidey img{--ft:5.2s;animation-name:heroFloatTilt}
+@keyframes heroFloat{from{transform:translate3d(0,0,0)}to{transform:translate3d(0,-6px,0)}}
+@keyframes heroFloatTilt{from{transform:translate3d(0,2px,0) rotate(-.8deg)}to{transform:translate3d(0,-7px,0) rotate(1deg)}}
+.hero-ring{animation:ringPulse 4.2s ease-in-out infinite}
+.hero-beam-a{animation:beamBreathe 7s ease-in-out infinite alternate}
+@keyframes ringPulse{0%,100%{opacity:.75;transform:scale(1)}50%{opacity:1;transform:scale(1.035)}}
+@keyframes beamBreathe{from{opacity:.28}to{opacity:.5}}
+
+/* ---------- very short phones ---------- */
+@media (max-height:700px) and (max-width:1023px){
+  .hero-eyebrow{margin-bottom:8px}
+  .hero-ctas{margin-top:14px;gap:8px}
+  .hero-ctas .btn-primary{min-height:50px}
+  .hero-ctas .btn-outline{min-height:44px}
+  .hero-stats{margin-top:12px}
+  .hero-stage{--sh:clamp(206px,calc(var(--vh100) - var(--chrome) - var(--dock-h) - var(--safe-bottom) - 372px),520px)}
+}
+/* ---------- tablets (portrait) ---------- */
+@media (min-width:700px) and (max-width:1023px){
+  .hero-stage{--sh:clamp(340px,calc(var(--vh100) - var(--chrome) - var(--dock-h) - var(--safe-bottom) - 400px),640px);max-width:760px}
+  .hero-title{font-size:clamp(2.6rem,7vw,3.8rem)}
+  .hero-eyebrow{font-size:.85rem;letter-spacing:5px}
+  .hero-ctas{flex-direction:row;width:auto;gap:16px;justify-content:center}
+  .hero-ctas .btn-primary,.hero-ctas .btn-outline{width:auto;min-width:230px}
+  .hero-stats{max-width:560px;margin-inline:auto}
+  .hero-stat-num{font-size:1.7rem}
+  .hc-kratos{--h:min(calc(var(--sh)*.95),calc(60vw/.7478))}
+}
+/* ---------- landscape phones: poster left, copy right ---------- */
+@media (orientation:landscape) and (max-height:520px) and (max-width:1023px){
+  :root{--dock-h:0px}
+  .dock{display:none!important}
+  body{padding-bottom:0}
+  .hero{display:grid;grid-template-columns:46% minmax(0,1fr);align-items:center;min-height:calc(var(--vh100) - var(--chrome) - var(--dock-h) - var(--safe-bottom));text-align:left}
+  .hero-stage{--sh:clamp(200px,calc(var(--vh100) - var(--chrome) - var(--dock-h) - var(--safe-bottom) - 28px),400px);grid-column:1;grid-row:1/3;align-self:end;max-width:none}
+  .hero-copy{grid-column:2;grid-row:1;margin-top:0;padding:8px 24px 0 8px;align-self:end}
+  .hero-stats{grid-column:2;grid-row:2;margin-top:6px;padding:0 24px 8px 8px;align-self:start}
+  .hero-title{align-items:flex-start;font-size:clamp(1.5rem,5.4vw,2.4rem)}
+  .hero-ctas{flex-direction:column;align-items:flex-start;width:auto;max-width:100%;margin:12px 0 0;gap:8px}
+  .hero-ctas .btn-primary,.hero-ctas .btn-outline{width:auto;min-height:44px;padding:12px 22px;font-size:.66rem;white-space:normal;text-align:center}
+  .hero-stats{grid-template-columns:repeat(4,auto);justify-content:start;gap:14px}
+  .hero-stat-num{font-size:1.05rem}
+  .hero-eyebrow{white-space:normal}
+}
+
+/* =========================================================
+   DESKTOP (≥1024px) — original corner composition, re-fitted
+   ========================================================= */
+@media (min-width:1024px){
+  .hero{min-height:100vh;padding:2rem}
+  .hero-stage{position:absolute;inset:var(--nav-h) 0 0;height:auto;width:auto;--sh:min(78vh,760px)}
+  .hero-game-assembly{-webkit-mask-image:none;mask-image:none}
+  .hero-atmos{display:none}
+  .hero-copy{margin-top:0;padding:0;width:auto;max-width:min(760px,48vw)}
+  .hero-title{font-size:clamp(2.6rem,4.4vw,4.6rem)}
+  .hero-eyebrow{font-size:.78rem;letter-spacing:6px;margin-bottom:22px}
+  .hero-ctas{flex-direction:row;width:auto;gap:16px;margin-top:38px;justify-content:center}
+  .hero-ctas .btn-primary,.hero-ctas .btn-outline{width:auto;font-size:.7rem;white-space:nowrap}
+  .hero-stats{position:relative;display:flex;gap:44px;margin-top:54px;width:auto;justify-content:center;padding:0}
+  .hero-stat-num{font-size:2rem}
+  .hero-stat-label{font-size:.78rem}
+  .scroll-indicator{
+    display:flex;position:absolute;bottom:26px;left:50%;translate:-50% 0;z-index:6;
+    flex-direction:column;align-items:center;gap:6px;text-decoration:none;min-width:44px;min-height:60px;
+  }
+  .scroll-dot{width:4px;height:4px;border-radius:50%;background:var(--neon-blue)}
+  .scroll-line{width:1px;height:40px;background:linear-gradient(to bottom,var(--neon-blue),transparent)}
+  .scroll-indicator{animation:scrollBob 2s ease-in-out infinite}
+  @keyframes scrollBob{0%,100%{transform:translateY(0)}50%{transform:translateY(8px)}}
+
+  /* characters: top corners + lower corners, sized from viewport height so they never crowd the copy */
+  .hero-game-card.game-character-only.hc-atsu{--cx:auto;right:auto;left:2%;translate:0 0;--h:min(52vh,calc(23vw/.6909));--b:auto;top:7%;--z:2}
+  .hero-game-card.game-character-only.hc-eve{--cx:auto;left:11%;translate:0 0;--h:min(58vh,calc(15vw/.4926));--b:-3%;--z:3}
+  .hero-game-card.game-character-only.hc-kratos{--cx:auto;left:auto;right:10%;translate:0 0;--h:min(66vh,calc(24vw/.7478));--b:-3%;--z:3}
+  .hero-game-card.game-character-only.hc-spidey{--cx:auto;left:auto;right:1%;translate:0 0;--h:min(40vh,calc(24vw/1.0933));--b:auto;top:8%;--z:2}
+}
+@media (min-width:1024px) and (max-width:1199px){
+  .hero-copy{max-width:min(520px,44vw)}
+  .hero-stats{gap:26px}
+  .hero-stat-label{font-size:.7rem;letter-spacing:1px}
+  .hero-game-card.game-character-only.hc-kratos{right:3%;--h:min(56vh,calc(20vw/.7478))}
+  .hero-game-card.game-character-only.hc-eve{left:7%;--h:min(52vh,calc(13vw/.4926))}
+  .hero-game-card.game-character-only.hc-atsu{--h:min(48vh,calc(20vw/.6909))}
+  .hero-game-card.game-character-only.hc-spidey{--h:min(36vh,calc(21vw/1.0933))}
+}
+
+/* ---------- reduced motion: static poster ---------- */
+@media (prefers-reduced-motion:reduce){
+  .hero-motes{display:none}
+  .hc-par{will-change:auto}
+}
